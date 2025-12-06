@@ -1,5 +1,6 @@
 import { defineConfig } from 'sanity'
 import { structureTool } from 'sanity/structure'
+import { schemaTypes } from './schemas'
 
 export default defineConfig({
   name: 'default',
@@ -13,9 +14,7 @@ export default defineConfig({
   plugins: [structureTool()],
 
   schema: {
-    types: [
-      // Ajoutez vos types de schéma ici
-    ],
+    types: schemaTypes,
   },
 })
 

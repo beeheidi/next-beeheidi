@@ -89,7 +89,7 @@ const Header = () => {
             </li>
             <li>
               <Link
-                href="/"
+                href="/explore"
                 className="text-6xl font-bold text-primary flex  items-center gap-2 hover:scale-105 transition-all duration-300"
               >
                 <Image
@@ -103,7 +103,10 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link href="/qui-est-heidi" className="text-6xl font-bold text-[#cbb68b]">
+              <Link
+                href="/qui-est-heidi"
+                className="text-6xl font-bold text-[#cbb68b]"
+              >
                 Qui est Heidi ?
               </Link>
             </li>

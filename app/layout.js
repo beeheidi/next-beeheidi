@@ -1,6 +1,7 @@
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header/Header";
+import ConditionalHeader from "@/components/ConditionalHeader";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -17,7 +18,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${roboto.className} antialiased`}>
-        <Header />
+        <ConditionalHeader />
         {children}
       </body>
     </html>
