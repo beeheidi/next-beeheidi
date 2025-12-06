@@ -103,7 +103,6 @@ const Header = () => {
               </Link>
             </li>
             <li>
-<<<<<<< HEAD
               <Link href="/qui-est-heidi" className="text-6xl font-bold text-[#cbb68b]">
                 Qui est Heidi ?
               </Link>
