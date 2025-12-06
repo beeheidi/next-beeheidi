@@ -12,7 +12,7 @@ const Header = () => {
 
   return (
     <header className="bg-transparent backdrop-blur-xs fixed top-0 left-0 right-0 z-50">
-      <div className="flex items-center justify-end max-w-[1440px] mx-auto">
+      <div className="flex items-center justify-end max-w-laptop mx-auto">
         <svg
           className={`w-24 h-24 z-52 transition-text duration-300 ${isOpen ? "stroke-black" : "stroke-white"}`}
           xmlns="http://www.w3.org/2000/svg"
@@ -83,14 +83,14 @@ const Header = () => {
         <nav className="flex items-center justify-center relative z-53">
           <ul className="flex items-center flex-col justify-center gap-12 text-black">
             <li>
-              <Link href="/" className="text-6xl text-[#cbb68b] font-bold">
+              <Link href="/" className="text-6xl text-primary font-bold">
                 Accueil
               </Link>
             </li>
             <li>
               <Link
                 href="/"
-                className="text-6xl font-bold text-[#cbb68b] flex  items-center gap-2 hover:scale-105 transition-all duration-300 "
+                className="text-6xl font-bold text-primary flex  items-center gap-2 hover:scale-105 transition-all duration-300"
               >
                 <Image
                   src="/images/accueil/home-explore.png"
@@ -103,17 +103,18 @@ const Header = () => {
               </Link>
             </li>
             <li>
+<<<<<<< HEAD
               <Link href="/qui-est-heidi" className="text-6xl font-bold text-[#cbb68b]">
                 Qui est Heidi ?
               </Link>
             </li>
             <li>
-              <Link href="/" className="text-6xl font-bold text-[#cbb68b]">
+              <Link href="/" className="text-6xl font-bold text-primary">
                 Services
               </Link>
             </li>
             <li>
-              <Link href="/" className="text-6xl font-bold text-[#cbb68b]">
+              <Link href="/" className="text-6xl font-bold text-primary">
                 Contact
               </Link>
             </li>
