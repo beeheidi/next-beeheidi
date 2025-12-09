@@ -6,23 +6,31 @@ const Button = ({
   onClick,
   variant = "primary",
   size = "md",
+  rounded = "lg",
   className = "",
   type = "button",
   disabled = false,
   ...props
 }) => {
-  const baseStyles =
-    "font-bold rounded-lg transition-all duration-300 inline-flex items-center justify-center";
+  const roundedStyles = {
+    none: "rounded-none",
+    sm: "rounded-sm",
+    md: "rounded-md",
+    lg: "rounded-lg",
+    full: "rounded-full",
+  };
+
+  const baseStyles = `font-bold ${roundedStyles[rounded] || roundedStyles.lg} transition-all duration-300 inline-flex items-center justify-center`;
 
   const variants = {
     primary:
-      "bg-primary text-white hover:bg-opacity-90 active:scale-95 cursor-pointer",
+      "bg-primary text-white hover:bg-opacity-90 hover:scale-105 active:scale-95 cursor-pointer",
     secondary:
-      "bg-secondary text-foreground hover:bg-opacity-90 active:scale-95 cursor-pointer",
+      "bg-secondary text-foreground hover:bg-opacity-90 hover:scale-105 active:scale-95 cursor-pointer",
     outline:
-      "border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-white active:scale-95 cursor-pointer",
+      "border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-white hover:scale-105 active:scale-95 cursor-pointer font-medium",
     ghost:
-      "text-primary hover:bg-primary hover:bg-opacity-10 active:scale-95 cursor-pointer",
+      "text-primary hover:bg-primary hover:bg-opacity-10 hover:scale-105 active:scale-95 cursor-pointer",
   };
 
   const sizes = {
