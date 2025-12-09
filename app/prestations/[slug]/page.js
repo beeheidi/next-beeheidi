@@ -4,48 +4,18 @@ import {
   prestationsSlugsQuery,
 } from "@/lib/sanity.queries";
 import { urlFor } from "@/lib/sanity";
+import {
+  categoryLabels,
+  difficultyLabels,
+  seasonLabels,
+  durationCategoryLabels,
+  regionLabels,
+} from "@/lib/labels";
 import Image from "next/image";
 import Link from "next/link";
 import { PortableText } from "@portabletext/react";
 import { notFound } from "next/navigation";
-
-const categoryLabels = {
-  randonnee: "Randonnée",
-  "dejeuner-altitude": "Déjeuner en altitude",
-  "escapade-culinaire": "Escapade culinaire",
-  aventure: "Aventure",
-  detente: "Détente",
-  autre: "Autre",
-};
-
-const difficultyLabels = {
-  facile: "Facile",
-  moderee: "Modérée",
-  difficile: "Difficile",
-  "tres-difficile": "Très difficile",
-};
-
-const seasonLabels = {
-  printemps: "Printemps",
-  ete: "Été",
-  automne: "Automne",
-  hiver: "Hiver",
-};
-
-const durationCategoryLabels = {
-  "moins-3h": "Moins de 3 heures",
-  "demi-journee": "Demi-journée",
-  journee: "Journée",
-  "plusieurs-jours": "Plusieurs jours",
-};
-
-const regionLabels = {
-  chablais: "Chablais",
-  "haut-valais": "Haut-Valais",
-  martigny: "Martigny",
-  "sion-sierre": "Sion & Sierre",
-  "crans-montana": "Crans-Montana",
-};
+import Button from "@/components/ui/Button/Button";
 
 export async function generateStaticParams() {
   try {
@@ -362,7 +332,7 @@ export default async function PrestationDetailPage({ params }) {
               {/* Période de disponibilité */}
               {prestation.availabilityPeriod && (
                 <div className="mb-6">
-                  <h3 className="text-xl font-bold text-foreground mb-2">
+                  <h3 className="text-xl font-bold text-primary mb-2">
                     Disponibilité
                   </h3>
                   <p className="text-gray-700">
@@ -406,9 +376,9 @@ export default async function PrestationDetailPage({ params }) {
               )}
 
               {/* Bouton de réservation */}
-              <button className="w-full bg-primary text-white py-4 rounded-lg font-bold text-lg hover:bg-opacity-90 transition-colors">
+              <Button variant="primary" size="lg" className="w-full">
                 Réserver maintenant
-              </button>
+              </Button>
             </div>
           </div>
         </div>

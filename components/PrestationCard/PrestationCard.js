@@ -1,37 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { urlFor } from "@/lib/sanity";
-
-const categoryLabels = {
-  randonnee: "Randonnée",
-  "dejeuner-altitude": "Déjeuner en altitude",
-  "escapade-culinaire": "Escapade culinaire",
-  aventure: "Aventure",
-  detente: "Détente",
-  autre: "Autre",
-};
-
-const difficultyLabels = {
-  facile: "Facile",
-  moderee: "Modérée",
-  difficile: "Difficile",
-  "tres-difficile": "Très difficile",
-};
-
-const seasonLabels = {
-  printemps: "Printemps",
-  ete: "Été",
-  automne: "Automne",
-  hiver: "Hiver",
-};
-
-const regionLabels = {
-  chablais: "Chablais",
-  "haut-valais": "Haut-Valais",
-  martigny: "Martigny",
-  "sion-sierre": "Sion & Sierre",
-  "crans-montana": "Crans-Montana",
-};
+import {
+  categoryLabels,
+  difficultyLabels,
+  seasonLabels,
+  regionLabels,
+} from "@/lib/labels";
 
 export default function PrestationCard({ prestation }) {
   const imageUrl = prestation.mainImage

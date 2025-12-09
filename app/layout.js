@@ -1,7 +1,7 @@
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header/Header";
-import ConditionalHeader from "@/components/ConditionalHeader";
+import ConditionalHeader from "@/components/Header/ConditionalHeader";
 
 const roboto = Roboto({
   variable: "--font-roboto",
