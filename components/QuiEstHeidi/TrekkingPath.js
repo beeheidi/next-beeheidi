@@ -19,7 +19,7 @@ export default function TrekkingPath() {
                 // Set initial state explicitly just in case CSS doesn't catch it
                 tl.fromTo(logoPaths,
                     { strokeDasharray: 2000, strokeDashoffset: 2000, fill: "transparent", stroke: "#f5f5f5" },
-                    { strokeDashoffset: 0, duration: 5, ease: "power1.inOut", stagger: 0.1 }
+                    { strokeDashoffset: 0, duration: 2, ease: "power1.inOut", stagger: 0.4 }
                 )
                     .to(logoPaths, { fill: "#f5f5f5", duration: 2, ease: "power2.inOut" }, "-=1");
             }
