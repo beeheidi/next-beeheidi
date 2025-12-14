@@ -12,6 +12,7 @@ const roboto = Roboto({
 export const metadata = {
   title: "Beeheidi",
   description: "Beeheidi",
+  robots: "noindex, nofollow",
 };
 
 export default function RootLayout({ children }) {
