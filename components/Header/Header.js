@@ -210,15 +210,6 @@ const Header = () => {
                   Qui est Heidi ?
                 </Link>
               </li>
-              <li ref={(el) => (menuItemsRef.current[3] = el)}>
-                <Link
-                  href="/"
-                  className="text-6xl font-bold text-primary flex  items-center gap-2 hover:scale-105 transition-scale duration-300"
-                  onClick={handleLinkClick}
-                >
-                  Services
-                </Link>
-              </li>
               <li ref={(el) => (menuItemsRef.current[4] = el)}>
                 <Link
                   href="/"
