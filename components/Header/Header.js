@@ -106,7 +106,7 @@ const Header = () => {
         <div className="w-full flex items-center justify-end ">
           <svg
             ref={svgRef}
-            className={`w-24 h-24 z-52  transition-colors duration-300 ${
+            className={`w-24 h-24 z-52 outline-none  transition-colors duration-300 ${
               isOpen
                 ? "stroke-black"
                 : isHomePage

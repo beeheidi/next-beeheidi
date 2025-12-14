@@ -10,6 +10,8 @@
   --color-secondary: #fff;
 
   --max-width: 1440px;
+
+  --box-shadow-card: 0 25px 60px -15px rgba(0, 0, 0, 0.1);
 }
 
 @theme inline {
@@ -21,6 +23,9 @@
 
   /* Largeurs max (pour max-w-*) */
   --max-width-laptop: var(--max-width);
+
+  /* Box Shadow */
+  --shadow-card: var(--box-shadow-card);
 }
 
 body {

@@ -25,12 +25,8 @@ const Button = ({
   const variants = {
     primary:
       "bg-primary text-white hover:bg-opacity-90 hover:scale-105 active:scale-95 cursor-pointer",
-    secondary:
-      "bg-secondary text-foreground hover:bg-opacity-90 hover:scale-105 active:scale-95 cursor-pointer",
     outline:
       "border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-white hover:scale-105 active:scale-95 cursor-pointer font-medium",
-    ghost:
-      "text-primary hover:bg-primary hover:bg-opacity-10 hover:scale-105 active:scale-95 cursor-pointer",
   };
 
   const sizes = {

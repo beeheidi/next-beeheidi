@@ -376,7 +376,12 @@ export default async function PrestationDetailPage({ params }) {
               )}
 
               {/* Bouton de réservation */}
-              <Button variant="primary" size="lg" className="w-full">
+              <Button
+                variant="primary"
+                size="md"
+                rounded="full"
+                className="w-full"
+              >
                 Réserver maintenant
               </Button>
             </div>
