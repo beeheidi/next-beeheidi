@@ -147,10 +147,10 @@ const Footer = () => {
           <div className="flex items-center gap-2">
             <span className="text-gray-600 text-sm">{tFooter("madeWith")}</span>
             <span className="text-primary">❤️</span>
-            <span className="text-gray-600 text-sm">{tFooter("in")}</span>
+            {/*  <span className="text-gray-600 text-sm">{tFooter("in")}</span>
             <span className="text-primary font-semibold">
               {tFooter("valais")}
-            </span>
+            </span> */}
           </div>
           <div className="flex items-center gap-2">
             <span className="text-gray-600 text-sm">
