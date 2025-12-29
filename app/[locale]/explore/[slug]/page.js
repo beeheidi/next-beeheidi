@@ -12,26 +12,30 @@ import {
   regionLabels,
 } from "@/lib/labels";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { PortableText } from "@portabletext/react";
 import { notFound } from "next/navigation";
 import Button from "@/components/ui/Button/Button";
+import TopImage from "@/components/ui/TopImage/TopImage";
 
 export async function generateStaticParams() {
-  try {
-    const slugs = await client.fetch(prestationsSlugsQuery);
-    return slugs.map((item) => ({
-      slug: item.slug,
-    }));
-  } catch (error) {
-    console.error("Error fetching slugs:", error);
-    return [];
+  const locales = ["fr", "en"];
+  const params = [];
+
+  for (const locale of locales) {
+    try {
+      const slugs = await client.fetch(prestationsSlugsQuery(locale));
+      params.push(...slugs.map(({ slug }) => ({ locale, slug })));
+    } catch (error) {
+      console.error("Error fetching slugs:", error);
+    }
   }
+
+  return params;
 }
 
 export async function generateMetadata({ params }) {
-  const resolvedParams = await params;
-  const slug = resolvedParams.slug;
+  const { locale, slug } = await params;
 
   if (!slug) {
     return {
@@ -39,7 +43,7 @@ export async function generateMetadata({ params }) {
     };
   }
 
-  const prestation = await client.fetch(prestationBySlugQuery, {
+  const prestation = await client.fetch(prestationBySlugQuery(locale), {
     slug: slug,
   });
 
@@ -56,14 +60,16 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function PrestationDetailPage({ params }) {
-  const resolvedParams = await params;
-  const slug = resolvedParams.slug;
+  const { locale, slug } = await params;
+  const t = await import(`../../../../messages/${locale}.json`).then(
+    (m) => m.default
+  );
 
   if (!slug) {
     notFound();
   }
 
-  const prestation = await client.fetch(prestationBySlugQuery, {
+  const prestation = await client.fetch(prestationBySlugQuery(locale), {
     slug: slug,
   });
 
@@ -85,20 +91,21 @@ export default async function PrestationDetailPage({ params }) {
     : [];
 
   return (
-    <div className="min-h-screen bg-background pt-24 pb-16">
-      <div className="max-w-laptop mx-auto px-6">
+    <main className=" bg-background pt-24 pb-16 relative">
+      <TopImage position="top-left" size="large" />
+      <div className="max-w-laptop mx-auto px-6 relative z-10">
         {/* Breadcrumb */}
         <nav className="mb-8">
           <div className="flex items-center gap-2 text-sm text-black">
             <Link href="/" className="hover:text-primary transition-colors">
-              Accueil
+              {t.common.home}
             </Link>
             <span>/</span>
             <Link
               href="/explore"
               className="hover:text-primary transition-colors"
             >
-              Explore
+              {t.common.explore}
             </Link>
             <span>/</span>
             <span className="text-primary">{prestation.title}</span>
@@ -151,8 +158,57 @@ export default async function PrestationDetailPage({ params }) {
           <div className="lg:col-span-2">
             {/* Description */}
             {prestation.description && (
-              <div className="prose prose-lg text-black max-w-none mb-8">
-                <PortableText value={prestation.description} />
+              <div className="prose prose-lg text-black max-w-none mb-8 [&_p]:whitespace-pre-line [&_p]:mb-4">
+                <PortableText
+                  value={prestation.description}
+                  components={{
+                    block: {
+                      normal: ({ children }) => (
+                        <p className="mb-4 whitespace-pre-line leading-relaxed">
+                          {children}
+                        </p>
+                      ),
+                      h1: ({ children }) => (
+                        <h1 className="text-4xl font-bold text-primary mb-6 mt-8">
+                          {children}
+                        </h1>
+                      ),
+                      h2: ({ children }) => (
+                        <h2 className="text-3xl font-bold text-primary mb-5 mt-7">
+                          {children}
+                        </h2>
+                      ),
+                      h3: ({ children }) => (
+                        <h3 className="text-2xl font-bold text-primary mb-4 mt-6">
+                          {children}
+                        </h3>
+                      ),
+                      h4: ({ children }) => (
+                        <h4 className="text-xl font-bold text-primary mb-3 mt-5">
+                          {children}
+                        </h4>
+                      ),
+                      h5: ({ children }) => (
+                        <h5 className="text-lg font-bold text-primary mb-2 mt-4">
+                          {children}
+                        </h5>
+                      ),
+                      h6: ({ children }) => (
+                        <h6 className="text-base font-bold text-primary mb-2 mt-4">
+                          {children}
+                        </h6>
+                      ),
+                    },
+                    marks: {
+                      strong: ({ children }) => (
+                        <strong className="font-bold">{children}</strong>
+                      ),
+                      em: ({ children }) => (
+                        <em className="italic">{children}</em>
+                      ),
+                    },
+                  }}
+                />
               </div>
             )}
 
@@ -160,7 +216,7 @@ export default async function PrestationDetailPage({ params }) {
             {prestation.highlights && prestation.highlights.length > 0 && (
               <div className="bg-gray-50 rounded-lg p-6 mb-8">
                 <h2 className="text-2xl font-bold text-primary mb-4">
-                  Points forts
+                  {t.prestation.highlights}
                 </h2>
                 <ul className="space-y-2">
                   {prestation.highlights.map((highlight, index) => (
@@ -177,13 +233,13 @@ export default async function PrestationDetailPage({ params }) {
             {prestation.technicalDetails && (
               <div className="mb-8">
                 <h2 className="text-2xl font-bold text-primary mb-4">
-                  Détails techniques
+                  {t.prestation.technicalDetails}
                 </h2>
                 <div className="bg-gray-50 rounded-lg p-6 space-y-3">
                   {prestation.technicalDetails.duration && (
                     <div>
                       <span className="font-semibold text-primary">
-                        Durée :{" "}
+                        {t.prestation.duration} :{" "}
                       </span>
                       <span className="text-gray-700">
                         {prestation.technicalDetails.duration}
@@ -193,7 +249,7 @@ export default async function PrestationDetailPage({ params }) {
                   {prestation.technicalDetails.difficultyDescription && (
                     <div>
                       <span className="font-semibold text-primary">
-                        Difficulté :{" "}
+                        {t.prestation.difficulty} :{" "}
                       </span>
                       <span className="text-gray-700">
                         {prestation.technicalDetails.difficultyDescription}
@@ -218,7 +274,7 @@ export default async function PrestationDetailPage({ params }) {
             {prestation.equipment && prestation.equipment.length > 0 && (
               <div className="mb-8">
                 <h2 className="text-2xl font-bold text-primary mb-4">
-                  Matériel à prévoir
+                  {t.prestation.equipment}
                 </h2>
                 <ul className="space-y-2 bg-gray-50 rounded-lg p-6">
                   {prestation.equipment.map((item, index) => (
@@ -236,7 +292,7 @@ export default async function PrestationDetailPage({ params }) {
               prestation.practicalInfo.length > 0 && (
                 <div className="mb-8">
                   <h2 className="text-2xl font-bold text-primary mb-4">
-                    Informations complémentaires
+                    {t.prestation.practicalInfo}
                   </h2>
                   <div className="bg-gray-50 rounded-lg p-6 space-y-3">
                     {prestation.practicalInfo.map((info, index) => (
@@ -257,7 +313,7 @@ export default async function PrestationDetailPage({ params }) {
             {prestation.gallery && prestation.gallery.length > 0 && (
               <div className="mb-8">
                 <h2 className="text-2xl font-bold text-primary mb-4">
-                  Galerie
+                  {t.prestation.gallery}
                 </h2>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                   {prestation.gallery.map((image, index) => {
@@ -291,7 +347,7 @@ export default async function PrestationDetailPage({ params }) {
               {prestation.price && prestation.price.length > 0 && (
                 <div className="mb-6">
                   <h3 className="text-xl font-bold text-primary mb-4">
-                    Tarifs
+                    {t.prestation.prices}
                   </h3>
                   <div className="space-y-3">
                     {prestation.price.map((priceItem, index) => (
@@ -314,7 +370,9 @@ export default async function PrestationDetailPage({ params }) {
               {/* Durée */}
               {prestation.duration && (
                 <div className="mb-6">
-                  <h3 className="text-xl font-bold text-primary mb-2">Durée</h3>
+                  <h3 className="text-xl font-bold text-primary mb-2">
+                    {t.prestation.duration}
+                  </h3>
                   {prestation.duration.category && (
                     <p className="text-gray-700 mb-1">
                       {durationCategoryLabels[prestation.duration.category] ||
@@ -333,7 +391,7 @@ export default async function PrestationDetailPage({ params }) {
               {prestation.availabilityPeriod && (
                 <div className="mb-6">
                   <h3 className="text-xl font-bold text-primary mb-2">
-                    Disponibilité
+                    {t.prestation.availability}
                   </h3>
                   <p className="text-gray-700">
                     {prestation.availabilityPeriod}
@@ -344,8 +402,8 @@ export default async function PrestationDetailPage({ params }) {
               {/* Inclus */}
               {prestation.included && prestation.included.length > 0 && (
                 <div className="mb-6">
-                  <h3 className="text-xl font-bold text-foreground mb-3">
-                    Prestations incluses
+                  <h3 className="text-xl font-bold text-primary mb-3">
+                    {t.prestation.included}
                   </h3>
                   <ul className="space-y-2">
                     {prestation.included.map((item, index) => (
@@ -362,7 +420,7 @@ export default async function PrestationDetailPage({ params }) {
               {prestation.notIncluded && prestation.notIncluded.length > 0 && (
                 <div className="mb-6">
                   <h3 className="text-xl font-bold text-foreground mb-3">
-                    Non inclus
+                    {t.prestation.notIncluded}
                   </h3>
                   <ul className="space-y-2">
                     {prestation.notIncluded.map((item, index) => (
@@ -376,18 +434,20 @@ export default async function PrestationDetailPage({ params }) {
               )}
 
               {/* Bouton de réservation */}
-              <Button
-                variant="primary"
-                size="md"
-                rounded="full"
-                className="w-full"
-              >
-                Réserver maintenant
-              </Button>
+              <Link href="/contact" className="block w-full">
+                <Button
+                  variant="primary"
+                  size="md"
+                  rounded="full"
+                  className="w-full"
+                >
+                  {t.prestation.contactToBook}
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 }

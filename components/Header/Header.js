@@ -1,17 +1,24 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import React, { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { useTranslations, useLocale } from "next-intl";
+import { Link, usePathname, getTranslatedPathname } from "@/i18n/navigation";
+import Culture from "@/components/ui/Culture/Culture";
+import { locales } from "@/i18n";
+import HeaderNav from "./HeaderNav";
 
 const Header = () => {
   const pathname = usePathname();
+  const defaultLocale = useLocale();
+  const t = useTranslations("common");
   const [isOpen, setIsOpen] = useState(false);
+  const [locale, setLocale] = useState(defaultLocale);
   const svgRef = useRef(null);
   const menuItemsRef = useRef([]);
-  const isHomePage = pathname === "/";
+  const isHomePage =
+    pathname === "/fr" || pathname === "/en" || pathname?.endsWith("/");
   const svgColor = isHomePage ? "stroke-white" : "stroke-black";
   const showLogo = !isHomePage;
 
@@ -103,7 +110,8 @@ const Header = () => {
             </Link>
           </div>
         )}
-        <div className="w-full flex items-center justify-end ">
+        <div className="w-full flex items-center justify-end gap-4">
+          <Culture />
           <svg
             ref={svgRef}
             className={`w-24 h-24 z-52 outline-none  transition-colors duration-300 ${
@@ -172,55 +180,24 @@ const Header = () => {
         <div
           className={`flex items-center justify-center fixed top-0 right-0 z-51 w-screen px-12 h-screen transition-all duration-800 ${isOpen ? "translate-x-0" : "translate-x-full"}`}
         >
-          <div className="absolute top-0 left-0 right-0 h-screen bg-white">
+          <div className="absolute top-0 left-0 right-0 h-screen bg-white flex flex-col items-center justify-center gap-12">
             <Image
               src="/images/logo/logo-heidi-white.svg"
               alt="Logo Heidi White"
-              width={384}
-              height={384}
-              className="object-contain w-96 h-auto absolute top-56 left-56 -rotate-20"
+              width={500}
+              height={500}
+              className="object-contain w-[500px] h-auto "
             />
+            <HeaderNav
+              t={t}
+              handleLinkClick={handleLinkClick}
+              menuItemsRef={menuItemsRef}
+              locale={locale}
+            />
+            <div className="mt-8">
+              <Culture />
+            </div>
           </div>
-          <nav className="flex items-center justify-center relative z-53">
-            <ul className="flex items-center flex-col justify-center gap-12 text-black">
-              <li ref={(el) => (menuItemsRef.current[0] = el)}>
-                <Link
-                  href="/"
-                  className="text-6xl text-primary font-bold flex  items-center gap-2 hover:scale-105 transition-scale duration-300"
-                  onClick={handleLinkClick}
-                >
-                  Accueil
-                </Link>
-              </li>
-              <li ref={(el) => (menuItemsRef.current[1] = el)}>
-                <Link
-                  href="/explore"
-                  className="text-6xl font-bold text-primary flex  items-center gap-2 hover:scale-105 transition-scale duration-300"
-                  onClick={handleLinkClick}
-                >
-                  <span>Explore</span>
-                </Link>
-              </li>
-              <li ref={(el) => (menuItemsRef.current[2] = el)}>
-                <Link
-                  href="/qui-est-heidi"
-                  className="text-6xl font-bold text-primary flex  items-center gap-2 hover:scale-105 transition-scale duration-300"
-                  onClick={handleLinkClick}
-                >
-                  Qui est Heidi ?
-                </Link>
-              </li>
-              <li ref={(el) => (menuItemsRef.current[4] = el)}>
-                <Link
-                  href="/"
-                  className="text-6xl font-bold text-primary flex  items-center gap-2 hover:scale-105 transition-scale duration-300"
-                  onClick={handleLinkClick}
-                >
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </nav>
         </div>
       </div>
     </header>

@@ -1,4 +1,5 @@
-import Link from "next/link";
+"use client";
+import { Link } from "@/i18n/navigation";
 
 const Button = ({
   children,
@@ -24,9 +25,9 @@ const Button = ({
 
   const variants = {
     primary:
-      "bg-primary text-white hover:bg-opacity-90 hover:scale-105 active:scale-95 cursor-pointer",
+      "bg-primary text-white hover:bg-opacity-90 hover:scale-105 active:scale-95 cursor-pointer shadow-lg",
     outline:
-      "border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-white hover:scale-105 active:scale-95 cursor-pointer font-medium",
+      "border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-white hover:scale-105 active:scale-95 cursor-pointer shadow-lg font-medium",
   };
 
   const sizes = {
@@ -43,8 +44,37 @@ const Button = ({
   const combinedClassName =
     `${baseStyles} ${variants[variant]} ${sizes[size]} ${disabledStyles} ${className}`.trim();
 
-  // Si href est fourni, utiliser Link (pour navigation interne)
+  // Détecter si c'est un lien externe ou un fichier (PDF, images, etc.)
+  const isExternalLink =
+    href &&
+    (href.startsWith("http://") ||
+      href.startsWith("https://") ||
+      href.startsWith("mailto:") ||
+      href.startsWith("tel:") ||
+      href.endsWith(".pdf") ||
+      href.endsWith(".jpg") ||
+      href.endsWith(".jpeg") ||
+      href.endsWith(".png") ||
+      href.endsWith(".gif") ||
+      href.endsWith(".zip") ||
+      href.endsWith(".doc") ||
+      href.endsWith(".docx"));
+
+  // Si href est fourni, utiliser Link (pour navigation interne) ou <a> (pour liens externes/fichiers)
   if (href && !disabled) {
+    if (isExternalLink) {
+      return (
+        <a
+          href={href}
+          className={combinedClassName}
+          target={href.startsWith("mailto:") || href.startsWith("tel:") ? undefined : "_blank"}
+          rel={href.startsWith("mailto:") || href.startsWith("tel:") ? undefined : "noopener noreferrer"}
+          {...props}
+        >
+          {children}
+        </a>
+      );
+    }
     return (
       <Link href={href} className={combinedClassName} {...props}>
         {children}

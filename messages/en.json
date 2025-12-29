@@ -1,0 +1,218 @@
+{
+  "common": {
+    "home": "Home",
+    "explore": "Explore",
+    "whoIsHeidi": "Who is Heidi?",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Live a unique experience",
+    "whoAreWe": "Who are we?"
+  },
+  "home": {
+    "featuredPrestations": "Our favorite services",
+    "explorePrestations": "Explore our services",
+    "discoverServices": "Discover our services",
+    "you are": "You are :",
+    "learn more": "Learn more",
+    "services": {
+      "business": {
+        "title": "Business",
+        "description": "Dare to make a positive impression by offering your clients a unique gift that stands out. Create deep connections and strengthen your team's cohesion through our group services.",
+        "button": "Contact us"
+      },
+      "tourism": {
+        "title": "Tourism office",
+        "description": "Offer your guests the opportunity to discover your region in a privileged and authentic way with enthusiastic local actors. Whether they love physical challenges or culinary surprises, our offers adapt to all types of visitors.",
+        "button": "Contact us"
+      },
+      "municipality": {
+        "title": "Municipality",
+        "description": "Surround yourself with our team to develop your municipality's activities and (help) discover your region differently.",
+        "button": "Contact us"
+      },
+      "accommodation": {
+        "title": "Accommodation",
+        "description": "Add personalized value to your guests' stay. We take care of them directly at your place and safely to make them experience rich and varied activities.",
+        "button": "Contact us"
+      },
+      "concierge": {
+        "title": "Concierge company",
+        "description": "Surround yourself with a serious partner to offer your clients real added value to their stay in Switzerland.",
+        "button": "Contact us"
+      },
+      "sportStore": {
+        "title": "Sports store",
+        "description": "Offer your clients a unique setting to thank them for their loyalty. Take advantage of our team to test your equipment in the best conditions.",
+        "button": "Contact us"
+      }
+    }
+  },
+  "explore": {
+    "subtitle": "Nature & Passion",
+    "title": "Explore with Heidi",
+    "description": "Discover the authenticity of the Valaisian mountains. Enjoy the gentle altitude and the scent of pine trees to experience a rich and enriching experience in a preserved environment. Here, no artifice, we let you taste the traditions of the fabulous Alpine park. Get to know passionate people who have preserved the art of simplicity and authenticity. Activities, gourmet walks, discovery of the mountain, fauna, flora and nature activities to draw together your most beautiful memories of the Valais.",
+    "noPrestations": "No prestations available at the moment."
+  },
+  "quiEstHeidi": {
+    "subtitle": "Nature & Passion",
+    "title": "Who is Heidi ?",
+    "description": "A passionate nature lover, beekeeper and emotion creator.",
+    "aboutHeidi": {
+      "title": "About Heidi",
+      "description": "Founder & \"Happiness Dealer\" of Beeheidi, Sandra, it's the little girl of an alpinist who blew the taste of the mountains into her.",
+      "button": "Contact me"
+    },
+    "ourTeam": {
+      "title": "Our team",
+      "description": "Authentic lovers of nature and terroir, discover the members of our team, always ready to make you live beautiful emotions!",
+      "button": "Explore with us"
+    }
+  },
+  "services": {
+    "subtitle": "Our services adapted to your needs",
+    "title": "Live a unique experience in the heart of the Alps with us!",
+    "description": "From a simple day to a complete stay with overnight stays, we compose for you! Team Building, Valais discovery, sports activities or gourmet, everything is possible!",
+    "youAre": "Discover the services we can offer you, whether you are :",
+    "whyUs": "Why choose us ?",
+    "whyUsList": [
+      "We are local actors at human scale and put forward our terroir.",
+      "Authenticity, Quality & Safety are part of our key values!",
+      "We work with professionalism while prioritizing the client's safety and we are insured for the activities we offer.",
+      "But above all, our team is made up of passionate people who perfectly know the Valais and its wonders and have a heart to share them, in all simplicity."
+    ],
+    "experience": "Live a unique experience in the heart of the Alps with us!",
+    "experienceDescription": "Whether you want a simple afternoon discovery or stay in Valais, we will organize the activities you desire! Share your wishes with us by contacting us immediately.",
+    "experienceButton": "Our presentation brochure",
+    "experienceAlert": "(Attention, the opening of this document may cause an irresistible desire to take altitude!)",
+    "button": "Contact us",
+    "business": {
+      "title": "You are a business",
+      "description": "Dare to make a positive impression by offering your clients a unique gift that stands out. Create deep connections and strengthen your team's cohesion through our group services.",
+      "weCanOffer": "We can offer you:",
+      "offers": [
+        "Personalized invitations for your various partners or clients",
+        "Team Building with Nature & Terroir flavor, sprinkled with authenticity and good humor",
+        "Summer outings for your employees, weekend or escape stay",
+        "Setting up regular physical activity for your employees",
+        "Exclusive and original gifts for your clients"
+      ]
+    },
+    "tourism": {
+      "title": "You are a tourism office",
+      "description": "Offer your guests the opportunity to discover your region in a privileged and authentic way with enthusiastic local actors. Whether they love physical challenges or culinary surprises, our offers adapt to all types of visitors.",
+      "weCanOffer": "We can offer you:",
+      "offers": [
+        "Trail-running sessions for all levels",
+        "Thematic discovery hikes: Terroir, Fauna & Flora",
+        "Gourmet safaris from alpine pasture to alpine pasture",
+        "Breakfasts at sunrise",
+        "Unique, epicurean and tailor-made experiences",
+        "Discovery outings for your various partners (Press, Guests, VIP, ...)"
+      ]
+    },
+    "municipality": {
+      "title": "You are a municipality",
+      "description": "Surround yourself with our team to develop your municipality's activities and (help) discover your region differently.",
+      "weCanOffer": "We can offer you:",
+      "offers": [
+        "Creation of Trail, Urban & Mountain routes (Terrain reconnaissance, Marking, Visual supports)",
+        "Organization of sports sessions for your residents",
+        "Discovery outings of your region for your various partners (Press, Guests, VIP, ...)",
+        "Team Building with Nature & Terroir flavor, sprinkled with authenticity and good humor",
+        "Summer outings for your employees",
+        "Development of innovative concepts for your municipality"
+      ]
+    },
+    "accommodation": {
+      "title": "You are an accommodation",
+      "description": "Add personalized value to your guests' stay. We take care of them directly at your place and safely to make them experience rich and varied activities.",
+      "weCanOffer": "We can offer you:",
+      "offers": [
+        "Trail-running sessions for all levels",
+        "Thematic discovery hikes: Terroir, Fauna & Flora",
+        "Gourmet Treks and Trails",
+        "Breakfasts at sunrise",
+        "Unique, epicurean and tailor-made experiences",
+        "Discovery outings for your team"
+      ]
+    },
+    "concierge": {
+      "title": "You are a concierge company",
+      "description": "Surround yourself with a serious partner to offer your clients real added value to their stay in Switzerland.",
+      "weCanOffer": "We can offer you:",
+      "offers": [
+        "Unique, epicurean and tailor-made experiences",
+        "Invitations for your various partners or clients",
+        "Summer outings, weekend or escape stay",
+        "Exclusive gifts for your clients",
+        "Team Building with Nature & Terroir flavor, sprinkled with authenticity and good humor",
+        "Discovery outings for your various partners (Press, Guests, VIP, ...)"
+      ]
+    },
+    "sportStore": {
+      "title": "You are a sports store",
+      "description": "Offer your clients a unique setting to thank them for their loyalty. Take advantage of our team to test your equipment in the best conditions and discover the alpine trails in the company of our local trail-runners.",
+      "weCanOffer": "We can offer you:",
+      "offers": [
+        "Organization of trail sessions or stays in Valais for your clients or employees",
+        "Setting up events to test your equipment",
+        "Out-of-the-ordinary sports courses for your clients",
+        "Gifts or setting up contests",
+        "Team Building with Nature & Terroir flavor, sprinkled with authenticity and good humor"
+      ]
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Heidi is happy to hear from you!",
+    "description": "A little word to blow to Heidi? A personalized experience, a tailor-made stay in the heart of the Swiss Alps to plan? Or even join our team?",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "namePlaceholder": "Your name",
+      "emailPlaceholder": "your@email.com",
+      "subjectPlaceholder": "Message subject",
+      "messagePlaceholder": "Your message...",
+      "required": "*",
+      "submit": "Send message",
+      "submitting": "Sending...",
+      "success": "Your message has been sent successfully! We will get back to you soon.",
+      "error": {
+        "required": "Please fill in all required fields.",
+        "email": "Please enter a valid email address.",
+        "generic": "An error occurred. Please try again later."
+      }
+    }
+  },
+  "prestation": {
+    "back": "Back",
+    "prices": "Prices",
+    "duration": "Duration",
+    "availability": "Availability",
+    "included": "Included",
+    "notIncluded": "Not included",
+    "equipment": "Equipment needed",
+    "highlights": "Highlights",
+    "gallery": "Gallery",
+    "practicalInfo": "Additional information",
+    "technicalDetails": "Technical details",
+    "difficulty": "Difficulty",
+    "contactToBook": "Contact to book"
+  },
+  "footer": {
+    "description": "Discover the authenticity of Valais with Heidi. Unique experiences in nature.",
+    "navigation": "Navigation",
+    "legal": "Legal notice",
+    "privacy": "Privacy policy",
+    "terms": "Terms of use",
+    "followUs": "Follow us",
+    "copyright": "© {year} Beeheidi. All rights reserved.",
+    "madeWith": "Made with",
+    "in": "in",
+    "valais": "Valais"
+  }
+}

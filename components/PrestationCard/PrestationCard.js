@@ -1,5 +1,7 @@
+"use client";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import { useLocale } from "next-intl";
 import { urlFor } from "@/lib/sanity";
 import {
   categoryLabels,
@@ -9,15 +11,16 @@ import {
 } from "@/lib/labels";
 
 export default function PrestationCard({ prestation }) {
+  const locale = useLocale();
   const imageUrl = prestation.mainImage
     ? urlFor(prestation.mainImage).width(600).height(400).url()
     : null;
 
+  // Les champs sont déjà localisés depuis la requête Sanity
   const categoryLabel =
-    categoryLabels[prestation.category] || prestation.category;
-  const difficultyLabel = prestation.difficulty
-    ? difficultyLabels[prestation.difficulty]
-    : null;
+    prestation.category || prestation.categoryFr || prestation.categoryEn;
+  const difficultyLabel =
+    prestation.difficulty || prestation.difficultyFr || prestation.difficultyEn;
   const seasons = prestation.season
     ? prestation.season.map((s) => seasonLabels[s] || s).join(", ")
     : null;
@@ -31,16 +34,24 @@ export default function PrestationCard({ prestation }) {
       ? prestation.price[0].currency
       : "CHF";
 
+  // Utiliser le slug localisé (déjà extrait par la requête)
+  const currentSlug = prestation.slug || prestation.slugFr || prestation.slugEn;
+
   return (
     <Link
-      href={`/prestations/${prestation.slug.current}`}
+      href={`/explore/${currentSlug}`}
       className="group block bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:scale-[1.02]"
     >
       <div className="relative h-64 overflow-hidden">
         {imageUrl ? (
           <Image
             src={imageUrl}
-            alt={prestation.mainImage?.alt || prestation.title}
+            alt={
+              prestation.mainImage?.alt ||
+              prestation.title ||
+              prestation.titleFr ||
+              prestation.titleEn
+            }
             fill
             className="object-cover group-hover:scale-110 transition-transform duration-300"
           />
@@ -49,21 +60,18 @@ export default function PrestationCard({ prestation }) {
             <span className="text-gray-400">Pas d'image</span>
           </div>
         )}
-        {prestation.featured && (
-          <div className="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-bold">
-            Mise en avant
-          </div>
-        )}
-        <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold text-black">
+        <div className="absolute top-4 right-4 bg-white/90 capitalize backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold text-black">
           {categoryLabel}
         </div>
       </div>
       <div className="p-6">
         <h3 className="text-2xl font-bold text-primary mb-2 group-hover:text-primary transition-colors">
-          {prestation.title}
+          {prestation.title || prestation.titleFr || prestation.titleEn}
         </h3>
         <p className="text-gray-600 mb-4 line-clamp-2">
-          {prestation.shortDescription}
+          {prestation.shortDescription ||
+            prestation.shortDescriptionFr ||
+            prestation.shortDescriptionEn}
         </p>
         <div className="flex flex-wrap gap-2 mb-4">
           {difficultyLabel && (

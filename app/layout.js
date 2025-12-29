@@ -1,7 +1,9 @@
+// Layout racine pour toutes les routes
+// Pour les routes [locale], le LocaleLayout gère la locale
 import { Roboto } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header/Header";
-import ConditionalHeader from "@/components/Header/ConditionalHeader";
+import { defaultLocale } from "../i18n";
+import { getLocale } from "next-intl/server";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -15,13 +17,20 @@ export const metadata = {
   robots: "noindex, nofollow",
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  // Essayer d'obtenir la locale depuis next-intl (fonctionne pour les routes [locale])
+  // Sinon, utiliser la locale par défaut
+  let locale = defaultLocale;
+  try {
+    locale = await getLocale();
+  } catch {
+    // Si getLocale() échoue (route non-localisée), utiliser la locale par défaut
+    locale = defaultLocale;
+  }
+
   return (
-    <html lang="en">
-      <body className={`${roboto.className} antialiased`}>
-        <ConditionalHeader />
-        {children}
-      </body>
+    <html lang={locale}>
+      <body className={`${roboto.className} antialiased`}>{children}</body>
     </html>
   );
 }

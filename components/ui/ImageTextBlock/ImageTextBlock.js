@@ -63,9 +63,10 @@ export default function ImageTextBlock({
             <span className="w-8 h-px bg-[var(--color-primary)]"></span>
             {title}
           </h2>
-          <p className="text-gray-600 leading-loose text-lg font-light mb-8">
-            {description}
-          </p>
+          <p
+            className="text-gray-600 leading-loose text-lg font-light mb-8"
+            dangerouslySetInnerHTML={{ __html: description }}
+          />
           {buttonText && buttonHref && (
             <Button
               href={buttonHref}

@@ -27,9 +27,25 @@
   /* Box Shadow */
   --shadow-card: var(--box-shadow-card);
 }
+html {
+  scroll-behavior: smooth;
+}
 
+#business,
+#tourism,
+#municipality,
+#accommodation,
+#concierge,
+#sportStore {
+  scroll-margin-top: 100px;
+}
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-roboto);
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--color-primary) !important;
+  color: var(--color-primary) !important;
 }

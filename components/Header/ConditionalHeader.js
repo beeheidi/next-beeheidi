@@ -1,6 +1,6 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import { usePathname } from "@/i18n/navigation";
 import Header from "@/components/Header/Header";
 
 export default function ConditionalHeader() {
