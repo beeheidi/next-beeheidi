@@ -16,7 +16,7 @@ export default async function ExplorePage({ params }) {
   );
   const prestations = await client.fetch(prestationsQueryByLocale(locale));
   return (
-    <div className=" bg-background pt-24 pb-16 relative">
+    <main className=" bg-background pt-24 pb-16 relative">
       <TopImage position="top-left" size="large" />
       <div className="max-w-laptop mx-auto px-6 relative z-1">
         <PageTitle
@@ -38,6 +38,7 @@ export default async function ExplorePage({ params }) {
           </div>
         )}
       </div>
-    </div>
+      <TopImage position="bottom-right" size="small" />
+    </main>
   );
 }

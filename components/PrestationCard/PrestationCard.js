@@ -1,28 +1,43 @@
 "use client";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
-import { useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
 import { urlFor } from "@/lib/sanity";
 import {
-  categoryLabels,
-  difficultyLabels,
-  seasonLabels,
-  regionLabels,
+  getCategoryLabel,
+  getDifficultyLabel,
+  getSeasonLabel,
+  getRegionLabel,
 } from "@/lib/labels";
 
 export default function PrestationCard({ prestation }) {
-  const locale = useLocale();
+  const t = useTranslations();
   const imageUrl = prestation.mainImage
     ? urlFor(prestation.mainImage).width(600).height(400).url()
     : null;
 
-  // Les champs sont déjà localisés depuis la requête Sanity
-  const categoryLabel =
+  // Fonction helper pour obtenir les traductions
+  const getLabel = (key) => {
+    try {
+      return t.raw(key);
+    } catch {
+      return key;
+    }
+  };
+
+  // Les champs de Sanity sont les clés (ex: "randonnee"), on les traduit avec les labels
+  const categoryKey =
     prestation.category || prestation.categoryFr || prestation.categoryEn;
-  const difficultyLabel =
+  const categoryLabel = getCategoryLabel(categoryKey, getLabel);
+
+  const difficultyKey =
     prestation.difficulty || prestation.difficultyFr || prestation.difficultyEn;
+  const difficultyLabel = difficultyKey
+    ? getDifficultyLabel(difficultyKey, getLabel)
+    : null;
+
   const seasons = prestation.season
-    ? prestation.season.map((s) => seasonLabels[s] || s).join(", ")
+    ? prestation.season.map((s) => getSeasonLabel(s, getLabel)).join(", ")
     : null;
 
   const minPrice =
@@ -86,13 +101,13 @@ export default function PrestationCard({ prestation }) {
           )}
           {prestation.region && (
             <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">
-              {regionLabels[prestation.region] || prestation.region}
+              {getRegionLabel(prestation.region, getLabel)}
             </span>
           )}
         </div>
         {minPrice && (
           <div className="flex items-center justify-between pt-4 border-t border-gray-200">
-            <span className="text-sm text-gray-600">À partir de</span>
+            <span className="text-sm text-gray-600">{t("labels.price")}</span>
             <span className="text-2xl font-bold text-primary">
               {minPrice} {currency}
             </span>

@@ -2,9 +2,11 @@ import createMiddleware from "next-intl/middleware";
 import { NextResponse } from "next/server";
 import { locales, defaultLocale } from "./i18n";
 
-// Mapping des pages traduites
+// Mapping des pages traduites (anglais -> français)
 const pageMappings = {
   "who-is-heidi": "qui-est-heidi",
+  "terms-and-conditions": "cgv",
+  "legal-notice": "mentions-legales",
 };
 
 const intlMiddleware = createMiddleware({

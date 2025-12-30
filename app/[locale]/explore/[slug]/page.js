@@ -5,11 +5,11 @@ import {
 } from "@/lib/sanity.queries";
 import { urlFor } from "@/lib/sanity";
 import {
-  categoryLabels,
-  difficultyLabels,
-  seasonLabels,
-  durationCategoryLabels,
-  regionLabels,
+  getCategoryLabel,
+  getDifficultyLabel,
+  getSeasonLabel,
+  getDurationCategoryLabel,
+  getRegionLabel,
 } from "@/lib/labels";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
@@ -81,17 +81,40 @@ export default async function PrestationDetailPage({ params }) {
     ? urlFor(prestation.mainImage).width(1200).height(800).url()
     : null;
 
-  const categoryLabel =
-    categoryLabels[prestation.category] || prestation.category;
+  // Fonction helper pour obtenir les traductions depuis l'objet t
+  const getLabel = (key) => {
+    const keys = key.split(".");
+    let value = t;
+    for (const k of keys) {
+      value = value?.[k];
+      if (value === undefined) return key;
+    }
+    return value || key;
+  };
+
+  const categoryLabel = getCategoryLabel(prestation.category, getLabel);
   const difficultyLabel = prestation.difficulty
-    ? difficultyLabels[prestation.difficulty]
+    ? getDifficultyLabel(prestation.difficulty, getLabel)
     : null;
   const seasons = prestation.season
-    ? prestation.season.map((s) => seasonLabels[s] || s)
+    ? prestation.season.map((s) => getSeasonLabel(s, getLabel))
     : [];
 
+  // Slugs localisés pour le changement de langue
+  const localizedSlugs = {
+    fr: prestation.slugFr || prestation.slug,
+    en: prestation.slugEn || prestation.slug,
+  };
+
   return (
-    <main className=" bg-background pt-24 pb-16 relative">
+    <>
+      {/* Script pour exposer les slugs localisés au composant Culture */}
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `window.__LOCALIZED_SLUGS__ = ${JSON.stringify(localizedSlugs)};`,
+        }}
+      />
+      <main className=" bg-background pt-24 pb-16 relative">
       <TopImage position="top-left" size="large" />
       <div className="max-w-laptop mx-auto px-6 relative z-10">
         {/* Breadcrumb */}
@@ -262,7 +285,7 @@ export default async function PrestationDetailPage({ params }) {
                         Région :{" "}
                       </span>
                       <span className="text-gray-700">
-                        {regionLabels[prestation.region] || prestation.region}
+                        {getRegionLabel(prestation.region, getLabel)}
                       </span>
                     </div>
                   )}
@@ -375,8 +398,10 @@ export default async function PrestationDetailPage({ params }) {
                   </h3>
                   {prestation.duration.category && (
                     <p className="text-gray-700 mb-1">
-                      {durationCategoryLabels[prestation.duration.category] ||
-                        prestation.duration.category}
+                      {getDurationCategoryLabel(
+                        prestation.duration.category,
+                        getLabel
+                      )}
                     </p>
                   )}
                   {prestation.duration.total && (
@@ -449,5 +474,6 @@ export default async function PrestationDetailPage({ params }) {
         </div>
       </div>
     </main>
+    </>
   );
 }

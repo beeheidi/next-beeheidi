@@ -110,7 +110,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <Link
-                  href="/legal"
+                  href={getTranslatedPathname("/mentions-legales", locale)}
                   className="text-gray-600 hover:text-primary transition-colors duration-200 text-sm"
                 >
                   {tFooter("legal")}
@@ -118,15 +118,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/privacy"
-                  className="text-gray-600 hover:text-primary transition-colors duration-200 text-sm"
-                >
-                  {tFooter("privacy")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/terms"
+                  href={getTranslatedPathname("/cgv", locale)}
                   className="text-gray-600 hover:text-primary transition-colors duration-200 text-sm"
                 >
                   {tFooter("terms")}

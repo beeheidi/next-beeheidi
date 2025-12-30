@@ -8,7 +8,7 @@
   },
   "hero": {
     "title": "Live a unique experience",
-    "whoAreWe": "Who are we?"
+    "exploreWorks": "Discover our favorite services"
   },
   "home": {
     "featuredPrestations": "Our favorite services",
@@ -16,6 +16,9 @@
     "discoverServices": "Discover our services",
     "you are": "You are :",
     "learn more": "Learn more",
+    "whoAreWe": "Who are we?",
+    "whoAreWeSubtitle": "Swiss Lifestyle & Alps Experiences",
+    "whoAreWeDescription": "A unique experience to live in the heart of the Alps. Discover one of the most beautiful natural attractions in the region through the eyes of the inhabitants.",
     "services": {
       "business": {
         "title": "Business",
@@ -214,5 +217,169 @@
     "madeWith": "Made with",
     "in": "in",
     "valais": "Valais"
+  },
+  "labels": {
+    "category": {
+      "randonnee": "Hiking",
+      "dejeuner-altitude": "Mountain lunch",
+      "escapade-culinaire": "Culinary escape",
+      "aventure": "Adventure",
+      "detente": "Relaxation",
+      "autre": "Other"
+    },
+    "difficulty": {
+      "facile": "Easy",
+      "moderee": "Moderate",
+      "difficile": "Difficult",
+      "tres-difficile": "Very difficult"
+    },
+    "season": {
+      "printemps": "Spring",
+      "ete": "Summer",
+      "automne": "Autumn",
+      "hiver": "Winter"
+    },
+    "durationCategory": {
+      "moins-3h": "Less than 3 hours",
+      "demi-journee": "Half day",
+      "journee": "Full day",
+      "plusieurs-jours": "Several days"
+    },
+    "region": {
+      "chablais": "Chablais",
+      "haut-valais": "Upper Valais",
+      "martigny": "Martigny",
+      "sion-sierre": "Sion & Sierre",
+      "crans-montana": "Crans-Montana"
+    },
+    "price": "From"
+  },
+  "cgv": {
+    "title": "Terms and Conditions",
+    "sections": {
+      "generalities": {
+        "title": "GENERALITIES",
+        "content": "The terms and conditions (T&Cs) stated below apply to all services provided by Beeheidi Sàrl and to clients who reside in and outside of Switzerland, with the exception of the online shop. Any individual placing an order declares they have read and agreed to the present T&Cs. In addition, provisions from the code of obligations (RS 220) apply."
+      },
+      "contract": {
+        "title": "CONCLUSION OF THE CONTRACT BASED ON THE PRESENT T&Cs",
+        "content": "The T&Cs take effect immediately after the booking order is confirmed or the quote has been signed by the client who then becomes the co-contracting party.Any modification that may occur after the signature of the booking confirmation, causing a readjustment of agreed services or extra costs, will be charged accordingly.",
+        "content2": "The co-contracting party accepts full responsibility for the financial consequences of a cancellation after the booking confirmation has been signed."
+      },
+      "prices": {
+        "title": "PRICES",
+        "content": "The prices of services/products correspond to the date the proposal was sent to the client. They appear in Swiss Francs and do not include VAT. The stated prices are guaranteed during the offer's validity period. For offers published on our website www.beeheidi.ch, prices are indicative and will be confirmed with client when a proposal is sent."
+      },
+      "payment": {
+        "title": "PAYMENT PROCEDURES",
+        "content": "The payment procedure is established according to the conditions of each offer.",
+        "content2": "In case of late payment, Beeheidi Sàrl reserves the right to charge reminder fees, and, where appropriate, to terminate the contract with immediate effect.",
+        "content3": "All services provided by Beeheidi Sàrl are charged and received only via post office or bank transfer. Credit card payments are accepted and may be subject to additional fees."
+      },
+      "liability": {
+        "title": "LIABILITY RELEASE",
+        "content": "Beeheidi Sàrl cannot be held responsible for services provided by independent contractors or third parties that are not directly run by Beeheidi (art. 101 al.2 CO), such as extra costs, delays, unforeseen circumstances, etc.",
+        "content2": "Beeheidi Sàrl accepts no responsibility for damages (accident, injury, etc.) the client is exposed to that may be caused by circumstances out of Beeheidi's control.",
+        "content3": "Beeheidi Sàrl cannot be held liable for any unpredictable risks and/or risks linked to the client's or the participant's behaviour. In other words, the client accepts full responsibility for the risks associated with outdoor activities which may be unavoidable despite meticulous and cautious planning. Any outdoor activity may involve an element of risk, the client as well as all the participants confirm that they have the appropriate equipment and sufficient physical abilities for the practice of such activities. Furthermore, the participant must not be under the influence of substances that could compromise their safety and that of others.",
+        "content4": "In order to carry out the activity in the safest environment possible, the client must respect the instructions provided by Beeheidi Sàrl and any affiliated partner at all times. The client is required to immediately inform Beeheidi Sàrl and/or any affiliated partner of any potential concern, physical condition and/or psychological issue that may affect him. The client is held responsible for informing all participants in an activity managed by Beeheidi Sàrl about this safety clause.",
+        "content5": "Minors must be accompanied by their legal representative, or by an adult appointed by the legal representative."
+      },
+      "insurance": {
+        "title": "INSURANCE",
+        "content": "Beheeidi Sàrl and any affiliated partner are covered by a professional third-party liability insurance. However, the client accepts full responsibility in case of loss, injury, death, or damage caused to a third party or himself, that may occur during one of the activities organised by Beeheidi Sàrl.",
+        "content2": "Each participant must have a personal accident and health insurance that covers mountain rescue services (such as AirGlacier, Rega, …) as well as a third-party liability insurance, that includes all the services and activities provided.",
+        "content3": "Furthermore, each participant accepts full responsibility in case of damage, loss or theft of equipment belonging to Beeheidi Sàrl or an affiliated partner."
+      },
+      "cancellation": {
+        "title": "CANCELLATION FROM CO-CONTRACTING PARTY",
+        "content": "The co-contracting party must address a written cancellation request to Beeheidi Sàrl. The client accepts that fees will apply. The reservation is transferable but cannot be exchanged or refunded.",
+        "content2": "If the minimum number of participants has not been reached, Beeheidi Sàrl reserves the right to cancel the stay or the activity, therefore refunding the registered participants. No further financial compensation is to be expected.",
+        "content3": "If the weather conditions do not allow the activity to take place, Beheeidi Sàrl reserves the right to cancel the stay or the activity and will provide a full refund. No further financial compensation is to be expected. Beheeidi Sàrl does not provide a cancellation insurance.",
+        "content4": "Clients are responsible for their own cancellation insurance."
+      },
+      "forceMajeure": {
+        "title": "FORCE MAJEURE CLAUSE",
+        "content": "If Beeheidi Sàrl considers that an activity or a trip should not start or should be interrupted before its end due to unforeseen circumstances (eg. Natural disaster, pandemic, political issues, or travel is not recommended, etc.), or under the order of competent authorities, Beeheidi cannot be held responsible. Furthermore, the company has the right to deduct from the amount refunded to the participant any costs/expenditures already made on their behalf. Any right to a financial compensation will not be taken into consideration."
+      },
+      "confidentiality": {
+        "title": "CONFIDENTIALITY CLAUSE",
+        "content": "Information shared between Beeheidi Sàrl and the co-contracting party in the context of the mandate regarding the provided services shall be treated in full confidentiality."
+      },
+      "interpretation": {
+        "title": "INTERPRETATION OF THE PRESENT CONDITIONS",
+        "content": "The T&Cs and all communication between Beeheidi Sàrl and the co-contracting party may be used to interpret the wishes of the co-contracting parties in the context of the services provided."
+      },
+      "jurisdiction": {
+        "title": "JURISDICTION",
+        "content": "In the event of any dispute between Beeheidi Sàrl and the co-contracting party regarding the execution, non-execution, application or interpretation of the T&Cs, the court of jurisdiction is in Sierre (CH).",
+        "content2": "Swiss law applies."
+      }
+    }
+  },
+  "legal": {
+    "title": "Legal Notice",
+    "introduction": {
+      "content": "By consulting information, indications or documents appearing on Beeheidi's website, you declare that you agree to the conditions below. Beeheidi reserves the right to modify, complete or delete all or part of the website content and these conditions, at any time and at its sole discretion. The same applies in case of improvements and/or modifications to the information."
+    },
+    "copyright": {
+      "title": "Copyright",
+      "content": "All content (texts, graphics, photos, etc.) on the website is protected by copyright and, unless otherwise stated, is the exclusive and total property of Beeheidi. Users must also respect the indications relating to protection and usage rights of third parties that may appear on this website.",
+      "content2": "Beeheidi provides the information contained on the website exclusively for private use and information purposes.",
+      "content3": "It is permitted to download, save, print or reproduce in any other way certain pages and/or parts of the website, provided that copyright notices or other legally protected designations are not removed. Beeheidi retains all property and usage rights and may revoke this authorization at any time.",
+      "content4": "The reproduction (partial or total), distribution (electronic or by other means), modification, creation of links or use for public or commercial purposes of any information contained on the website requires prior written authorization from Beeheidi."
+    },
+    "warranty": {
+      "title": "Warranty Exclusion",
+      "content": "Although Beeheidi endeavors in good faith to guarantee the reliability of the information contained on the site at the time of publication, Beeheidi cannot certify or formally attest explicitly or implicitly (also vis-à-vis third parties) to the accuracy, reliability and completeness of the information contained on the www.beeheidi.ch website.",
+      "content2": "Opinions expressed or other information contained on the www.beeheidi.ch website may be modified at any time without prior notice. Beeheidi disclaims all responsibility and does not guarantee that the functions available on the www.beeheidi.ch website will never be interrupted or that there are no viruses or other harmful elements in the browser concerned."
+    },
+    "liability": {
+      "title": "Liability Limitation",
+      "content": "Beeheidi disclaims all liability (including in case of fault) for direct, indirect or consequential damages that may result from access to elements of the www.beeheidi.ch website or their use, or from the impossibility of accessing or using them, or resulting from connection to other websites."
+    },
+    "externalLinks": {
+      "title": "Links to Other Websites",
+      "content": "The www.beeheidi.ch website contains links to third-party sites that may interest you. By activating these links, you may leave the www.beeheidi.ch website or third-party site windows may appear in the www.beeheidi.ch website environment. Beeheidi has no control over third-party websites linked to the www.beeheidi.ch website and cannot be held responsible in any way for the content and operation of these websites. This applies regardless of whether you leave the www.beeheidi.ch website environment by activating a link or whether a third-party site presentation appears in the www.beeheidi.ch website environment, even when in this case the provider of the information contained in this third-party site is not clearly apparent. The risk or danger that may result from connection with third-party sites or their consultation is exclusively the user's responsibility."
+    },
+    "embeddedContent": {
+      "title": "Content Embedded from Other Sites",
+      "content": "Articles on this site may include embedded content such as videos, images, articles (YouTube, Vimeo, Google Maps, etc.). Content embedded from other sites behaves in the same way as if the visitor were visiting that other site. These websites may collect data about you, use cookies, embed third-party tracking tools, track your interactions with this embedded content if you have a connected account on their website."
+    },
+    "privacy": {
+      "title": "Personal Data Protection",
+      "introduction": "We attach great importance to the security and confidentiality of your personal information. This text aims to inform you about how we collect, use, share and protect your data.",
+      "collection": {
+        "title": "Data Collection",
+        "content": "We collect personal data in various ways, including when you visit our website, use our services, or communicate with us. This data may include information such as your name, email address, phone number, and other data necessary for the provision of our services."
+      },
+      "usage": {
+        "title": "Data Usage",
+        "content": "The personal data we collect is used to provide you with relevant information, improve our services, personalize your experience, and contact you if necessary. We never sell or rent your data to third parties."
+      },
+      "security": {
+        "title": "Data Security",
+        "content": "The security of your personal data is our priority. We implement security measures to protect your data against unauthorized access, loss, disclosure or modification."
+      },
+      "sharing": {
+        "title": "Data Sharing",
+        "content": "We may share your personal data with third parties when necessary to provide our services. However, we only do so in compliance with applicable data protection laws and by taking measures to ensure that your data remains secure."
+      },
+      "newsletter": {
+        "title": "Newsletter and Electronic Mail",
+        "content": "Electronic messages or newsletters from Beeheidi are only sent to you if you wish. If you no longer wish to receive them, you can unsubscribe at any time. Remember that data transmitted unencrypted can be read or modified by unauthorized third parties."
+      }
+    },
+    "general": {
+      "title": "General",
+      "content": "If you have any questions or comments about our legal information or data protection, please contact us at info@beeheidi.ch."
+    },
+    "contact": {
+      "title": "CONTACT ADDRESS",
+      "company": "Beeheidi Sàrl",
+      "address": "Place du Village 7, 3960 Loc",
+      "email": "info@beeheidi.ch",
+      "phone": "+41 27 565 44 40"
+    },
+    "linkToCGV": "View Terms and Conditions"
   }
 }

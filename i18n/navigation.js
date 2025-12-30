@@ -23,6 +23,14 @@ const pathnames = {
     fr: "/explore/[slug]",
     en: "/explore/[slug]",
   },
+  "/cgv": {
+    fr: "/cgv",
+    en: "/terms-and-conditions",
+  },
+  "/mentions-legales": {
+    fr: "/mentions-legales",
+    en: "/legal-notice",
+  },
 };
 
 const navigation = createNavigation({

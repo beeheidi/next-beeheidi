@@ -8,7 +8,7 @@
   },
   "hero": {
     "title": "Vivez une experience unique",
-    "whoAreWe": "Qui sommes-nous ?"
+    "exploreWorks": "Découvrez nos prestations favorites"
   },
   "home": {
     "featuredPrestations": "Nos prestations coup de coeur",
@@ -16,6 +16,9 @@
     "discoverServices": "Découvrez nos services",
     "you are": "Vous êtes :",
     "learn more": "En savoir plus",
+    "whoAreWe": "Qui sommes-nous ?",
+    "whoAreWeSubtitle": "Swiss Lifestyle & Alps Experiences",
+    "whoAreWeDescription": "Une expérience unique à vivre au cœur des Alpes. Découvrez l’un des plus beaux parcs d’attractions naturels à travers le regard des habitants de la région.",
     "services": {
       "business": {
         "title": "Entreprise",
@@ -215,5 +218,169 @@
     "madeWith": "Fait avec",
     "in": "en",
     "valais": "Valais"
+  },
+  "labels": {
+    "category": {
+      "randonnee": "Randonnée",
+      "dejeuner-altitude": "Déjeuner en altitude",
+      "escapade-culinaire": "Escapade culinaire",
+      "aventure": "Aventure",
+      "detente": "Détente",
+      "autre": "Autre"
+    },
+    "difficulty": {
+      "facile": "Facile",
+      "moderee": "Modérée",
+      "difficile": "Difficile",
+      "tres-difficile": "Très difficile"
+    },
+    "season": {
+      "printemps": "Printemps",
+      "ete": "Été",
+      "automne": "Automne",
+      "hiver": "Hiver"
+    },
+    "durationCategory": {
+      "moins-3h": "Moins de 3 heures",
+      "demi-journee": "Demi-journée",
+      "journee": "Journée",
+      "plusieurs-jours": "Plusieurs jours"
+    },
+    "region": {
+      "chablais": "Chablais",
+      "haut-valais": "Haut-Valais",
+      "martigny": "Martigny",
+      "sion-sierre": "Sion & Sierre",
+      "crans-montana": "Crans-Montana"
+    },
+    "price": "À partir de"
+  },
+  "cgv": {
+    "title": "Conditions Générales",
+    "sections": {
+      "generalities": {
+        "title": "GÉNÉRALITÉS",
+        "content": "Les conditions générales (CG) ci-après s'appliquent à toutes les prestations fournies par Beeheidi Sàrl aux clients situés en Suisse ou à l'étranger. Exception faite de la boutique en ligne. Le client passant commande déclarent se conformer aux présentes CG. Au surplus, les dispositions du Code des obligations (RS 220) sont applicables."
+      },
+      "contract": {
+        "title": "CONCLUSION DU CONTRAT SUR LA BASE DES PRÉSENTES CG",
+        "content": "Une fois la confirmation de commande ou le devis dûment signé par le cocontractant, les CG déploient leurs effets avec effet immédiat.Les modifications ultérieures à la signature de la confirmation de commande, engendrant une adaptation des prestations convenues ou des frais supplémentaires, seront facturées en sus.",
+        "content2": "Les conséquences financières d'éventuelles annulations ultérieures à la signature de la confirmation de commande seront assumées intégralement par le cocontractant."
+      },
+      "prices": {
+        "title": "PRIX",
+        "content": "Les tarifs des services/prestations vendus sont ceux en vigueur au jour de l'envoi de l'offre au client. Ils sont libellés en francs suisses, TVA comprise. Ils sont garantis durant la période de validité de l'offre. Pour les offres publiées sur le site internet www.beeheidi.ch, les prix sont indicatifs et seront confirmés lors de l'envoi de l'offre au client."
+      },
+      "payment": {
+        "title": "MODALITÉS DE PAIEMENT",
+        "content": "Les modalités de payement sont fixées dans les conditions particulières de chaque offre.",
+        "content2": "En cas de retard de paiement, Beeheidi Sàrl se réserve le droit de facturer des frais de rappel et, le cas échéant, de résilier le contrat avec effet immédiat.",
+        "content3": "Toutes les prestations fournies par Beeheidi Sàrl sont facturées et seront uniquement encaissées par virement bancaire ou postal. Les paiements par carte de crédit sont acceptés, dans ce cas, des frais peuvent être perçus."
+      },
+      "liability": {
+        "title": "RESPONSABILITÉS",
+        "content": "Beeheidi Sàrl exclut toute responsabilité pour les services de sociétés tierces qu'elle ne gère pas directement (art. 101 al. 2 CO), notamment les coûts supplémentaires, retards, inconvénients, etc.",
+        "content2": "Beeheidi Sàrl décline toute responsabilité pour les dommages (accident, blessure, etc.) pouvant atteindre le client et dont l'origine échappe à son contrôle.",
+        "content3": "Beeheidi Sàrl décline toute responsabilité face aux risques imprévisibles et/ou liés au comportement du client ainsi que des participants. En d'autres termes, le client accepte d'assumer le risque inhérent à une activité de loisir en plein air, qui ne peut être évité malgré une préparation minutieuse et une conduite prudente et avisée. La pratique d'activités en montagne comporte des risques et le client ainsi que tous les participants déclarent avoir le matériel et les aptitudes physiques nécessaires à la pratique de ces activités. En outre, il ne doit pas être sous l'influence de substances qui pourraient compromettre la tenue de l'activité en toute sécurité.",
+        "content4": "Afin d'assurer un déroulement aussi sûr que possible, le client doit se conformer en tout temps aux instructions de Beeheidi Sàrl et/ou de ses auxiliaires. Il est tenu de faire immédiatement part à Beeheidi Sàrl et/ou ses auxiliaires de toute préoccupation éventuelle ainsi que de tout problème physique et/ou psychique dont il pourrait souffrir. Le client est responsable d'informer tout participant à une prestation dispensée par Beeheidi Sàrl de cette clause de sécurité.",
+        "content5": "Les personnes mineures doivent être accompagnées de leur représentant légal, le cas échéant d'un adulte ayant l'autorisation de ce dernier."
+      },
+      "insurance": {
+        "title": "ASSURANCES",
+        "content": "Beeheidi Sàrl et ses auxiliaires sont assurés par une assurance responsabilité civile professionnelle. Toutefois, le client assume une responsabilité pleine et entière pour toute perte, blessure, décès ou dommage causé à autrui ou à lui-même, survenant dans le cadre de sa participation à une prestation organisée par Beeheidi Sàrl.",
+        "content2": "Chaque participant doit avoir sa propre assurance accident et maladie avec rapatriement valable pour la montagne (par exemple Air Glacier, Rega, …) ainsi qu'une assurance responsabilité civile, le tout couvrant les activités visées.",
+        "content3": "En outre, chaque participant assume une pleine responsabilité́ en cas d'endommagement, perte ou vol du matériel appartenant à Beeheidi Sàrl ou à un prestataire mandaté par Beeheidi Sàrl."
+      },
+      "cancellation": {
+        "title": "ANNULATION PAR LE CO-CONTRACTANT",
+        "content": "Toute annulation de prestations devra être adressée par écrit à Beeheidi Sàrl et engendrera des frais. Votre réservation est transmissible mais ne peut-être ni échangée ni remboursée.",
+        "content2": "Si le nombre minimum requis de participants n'est pas atteint, Beeheidi Sàrl se réserve le droit d'annuler le séjour en remboursant intégralement les participants déjà inscrits. Cependant, aucune autre compensation financière n'est prévue.",
+        "content3": "Si les conditions météorologiques ne permettent pas le maintien de l'activité, Beeheidi Sàrl se réserve le droit d'annuler le séjour en remboursant intégralement le client déjà inscrit. Aucune autre compensation financière n'est prévue.",
+        "content4": "Beeheidi Sàrl ne propose pas d'assurance annulation. Cas échéant, une telle assurance est à contracter directement par le client."
+      },
+      "forceMajeure": {
+        "title": "CAS DE FORCE MAJEURE",
+        "content": "Si Beeheidi Sàrl estime qu'un voyage ne peut commencer ou doit être interrompu avant son terme en raison d'un cas de force majeure (par ex. catastrophe naturelle, pandémie, troubles politiques, lorsque ces évènements commandent de ne pas faire le voyage, etc), ou en raison d'actes de l'autorité́, Beeheidi ne peut en aucun cas être tenue pour responsable. En outre, elle est en droit de déduire des versements qu'elle restitue au participant les frais qu'elle a déjà̀ engagés. Tout droit à une compensation financière est exclu."
+      },
+      "confidentiality": {
+        "title": "CONFIDENTIALITÉ",
+        "content": "Toutes les informations échangées par Beeheidi Sàrl dans le cadre de son mandat avec le cocontractant au sujet des prestations fournies seront traitées de manière confidentielle."
+      },
+      "interpretation": {
+        "title": "INTERPRÉTATION DES PRÉSENTES CONDITIONS",
+        "content": "Les CG et tous les échanges de manifestations de volonté entre Beeheidi Sàrl et le cocontractant pourront être utilisés pour interpréter la volonté des cocontractants dans le cadre de l'exécution des prestations."
+      },
+      "jurisdiction": {
+        "title": "JURIDICTION COMPÉTENTE",
+        "content": "En cas de litige entre Beeheidi Sàrl et le cocontractant relatif notamment à l'exécution, l'inexécution, l'application ou l'interprétation des CG, le for judiciaire est à Sierre.",
+        "content2": "Le droit suisse est applicable."
+      }
+    }
+  },
+  "legal": {
+    "title": "Mentions Légales",
+    "introduction": {
+      "content": "En consultant des informations, indications ou documents figurant sur le site Internet de Beeheidi, vous déclarez adhérer aux conditions ci-après. Beeheidi se réserve le droit de modifier, compléter ou supprimer tout ou partie du contenu du site Internet et des présentes conditions, et ce, à tout moment et selon sa libre appréciation. Il en va de même en cas d'améliorations et/ou de modifications apportées aux informations."
+    },
+    "copyright": {
+      "title": "Droits d'auteur",
+      "content": "L'ensemble du contenu (textes, graphiques, photos, etc.) du site Internet est protégé par un droit d'auteur et, sauf disposition contraire, est la propriété exclusive et totale de Beeheidi. L'utilisateur doit également respecter les indications relatives à des droits de protection et d'utilisation de tiers susceptibles de figurer sur ce site Internet.",
+      "content2": "Beeheidi fournit les informations contenues sur le site Internet à des fins exclusives d'usage privé et d'information.",
+      "content3": "Il est permis de télécharger, d'enregistrer, d'imprimer ou de reproduire de quelque autre manière certaines pages et/ou parties du site Internet, à condition de ne supprimer ni des mentions de copyright, ni d'autres désignations légalement protégées. Beeheidi conserve tous les droits de propriété et d'utilisation et peut à tout moment révoquer cette autorisation.",
+      "content4": "La reproduction (partielle ou totale), la diffusion (électronique ou par d'autres moyens), la modification, la création de liens ou l'utilisation à des fins publiques ou commerciales des informations, quelles qu'elles soient, contenues sur le site Internet requièrent l'autorisation écrite préalable de Beeheidi."
+    },
+    "warranty": {
+      "title": "Exclusion de garantie",
+      "content": "Bien que Beeheidi s'emploie en toute bonne foi à garantir la fiabilité des informations contenues dans le site au moment de leur publication, Beeheidi ne peut certifier ou attester formellement de manière explicite ou implicite (également vis à vis de tiers) l'exactitude, la fiabilité et l'exhaustivité des informations contenues dans le site www.beeheidi.ch",
+      "content2": "Les opinions émises ou autres informations contenues dans le site internet www.beeheidi.ch peuvent être modifiées en tout temps sans avertissement préalable. Beeheidi se dégage de toute responsabilité et ne garantit nullement que les fonctions disponibles sur le site www.beeheidi.ch ne soient jamais interrompues ni l'absence de virus ou autres éléments dommageables dans le navigateur concerné."
+    },
+    "liability": {
+      "title": "Restriction de la responsabilité",
+      "content": "Beeheidi se dégage de toute responsabilité (également en cas de faute) pour les dommages directs, indirects ou consécutifs pouvant résulter de l'accès aux éléments du site internet www.beeheidi.ch ou de leur utilisation, respectivement de l'impossibilité d'y accéder ou de les utiliser ou encore résultant de la connexion à d'autres sites internet."
+    },
+    "externalLinks": {
+      "title": "Liens vers d'autres sites internet",
+      "content": "Le site internet www.beeheidi.ch contient des liens vers des sites de tiers qui peuvent vous intéresser. En activant ces liens, vous quittez éventuellement le site www.beeheidi.ch ou des fenêtres de sites tiers apparaissent dans l'environnement du site www.beeheidi.ch. Beeheidi n'a aucun contrôle sur les sites internet de tiers liés au site www.beeheidi.ch et ne peut être en aucun cas tenu pour responsable du contenu et du fonctionnement de ces sites internet. Ceci vaut indépendamment du fait que vous quittiez l'environnement du site internet www.beeheidi.ch en activant un lien ou que la présentation d'un site tiers apparaisse dans l'environnement du site www.beeheidi.ch, même lorsque dans ce cas le fournisseur des informations contenues dans ce site tiers n'apparaît pas clairement. Le risque ou le danger pouvant découler de la connexion avec des sites tiers ou de leur consultation est exclusivement affaire de l'utilisateur."
+    },
+    "embeddedContent": {
+      "title": "Contenu embarqué depuis d'autres sites",
+      "content": "Les articles de ce site peuvent inclure des contenus intégrés comme par exemple des vidéos, images, articles (YouTube, Vimeo, Google Maps, etc.). Le contenu intégré depuis d'autres sites se comporte de la même manière que si le visiteur se rendait sur cet autre site. Ces sites web pourraient collecter des données sur vous, utiliser des cookies, embarquer des outils de suivi tiers, suivre vos interactions avec ces contenus embarqués si vous disposez d'un compte connecté sur leur site web."
+    },
+    "privacy": {
+      "title": "Protection des Données Personnelles",
+      "introduction": "Nous attachons une grande importance à la sécurité et à la confidentialité de vos informations personnelles. Ce texte a pour objectif de vous informer sur la manière dont nous collectons, utilisons, partageons et protégeons vos données.",
+      "collection": {
+        "title": "Collecte de Données",
+        "content": "Nous collectons des données personnelles de différentes manières, notamment lorsque vous visitez notre site internet, utilisez nos services, ou communiquez avec nous. Ces données peuvent inclure des informations telles que votre nom, votre adresse e-mail, votre numéro de téléphone, et d'autres données nécessaires à la fourniture de nos services."
+      },
+      "usage": {
+        "title": "Utilisation des Données",
+        "content": "Les données personnelles que nous collectons sont utilisées dans le but de vous fournir des informations pertinentes, d'améliorer nos services, de personnaliser votre expérience, et de vous contacter si nécessaire. Nous ne vendons ni ne louons jamais vos données à des tiers."
+      },
+      "security": {
+        "title": "Sécurité des Données",
+        "content": "La sécurité de vos données personnelles est notre priorité. Nous mettons en place des mesures de sécurité pour protéger vos données contre tout accès non autorisé, la perte, la divulgation ou la modification."
+      },
+      "sharing": {
+        "title": "Partage des Données",
+        "content": "Nous pouvons partager vos données personnelles avec des tiers lorsque cela est nécessaire pour fournir nos services. Cependant, nous ne le faisons que dans le respect des lois applicables sur la protection des données et en prenant des mesures pour garantir que vos données restent sécurisées."
+      },
+      "newsletter": {
+        "title": "Newsletter et courrier électroniques",
+        "content": "Les messages électroniques ou newsletters de Beeheidi ne vous sont envoyés que si vous le désirez. Si vous ne souhaitez plus les recevoir, vous pouvez à tout moment vous désabonner. N'oubliez pas que les données transmises non codées peuvent être lues ou modifiées par des tiers non autorisés."
+      }
+    },
+    "general": {
+      "title": "Général",
+      "content": "Si vous avez des questions ou des commentaires sur nos informations légales ou sur la protection des données, veuillez nous contacter à l'adresse info@beeheidi.ch."
+    },
+    "contact": {
+      "title": "ADRESSE DE CONTACT",
+      "company": "Beeheidi Sàrl",
+      "address": "Place du Village 7, 3960 Loc",
+      "email": "info@beeheidi.ch",
+      "phone": "+41 27 565 44 40"
+    },
+    "linkToCGV": "Voir les Conditions Générales"
   }
 }

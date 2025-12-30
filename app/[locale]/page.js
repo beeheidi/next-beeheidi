@@ -6,8 +6,10 @@ import ImageTextBlock from "@/components/ui/ImageTextBlock/ImageTextBlock";
 import TopImage from "@/components/ui/TopImage/TopImage";
 import { client } from "@/lib/sanity";
 import { featuredPrestationsQuery } from "@/lib/sanity.queries";
+import { MailIcon, PhoneIcon } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
+import Link from "next/link";
 
 export default async function Home({ params }) {
   const { locale } = await params;
@@ -54,11 +56,11 @@ export default async function Home({ params }) {
   ];
 
   return (
-    <main className=" bg-white">
+    <main className=" bg-white relative">
       <Hero
         key={locale}
         title={t("hero.title")}
-        whoAreWe={t("hero.whoAreWe")}
+        whoAreWe={t("hero.exploreWorks")}
       />
 
       {prestations && prestations.length > 0 && (
@@ -86,6 +88,39 @@ export default async function Home({ params }) {
           </div>
         </section>
       )}
+
+      <section className=" py-16 relative">
+        <div className="max-w-laptop mx-auto px-6  shadow-2xl rounded-2xl p-16 bg-white relative">
+          <TopImage position="bottom-right" size="small" />
+          <h2 className="text-4xl font-bold text-center text-primary mb-12">
+            {t("home.whoAreWe")}
+          </h2>
+          <h3 className="text-2xl font-bold text-center text-gray-500 mb-12">
+            {t("home.whoAreWeSubtitle")}
+          </h3>
+          <p className="text-center text-gray-500 mb-12">
+            {t("home.whoAreWeDescription")}
+          </p>
+          <div className="flex items-center justify-center gap-4">
+            <Link href="tel:0041275654440">
+              <PhoneIcon className="w-6 h-6 text-primary" />
+            </Link>
+            <Link href="mailto:info@beeheidi.ch">
+              <MailIcon className="w-6 h-6 text-primary" />
+            </Link>
+          </div>
+          <div className="flex justify-center mt-8">
+            <Button
+              variant="outline"
+              rounded="full"
+              size="lg"
+              href="/qui-est-heidi"
+            >
+              {t("home.learn more")}
+            </Button>
+          </div>
+        </div>
+      </section>
       <section className="bg-foreground py-16 relative">
         <div className="max-w-laptop mx-auto px-6 ">
           <h2 className="text-4xl font-bold text-center text-primary mb-12">
