@@ -68,7 +68,7 @@ const Hero = ({ title, whoAreWe }) => {
       </div>
 
       <div className="absolute bottom-24 left-0 flex items-center gap-4 z-10">
-        <div className="w-24 md:w-96 h-px bg-white "></div>
+        <div className="w-12 md:w-96 h-px bg-white "></div>
         <div className="text-white flex items-center gap-4">
           <p className="text-lg font-bold">{whoAreWe}</p>
           <ChevronDown

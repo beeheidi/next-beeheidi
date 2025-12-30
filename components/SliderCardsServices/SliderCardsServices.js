@@ -47,7 +47,7 @@ export default function SliderCardsServices({ services }) {
                 fill
                 className="object-cover absolute top-0 left-0 z-0"
               />
-              <div className="relative z-11 px-8 h-full flex flex-col items-start py-28 backdrop-blur-xs">
+              <div className="relative z-11 px-8 h-full flex flex-col items-start lg:py-28 py-24 backdrop-blur-xs">
                 <h3 className="text-3xl font-bold text-primary mb-4 relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-8 after:h-px after:bg-primary">
                   {service.title}
                 </h3>

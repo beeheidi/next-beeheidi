@@ -114,7 +114,7 @@ const Header = () => {
           <Culture />
           <svg
             ref={svgRef}
-            className={`w-24 h-24 z-52 outline-none  transition-colors duration-300 ${
+            className={`w-24 h-24 scale-50 z-52 outline-none  transition-colors duration-300 ${
               isOpen
                 ? "stroke-black"
                 : isHomePage
@@ -186,7 +186,7 @@ const Header = () => {
               alt="Logo Heidi White"
               width={500}
               height={500}
-              className="object-contain w-[500px] h-auto "
+              className="object-contain  lg:w-[500px] w-[300px] h-auto "
             />
             <HeaderNav
               t={t}

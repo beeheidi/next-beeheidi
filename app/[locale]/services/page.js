@@ -120,13 +120,13 @@ async function ServicesPage({ params }) {
             <div
               key={service.id}
               id={service.id}
-              className={`flex flex-col md:flex-row items-center   ${
+              className={`flex flex-col lg:flex-row items-center   ${
                 index > 0 ? "mt-8" : ""
               }`}
             >
               <div
-                className={`w-full md:w-1/2 h-full rounded-2xl overflow-hidden shadow-xl  ${
-                  imageLeft ? "order-1" : "order-2"
+                className={`w-full lg:w-1/2 h-full rounded-2xl overflow-hidden shadow-xl  ${
+                  imageLeft ? "lg:order-1 order-2" : "lg:order-2 order-1"
                 }`}
               >
                 <Image
@@ -134,16 +134,16 @@ async function ServicesPage({ params }) {
                   alt={service.alt}
                   width={1920}
                   height={1080}
-                  className="w-full h-[600px] object-cover  md:rounded-none"
+                  className="w-full lg:h-[600px] h-[400px] object-cover  md:rounded-none"
                   priority={index === 0}
                 />
               </div>
 
               <div
-                className={`w-full md:w-1/2 py-8 px-8 bg-foreground shadow-xl  ${
+                className={`w-full lg:w-1/2 py-8 px-8 bg-foreground shadow-xl  ${
                   imageLeft
-                    ? "rounded-br-2xl rounded-tr-2xl   order-2"
-                    : "rounded-bl-2xl rounded-tl-2xl   order-1"
+                    ? "rounded-br-2xl rounded-tr-2xl lg:order-2 order-1"
+                    : "rounded-bl-2xl rounded-tl-2xl  order-1"
                 }`}
               >
                 <h3 className="text-2xl font-bold text-primary mb-4">
