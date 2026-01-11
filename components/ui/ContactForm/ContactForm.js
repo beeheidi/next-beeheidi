@@ -3,13 +3,14 @@ import React, { useState } from "react";
 import Button from "@/components/ui/Button/Button";
 import { useTranslations } from "next-intl";
 
-const ContactForm = () => {
+const ContactForm = ({ prestation = null }) => {
   const t = useTranslations("contact.form");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     subject: "",
     message: "",
+    prestation: prestation || "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
@@ -64,6 +65,7 @@ const ContactForm = () => {
         email: "",
         subject: "",
         message: "",
+        prestation: prestation || "",
       });
     } catch (error) {
       setSubmitStatus({
@@ -93,7 +95,7 @@ const ContactForm = () => {
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+              className="w-full px-4 py-3 border text-gray-700 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
               placeholder={t("namePlaceholder")}
             />
           </div>
@@ -112,7 +114,7 @@ const ContactForm = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+              className="w-full px-4 py-3 border text-gray-700 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
               placeholder={t("emailPlaceholder")}
             />
           </div>
@@ -131,10 +133,29 @@ const ContactForm = () => {
             name="subject"
             value={formData.subject}
             onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+            className="w-full px-4 py-3 border text-gray-700 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
             placeholder={t("subjectPlaceholder")}
           />
         </div>
+
+        {prestation && (
+          <div>
+            <label
+              htmlFor="prestation"
+              className="block text-sm font-semibold text-gray-700 mb-2"
+            >
+              {t("prestation")}
+            </label>
+            <input
+              type="text"
+              id="prestation"
+              name="prestation"
+              value={formData.prestation}
+              readOnly
+              className="w-full px-4 py-3 border text-gray-700 border-gray-300 rounded-lg bg-gray-50 text-gray-700 cursor-not-allowed"
+            />
+          </div>
+        )}
 
         <div>
           <label
@@ -150,7 +171,7 @@ const ContactForm = () => {
             onChange={handleChange}
             required
             rows={6}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"
+            className="w-full px-4 py-3 border text-gray-700 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"
             placeholder={t("messagePlaceholder")}
           />
         </div>

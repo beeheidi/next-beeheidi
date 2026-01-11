@@ -5,7 +5,6 @@ import { useTranslations } from "next-intl";
 import { urlFor } from "@/lib/sanity";
 import {
   getCategoryLabel,
-  getDifficultyLabel,
   getSeasonLabel,
   getRegionLabel,
 } from "@/lib/labels";
@@ -29,12 +28,6 @@ export default function PrestationCard({ prestation }) {
   const categoryKey =
     prestation.category || prestation.categoryFr || prestation.categoryEn;
   const categoryLabel = getCategoryLabel(categoryKey, getLabel);
-
-  const difficultyKey =
-    prestation.difficulty || prestation.difficultyFr || prestation.difficultyEn;
-  const difficultyLabel = difficultyKey
-    ? getDifficultyLabel(difficultyKey, getLabel)
-    : null;
 
   const seasons = prestation.season
     ? prestation.season.map((s) => getSeasonLabel(s, getLabel)).join(", ")
@@ -89,11 +82,6 @@ export default function PrestationCard({ prestation }) {
             prestation.shortDescriptionEn}
         </p>
         <div className="flex flex-wrap gap-2 mb-4">
-          {difficultyLabel && (
-            <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">
-              {difficultyLabel}
-            </span>
-          )}
           {seasons && (
             <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">
               {seasons}

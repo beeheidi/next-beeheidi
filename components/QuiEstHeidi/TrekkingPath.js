@@ -27,9 +27,9 @@ export default function TrekkingPath() {
           },
           {
             strokeDashoffset: 0,
-            duration: 5,
+            duration: 1.9,
             ease: "power1.inOut",
-            stagger: 0.1,
+            stagger: 0.2,
           }
         ).to(
           logoPaths,

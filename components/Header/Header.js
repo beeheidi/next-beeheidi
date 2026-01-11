@@ -15,12 +15,22 @@ const Header = () => {
   const t = useTranslations("common");
   const [isOpen, setIsOpen] = useState(false);
   const [locale, setLocale] = useState(defaultLocale);
+  const [scrolledPast100vh, setScrolledPast100vh] = useState(false);
   const svgRef = useRef(null);
   const menuItemsRef = useRef([]);
   const isHomePage =
     pathname === "/fr" || pathname === "/en" || pathname?.endsWith("/");
-  const svgColor = isHomePage ? "stroke-white" : "stroke-black";
   const showLogo = !isHomePage;
+
+  // Déterminer la couleur du SVG
+  const getSvgColor = () => {
+    if (isOpen) return "stroke-black";
+    if (isHomePage) {
+      // Sur la page d'accueil, noir si on a scrollé au-delà de 100vh, sinon blanc
+      return scrolledPast100vh ? "stroke-black" : "stroke-white";
+    }
+    return "stroke-black";
+  };
 
   const handleClick = () => {
     if (isOpen) {
@@ -94,6 +104,31 @@ const Header = () => {
     }
   }, [isOpen]);
 
+  // Détecter le scroll au-delà de 100vh sur la page d'accueil
+  useEffect(() => {
+    if (!isHomePage) {
+      setScrolledPast100vh(false);
+      return;
+    }
+
+    const handleScroll = () => {
+      const scrollY = window.scrollY || window.pageYOffset;
+      const viewportHeight = window.innerHeight - 100;
+      setScrolledPast100vh(scrollY > viewportHeight);
+    };
+
+    // Vérifier la position initiale
+    handleScroll();
+
+    // Ajouter l'écouteur de scroll
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    // Nettoyer l'écouteur au démontage
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isHomePage]);
+
   return (
     <header className="bg-transparent backdrop-blur-xs fixed top-0 left-0 right-0 z-50 ">
       <div className="flex items-center justify-between max-w-laptop mx-auto">
@@ -114,13 +149,7 @@ const Header = () => {
           <Culture />
           <svg
             ref={svgRef}
-            className={`w-24 h-24 scale-50 z-52 outline-none  transition-colors duration-300 ${
-              isOpen
-                ? "stroke-black"
-                : isHomePage
-                  ? "stroke-white"
-                  : "stroke-black"
-            }`}
+            className={`w-24 h-24 scale-50 z-52 outline-none transition-colors duration-300 ${getSvgColor()}`}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 10 10"
             strokeWidth=".6"

@@ -176,6 +176,7 @@
       "email": "Email",
       "subject": "Subject",
       "message": "Message",
+      "prestation": "Service",
       "namePlaceholder": "Your name",
       "emailPlaceholder": "your@email.com",
       "subjectPlaceholder": "Message subject",

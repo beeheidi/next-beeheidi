@@ -25,7 +25,9 @@ export default function PageTitle({
     : maxWidthClasses[textMaxWidth] || maxWidthClasses["2xl"];
 
   return (
-    <section className={`mb-32 text-center title-section ${className}`}>
+    <section
+      className={`mb-32 text-center relative z-10 title-section ${className}`}
+    >
       {subtitle && (
         <span className="block text-primary font-bold tracking-[0.2em] text-sm uppercase mb-4">
           {subtitle}

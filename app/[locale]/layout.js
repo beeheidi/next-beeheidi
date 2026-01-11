@@ -20,11 +20,11 @@ export function generateStaticParams() {
 export default async function LocaleLayout({ children, params }) {
   // Dans Next.js 16, params est une Promise
   const { locale: paramLocale } = await params;
-  
+
   // Utiliser la locale depuis les params (qui vient de l'URL) plutôt que getLocale()
   // car getLocale() peut retourner la locale par défaut au lieu de celle de l'URL
   const locale = paramLocale;
-  
+
   // Valider que la locale est supportée
   if (!locales.includes(locale)) {
     notFound();
@@ -47,4 +47,3 @@ export const metadata = {
   description: "Beeheidi",
   robots: "noindex, nofollow",
 };
-

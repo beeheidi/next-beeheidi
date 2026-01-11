@@ -2,8 +2,12 @@ import PageTitle from "@/components/ui/PageTitle/PageTitle";
 import ContactForm from "@/components/ui/ContactForm/ContactForm";
 import TopImage from "@/components/ui/TopImage/TopImage";
 
-export default async function ContactPage({ params }) {
+export default async function ContactPage({ params, searchParams }) {
   const { locale } = await params;
+  const resolvedSearchParams = await searchParams;
+  const prestation = resolvedSearchParams?.prestation
+    ? decodeURIComponent(resolvedSearchParams.prestation)
+    : null;
   const t = await import(`../../../messages/${locale}.json`).then(
     (m) => m.default
   );
@@ -18,7 +22,7 @@ export default async function ContactPage({ params }) {
         textMaxWidth="7xl"
       />
       <div className="max-w-laptop mx-auto px-6">
-        <ContactForm />
+        <ContactForm prestation={prestation} />
       </div>
       <TopImage position="bottom-right" size="small" />
     </main>
