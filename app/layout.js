@@ -1,6 +1,6 @@
 // Layout racine pour toutes les routes
 // Pour les routes [locale], le LocaleLayout gère la locale
-import { Roboto } from "next/font/google";
+import { Roboto, Poppins } from "next/font/google";
 import "./globals.css";
 import { defaultLocale } from "../i18n";
 import { getLocale } from "next-intl/server";
@@ -9,6 +9,12 @@ const roboto = Roboto({
   variable: "--font-roboto",
   subsets: ["latin"],
   weight: ["400", "700"],
+});
+
+const poppins = Poppins({
+  variable: "--font-poppins",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata = {
@@ -30,7 +36,7 @@ export default async function RootLayout({ children }) {
 
   return (
     <html lang={locale}>
-      <body className={`${roboto.className} antialiased`}>{children}</body>
+      <body className={`${roboto.variable} ${poppins.variable} antialiased`}>{children}</body>
     </html>
   );
 }
