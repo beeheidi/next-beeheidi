@@ -5,6 +5,7 @@ export default function PageTitle({
   className = "",
   showDivider = true,
   textMaxWidth = "2xl",
+  align = "center",
 }) {
   const maxWidthClasses = {
     sm: "max-w-sm",
@@ -24,9 +25,30 @@ export default function PageTitle({
     ? textMaxWidth
     : maxWidthClasses[textMaxWidth] || maxWidthClasses["2xl"];
 
+  const alignClass =
+    align === "right"
+      ? "text-right"
+      : align === "left"
+      ? "text-left"
+      : "text-center";
+
+  const dividerClass =
+    align === "right"
+      ? "ml-auto"
+      : align === "left"
+      ? "mr-auto"
+      : "mx-auto";
+
+  const descClass =
+    align === "right"
+      ? "ml-auto"
+      : align === "left"
+      ? "mr-auto"
+      : "mx-auto";
+
   return (
     <section
-      className={`mb-32 text-center relative z-10 title-section ${className}`}
+      className={`mb-32 relative z-10 title-section ${alignClass} ${className}`}
     >
       {subtitle && (
         <span className="block text-primary font-bold tracking-[0.2em] text-sm uppercase mb-4">
@@ -34,16 +56,16 @@ export default function PageTitle({
         </span>
       )}
       {title && (
-        <h1 className="text-5xl md:text-7xl font-bold text-black mb-8">
+        <h1 className="text-5xl md:text-7xl font-light text-anthracite mb-8">
           {title}
         </h1>
       )}
       {showDivider && (
-        <div className="w-px h-20 bg-primary mx-auto mb-8 "></div>
+        <div className={`w-px h-20 bg-primary ${dividerClass} mb-8`}></div>
       )}
       {description && (
         <p
-          className={`text-xl md:text-2xl text-gray-500 ${maxWidthClass} mx-auto font-light leading-relaxed`}
+          className={`text-xl md:text-2xl text-gray-500 ${maxWidthClass} ${descClass} font-light leading-relaxed whitespace-pre-line`}
         >
           {description}
         </p>

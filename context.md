@@ -4,65 +4,84 @@ Site vitrine de Beeheidi (Sàrl, Valais), société d'expériences outdoor (rand
 
 ---
 
-## Bugs critiques
+## Modifications PDF — branche `pdf-modifications`
 
-### ~~1. Middleware i18n inactif~~ ✅ (fausse alerte)
-- Next.js 16 utilise `proxy.js` comme convention (et non `middleware.js`). Le fichier était déjà correct.
+### ✅ Tout fait
 
-### 2. Formulaire de contact ne fait rien
-- **Fichier** : `components/ui/ContactForm/ContactForm.js:52`
-- **Problème** : Le submit simule un envoi (`setTimeout`) mais n'appelle aucune API. Les messages partent dans le vide.
-- **Fix** : créer une API route `app/api/contact/route.js` + intégrer un service email (Resend recommandé)
+**Design global**
+- Couleur `#404040` anthracite → token Tailwind `text-anthracite`
+- Font Poppins ajoutée (300/400/500/600/700), appliquée via `--font-poppins` sur le `body`
+- `PageTitle` : prop `align` ajoutée (center / left / right)
 
-### 3. Site invisible pour les moteurs de recherche
-- **Fichier** : `app/[locale]/layout.js:32`
-- **Problème** : `robots: "noindex, nofollow"` bloque tout indexing Google.
-- **Fix** : supprimer la ligne avant mise en prod + ajouter `generateMetadata` par page avec titre, description, og:image
+**Header / Navigation**
+- "Explore" → "Expériences", "Services" → "Services partenaires" (FR + EN)
+- Burger menu : panneau latéral droit (w-80 lg:w-96), overlay semi-opaque, Poppins léger anthracite
+- `isHomePage` corrigé (`pathname === "/"`)
+
+**Footer**
+- Colonne Contact (Beeheidi Sàrl, tél, email) à la place de Navigation
+- Instagram uniquement, "Conditions générales", lien Studio discret `✦`
+
+**Hero**
+- Logo + baseline centrés, titre `font-light`
+- Texte bas → "Nos expériences coups de coeur" `font-light`, design original conservé
+
+**Page d'accueil**
+- Ordre : Hero → Qui sommes-nous → Les incontournables → Espace partenaires
+- WhoAreWe : card compacte (logo doré, "Expériences d'exception - Alpes suisses", icônes tél/email)
+- "Les incontournables" : titre `font-light`, filigrane Heidi en haut derrière le titre
+- "Espace partenaires" : fond blanc, titre `font-light text-anthracite`
+
+**Page Expériences (`/explore`)**
+- Titre : "Le Valais avec Heidi", subtitle : "Expériences alpines d'exception"
+- Alignement à droite, `getTranslations`
+
+**Page Qui est Heidi (`/qui-est-heidi`)**
+- Sandra (fondatrice) + Stéphane (guide), textes biographiques avec `<br/>`
+- PageTitle aligné à droite, `imageLeft=true` pour les deux blocs
+- Photos à remplacer quand fournies par la cliente
+
+**Page Services partenaires (`/services`)**
+- Vignettes : texte gauche + image droite (plus d'alternance)
+- Navigation icônes : 6 cards avec icône Lucide + `rotate-12` au hover
+- `getTranslations`, `Link` depuis `@/i18n/navigation`
+
+**Page Contact (`/contact`)**
+- Champs ajoutés : Prénom* + Téléphone (layout 2 colonnes)
+- `getTranslations`
+
+**Page Galerie (`/galerie`)**
+- Page créée, grille masonry 2→3→4 colonnes
+- Images collées, bordure blanche fine (`border border-white`), sans titre
+- À ajouter à la navigation si souhaité
+
+**Sanity schema (`schemas/prestation.js`)**
+- `durationCategory` : dropdown 5 options (Moins de 3h / Demi-journée / Journée complète / Plusieurs jours / Sur mesure)
+- `priceText` : texte libre bilingue FR/EN + `amount` optionnel pour tri
+- `activityReference` : référence texte libre (ex: BH-001)
+- Queries simplifiées (plus d'overfetching `*Fr`/`*En`)
+- `PrestationCard` : affiche `priceText` directement
 
 ---
 
-## Bugs secondaires
+## 🔲 À faire
 
-### 4. i18n inconsistant (2 pages)
-- **Fichiers** : `app/[locale]/services/page.js`, `app/[locale]/contact/page.js`
-- **Problème** : importent les messages via `await import('../../../messages/${locale}.json')` au lieu de `getTranslations()` de next-intl.
-- **Fix** : remplacer par `getTranslations({ locale })` comme dans `app/[locale]/page.js`
+### Contenu / Photos
+- Nouvelle photo hero (fleurs cerisier) — à fournir par la cliente
+- Photos Sandra + Stéphane — à fournir par la cliente (remplacer dans `/qui-est-heidi`)
 
-### 5. Détection homepage fragile dans le Header
-- **Fichier** : `components/Header/Header.js:18`
-- **Problème** : `pathname?.endsWith("/")` matche `/services/`, `/contact/` etc. en plus de la homepage.
-- **Fix** : `const isHomePage = pathname === "/"` (next-intl's `usePathname` retourne le path sans préfixe de locale)
+### Fonctionnel
+- **Formulaire contact** : créer `app/api/contact/route.js` + connecter Resend pour l'envoi réel
+- **Galerie** : décider si la page apparaît dans la navigation
 
-### 6. Liens non localisés dans la page Services
-- **Fichier** : `app/[locale]/services/page.js`
-- **Problème** : `href="/contact"` et `href="/services"` utilisent `Link` de Next.js au lieu du `Link` de `@/i18n/navigation` — risque de mauvaise locale dans l'URL.
-- **Fix** : importer `Link` depuis `@/i18n/navigation`
+### Avant mise en production
+- **SEO** : supprimer `robots: "noindex, nofollow"` dans `app/[locale]/layout.js:32`
+- Ajouter `generateMetadata` par page si besoin
 
 ---
 
-## Améliorations
+## 🔧 Micro-corrections (plus tard)
 
-### 7. Overfetching GROQ
-- **Fichier** : `lib/sanity.queries.js`
-- **Problème** : chaque requête fetche les deux langues de chaque champ (`"titleFr": title.fr, "titleEn": title.en`) alors qu'une seule locale est utilisée par requête.
-- **Fix** : ne projeter que la locale active (supprimer les champs `*Fr` / `*En` redondants)
-
-### 8. Contenu statique non éditable via Sanity
-- **Fichiers** : `components/Hero/Hero.js`, `app/[locale]/page.js:22-55`
-- **Problème** : les slides du Hero et les 6 services de la homepage sont hardcodés — toute modif nécessite un redéploiement.
-- **Fix** : créer des documents Sanity `heroSlide` et `service` + requêtes GROQ correspondantes
-
----
-
-## Ordre de priorité
-
-| # | Tâche | Effort | Impact |
-|---|---|---|---|
-| 1 | ~~Middleware i18n — fausse alerte, `proxy.js` est correct en Next.js 16~~ ✅ | — | — |
-| 2 | Implémenter envoi email formulaire contact | Moyen | Critique |
-| 3 | Supprimer noindex + SEO metadata par page | Faible | Critique (prod) |
-| 4 | Uniformiser i18n avec `getTranslations` | Faible | Moyen |
-| 5 | Corriger détection homepage Header | Très faible | Faible |
-| 6 | Corriger liens localisés dans Services | Très faible | Faible |
-| 7 | Alléger requêtes GROQ | Faible | Moyen |
-| 8 | Hero + Services dans Sanity | Élevé | Moyen |
+- Ajustement fin du positionnement du filigrane Heidi sur la section "Les incontournables"
+- Texte définitif "Qui est Heidi" (Sandra + Stéphane) à valider avec la cliente
+- Mobile : vérifier l'affichage des vignettes Services sur petits écrans

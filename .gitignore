@@ -35,3 +35,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+/scripts/import-payloads.json
+/scripts/import-batches/
+/scripts/import-report.json
+/beeheidi scrapping

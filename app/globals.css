@@ -8,6 +8,7 @@
   /* Couleurs personnalisées */
   --color-primary: #cbb68b;
   --color-secondary: #fff;
+  --color-anthracite: #404040;
 
   --max-width: 1440px;
 
@@ -20,6 +21,7 @@
   --color-foreground: var(--foreground);
   --color-primary: var(--color-primary);
   --color-secondary: var(--color-secondary);
+  --color-anthracite: var(--color-anthracite);
 
   /* Largeurs max (pour max-w-*) */
   --max-width-laptop: var(--max-width);
