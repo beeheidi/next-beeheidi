@@ -57,18 +57,32 @@ export default async function Home({ params }) {
   ];
 
   return (
-    <main className=" bg-white relative">
+    <main className=" bg-white relative mt-[-96px]">
       <Hero
         key={locale}
         title={t("hero.title")}
         whoAreWe={t("hero.exploreWorks")}
       />
 
+      <section className="py-16 relative -mt-28 overflow-visible z-10">
+        
+        <WhoAreWe t={t} />
+      </section>
+
       {prestations && prestations.length > 0 && (
-        <section className="relative">
-          <TopImage />
-          <div className="max-w-laptop mx-auto px-6 py-16 relative z-1">
-            <h2 className="text-4xl font-bold text-center text-primary mb-12">
+        <section className="relative overflow-hidden">
+          {/* Watermark heidi */}
+          <div className="relative justify-center flex mb-8 w-full pointer-events-none select-none z-0">
+            <Image
+              src="/images/logo/logo-heidi-white.svg"
+              alt=""
+              width={600}
+              height={300}
+              className="object-contain opacity-10 invert w-[250px] md:w-[500px]"
+            />
+          </div>
+          <div className="max-w-laptop mx-auto px-6 py-16 relative z-10">
+            <h2 className="text-4xl font-light text-center text-anthracite mb-12">
               {t("home.featuredPrestations")}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -90,13 +104,9 @@ export default async function Home({ params }) {
         </section>
       )}
 
-      <section className=" py-16 relative">
-        <WhoAreWe t={t} />
-      </section>
-
-      <section className="bg-foreground py-16 relative">
-        <div className="max-w-laptop mx-auto px-6 ">
-          <h2 className="text-4xl font-bold text-center text-primary mb-12">
+      <section className="bg-white py-16 relative">
+        <div className="max-w-laptop mx-auto px-6">
+          <h2 className="text-4xl font-light text-center text-anthracite mb-12">
             {t("home.discoverServices")}
           </h2>
 

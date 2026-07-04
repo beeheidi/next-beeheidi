@@ -6,7 +6,7 @@ import { useTranslations, useLocale } from "next-intl";
 import { Link, getTranslatedPathname } from "@/i18n/navigation";
 import Culture from "@/components/ui/Culture/Culture";
 import { locales } from "@/i18n";
-import SocialItems from "../ui/SocialItems/SocialItems";
+import { Instagram, Mail, Phone } from "lucide-react";
 
 const Footer = () => {
   const t = useTranslations("common");
@@ -15,7 +15,6 @@ const Footer = () => {
   const [locale, setLocale] = useState(defaultLocale);
   const currentYear = new Date().getFullYear();
 
-  // Détecter la locale depuis l'URL pour être sûr qu'elle est à jour
   useEffect(() => {
     const path = window.location.pathname;
     const localeFromPath = path.match(/^\/(fr|en)/)?.[1];
@@ -27,10 +26,11 @@ const Footer = () => {
   }, [defaultLocale]);
 
   return (
-    <footer className=" text-black border-t border-gray-200">
+    <footer className="text-black border-t border-gray-200">
       <div className="max-w-laptop mx-auto px-6 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
-          {/* Logo et description */}
+
+          {/* Logo + description + Instagram */}
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block mb-4">
               <Image
@@ -41,77 +41,67 @@ const Footer = () => {
                 className="object-contain h-12 w-auto"
               />
             </Link>
-            <p className="text-gray-600 text-sm leading-relaxed mb-4 max-w-md">
-              {tFooter("description")}
+            <p className="text-gray-500 text-sm font-light leading-relaxed mb-6 max-w-sm">
+              {tFooter("descriptionLine1")}
+              <br />
+              {tFooter("descriptionLine2")}
             </p>
-            <div className="flex items-center gap-2">
-              <span className="text-sm text-gray-500">
+            <div className="flex items-center gap-3">
+              <span className="text-sm text-gray-400 font-light">
                 {tFooter("followUs")}
               </span>
-
-              <SocialItems />
+              <Link
+                href="https://www.instagram.com/beeheidi.ch"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="text-gray-400 hover:text-primary transition-colors duration-200"
+              >
+                <Instagram size={20} />
+              </Link>
             </div>
           </div>
 
-          {/* Navigation */}
+          {/* Contact */}
           <div>
-            <h3 className="text-lg font-bold text-primary mb-4">
-              {tFooter("navigation")}
+            <h3 className="text-sm font-semibold text-primary uppercase tracking-widest mb-4">
+              {tFooter("contactTitle")}
             </h3>
             <ul className="space-y-3">
-              <li>
-                <Link
-                  href="/"
-                  className="text-gray-600 hover:text-primary transition-colors duration-200 text-sm"
-                >
-                  {t("home")}
-                </Link>
+              <li className="text-gray-500 text-sm font-light">
+                {tFooter("company")}
               </li>
               <li>
-                <Link
-                  href="/explore"
-                  className="text-gray-600 hover:text-primary transition-colors duration-200 text-sm"
+                <a
+                  href="tel:+41275654440"
+                  className="flex items-center gap-2 text-gray-500 text-sm font-light hover:text-primary transition-colors duration-200"
                 >
-                  {t("explore")}
-                </Link>
+                  <Phone size={14} />
+                  {tFooter("phone")}
+                </a>
               </li>
               <li>
-                <Link
-                  href={getTranslatedPathname("/qui-est-heidi", locale)}
-                  className="text-gray-600 hover:text-primary transition-colors duration-200 text-sm"
+                <a
+                  href="mailto:info@beeheidi.ch"
+                  className="flex items-center gap-2 text-gray-500 text-sm font-light hover:text-primary transition-colors duration-200"
                 >
-                  {t("whoIsHeidi")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services"
-                  className="text-gray-600 hover:text-primary transition-colors duration-200 text-sm"
-                >
-                  {t("services")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contact"
-                  className="text-gray-600 hover:text-primary transition-colors duration-200 text-sm"
-                >
-                  {t("contact")}
-                </Link>
+                  <Mail size={14} />
+                  {tFooter("email")}
+                </a>
               </li>
             </ul>
           </div>
 
-          {/* Informations légales */}
+          {/* Mentions légales */}
           <div>
-            <h3 className="text-lg font-bold text-primary mb-4">
+            <h3 className="text-sm font-semibold text-primary uppercase tracking-widest mb-4">
               {tFooter("legal")}
             </h3>
             <ul className="space-y-3">
               <li>
                 <Link
                   href={getTranslatedPathname("/mentions-legales", locale)}
-                  className="text-gray-600 hover:text-primary transition-colors duration-200 text-sm"
+                  className="text-gray-500 text-sm font-light hover:text-primary transition-colors duration-200"
                 >
                   {tFooter("legal")}
                 </Link>
@@ -119,7 +109,7 @@ const Footer = () => {
               <li>
                 <Link
                   href={getTranslatedPathname("/cgv", locale)}
-                  className="text-gray-600 hover:text-primary transition-colors duration-200 text-sm"
+                  className="text-gray-500 text-sm font-light hover:text-primary transition-colors duration-200"
                 >
                   {tFooter("terms")}
                 </Link>
@@ -129,26 +119,29 @@ const Footer = () => {
         </div>
 
         {/* Séparateur */}
-        <div className="border-t border-gray-200 my-8"></div>
+        <div className="border-t border-gray-100 my-8" />
 
         {/* Bas du footer */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-600 text-sm text-center md:text-left">
+          <p className="text-gray-400 text-xs font-light text-center md:text-left">
             {tFooter("copyright", { year: currentYear })}
           </p>
-          <div className="flex items-center gap-2">
-            <span className="text-gray-600 text-sm">{tFooter("madeWith")}</span>
-            <span className="text-primary">❤️</span>
-            {/*  <span className="text-gray-600 text-sm">{tFooter("in")}</span>
-            <span className="text-primary font-semibold">
-              {tFooter("valais")}
-            </span> */}
+
+          <div className="flex items-center gap-1 text-gray-400 text-xs font-light">
+            {tFooter("madeWith")}
+            <span className="text-primary mx-1">♥</span>
+            {tFooter("in")} {tFooter("valais")}
           </div>
-          <div className="flex items-center gap-2">
-            <span className="text-gray-600 text-sm">
-              {tFooter("navigation")}:
-            </span>
-            <Culture />
+
+          <div className="flex items-center gap-4">
+            <Culture variant="dark" />
+            <Link
+              href="/studio"
+              className="text-gray-200 text-xs hover:text-gray-400 transition-colors duration-200"
+              aria-label="Administration"
+            >
+              ✦
+            </Link>
           </div>
         </div>
       </div>

@@ -1,3 +1,4 @@
 import prestation from "./prestation";
+import blockContent from "./blockContent";
 
-export const schemaTypes = [prestation];
+export const schemaTypes = [blockContent, prestation];

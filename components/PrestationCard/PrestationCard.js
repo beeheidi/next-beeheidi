@@ -3,19 +3,17 @@ import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { urlFor } from "@/lib/sanity";
-import {
-  getCategoryLabel,
-  getSeasonLabel,
-  getRegionLabel,
-} from "@/lib/labels";
+import { getPrestationCardPrice } from "@/lib/prestation";
+import { getPrestationThumbnail, getPrestationSubtitle } from "@/lib/content";
+import { getDurationCategoryLabel } from "@/lib/labels";
 
 export default function PrestationCard({ prestation }) {
   const t = useTranslations();
-  const imageUrl = prestation.mainImage
-    ? urlFor(prestation.mainImage).width(600).height(400).url()
+  const thumbnail = getPrestationThumbnail(prestation);
+  const imageUrl = thumbnail
+    ? urlFor(thumbnail).width(600).height(400).url()
     : null;
 
-  // Fonction helper pour obtenir les traductions
   const getLabel = (key) => {
     try {
       return t.raw(key);
@@ -24,26 +22,11 @@ export default function PrestationCard({ prestation }) {
     }
   };
 
-  // Les champs de Sanity sont les clés (ex: "randonnee"), on les traduit avec les labels
-  const categoryKey =
-    prestation.category || prestation.categoryFr || prestation.categoryEn;
-  const categoryLabel = getCategoryLabel(categoryKey, getLabel);
-
-  const seasons = prestation.season
-    ? prestation.season.map((s) => getSeasonLabel(s, getLabel)).join(", ")
-    : null;
-
-  const minPrice =
-    prestation.price && prestation.price.length > 0
-      ? Math.min(...prestation.price.map((p) => p.amount))
-      : null;
-  const currency =
-    prestation.price && prestation.price.length > 0
-      ? prestation.price[0].currency
-      : "CHF";
-
-  // Utiliser le slug localisé (déjà extrait par la requête)
   const currentSlug = prestation.slug || prestation.slugFr || prestation.slugEn;
+  const displayPrice = getPrestationCardPrice(prestation);
+  const durationLabel = prestation.durationCategory
+    ? getDurationCategoryLabel(prestation.durationCategory, getLabel)
+    : null;
 
   return (
     <Link
@@ -54,51 +37,38 @@ export default function PrestationCard({ prestation }) {
         {imageUrl ? (
           <Image
             src={imageUrl}
-            alt={
-              prestation.mainImage?.alt ||
-              prestation.title ||
-              prestation.titleFr ||
-              prestation.titleEn
-            }
+            alt={thumbnail?.alt || prestation.title || ""}
             fill
             className="object-cover group-hover:scale-110 transition-transform duration-300"
           />
         ) : (
           <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-            <span className="text-gray-400">Pas d'image</span>
+            <span className="text-gray-400 font-light">Pas d&apos;image</span>
           </div>
         )}
-        <div className="absolute top-4 right-4 bg-white/90 capitalize backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold text-black">
-          {categoryLabel}
-        </div>
       </div>
       <div className="p-6">
-        <h3 className="text-2xl font-bold text-primary mb-2 group-hover:text-primary transition-colors">
+        <h3 className="text-2xl font-semibold text-anthracite mb-2">
           {prestation.title || prestation.titleFr || prestation.titleEn}
         </h3>
-        <p className="text-gray-600 mb-4 line-clamp-2">
-          {prestation.shortDescription ||
-            prestation.shortDescriptionFr ||
-            prestation.shortDescriptionEn}
+        <p className="text-anthracite font-regular mb-4 line-clamp-2">
+          {getPrestationSubtitle(prestation)}
         </p>
-        <div className="flex flex-wrap gap-2 mb-4">
-          {seasons && (
-            <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">
-              {seasons}
-            </span>
-          )}
-          {prestation.region && (
-            <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">
-              {getRegionLabel(prestation.region, getLabel)}
-            </span>
-          )}
-        </div>
-        {minPrice && (
-          <div className="flex items-center justify-between pt-4 border-t border-gray-200">
-            <span className="text-sm text-gray-600">{t("labels.price")}</span>
-            <span className="text-2xl font-bold text-primary">
-              {minPrice} {currency}
-            </span>
+
+        {(displayPrice || durationLabel) && (
+          <div className="flex items-center justify-between gap-4 pt-4 border-t border-gray-200">
+            {durationLabel ? (
+              <span className="text-sm text-gray-500 font-light">
+                {durationLabel}
+              </span>
+            ) : (
+              <span />
+            )}
+            {displayPrice && (
+              <span className="text-xl text-anthracite ml-auto text-right font-light">
+                Dès <span className="font-medium">{displayPrice}</span>
+              </span>
+            )}
           </div>
         )}
       </div>

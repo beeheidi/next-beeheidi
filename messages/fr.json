@@ -1,24 +1,25 @@
 {
   "common": {
     "home": "Accueil",
-    "explore": "Explore",
+    "explore": "Expériences",
     "whoIsHeidi": "Qui est Heidi ?",
-    "services": "Services",
+    "services": "Services partenaires",
     "contact": "Contact"
   },
   "hero": {
     "title": "Vivez une experience unique",
-    "exploreWorks": "Découvrez nos prestations favorites"
+    "exploreWorks": "Nos expériences coups de coeur"
   },
   "home": {
-    "featuredPrestations": "Nos prestations coup de coeur",
-    "explorePrestations": "Explorez nos prestations",
-    "discoverServices": "Découvrez nos services",
+    "featuredPrestations": "Les incontournables",
+    "explorePrestations": "Voir toutes nos offres",
+    "discoverServices": "Espace partenaires",
     "you are": "Vous êtes :",
     "learn more": "En savoir plus",
     "whoAreWe": "Qui sommes-nous ?",
-    "whoAreWeSubtitle": "Swiss Lifestyle & Alps Experiences",
+    "whoAreWeSubtitle": "Expériences d’exception - Alpes suisses",
     "whoAreWeDescription": "Une expérience unique à vivre au cœur des Alpes. Découvrez l’un des plus beaux parcs d’attractions naturels à travers le regard des habitants de la région.",
+    "contactUs": "Nous contacter",
     "services": {
       "business": {
         "title": "Entreprise",
@@ -53,25 +54,25 @@
     }
   },
   "explore": {
-    "subtitle": "Nature & Passion",
-    "title": "Explore avec Heidi",
-    "description": "Un lever de soleil ou une balade gourmande dans les alpages, découvrez l'authenticité valaisanne. Profitez de la douce altitude et de l'odeur des sapins pour vivre une expérience enrichissante au cœur d'un environnement préservé. Ici, pas d'artifice, nous vous faisons goûter aux traditions du fabuleux parc alpin. Faites la connaissance de passionnés qui ont su conserver l'art de la simplicité et de l'authenticité. Activités de randonnée, balades gourmandes, découverte de la montagne, de la faune, de la flore et loisirs en pleine nature pour dessiner ensemble vos plus beaux souvenirs du Valais.",
+    "subtitle": "Expériences alpines d'exception",
+    "title": "Le Valais avec Heidi",
+    "description": "Un lever de soleil ou une balade gourmande dans les alpages, découvrez l’authenticité valaisanne. Profitez de la douce altitude et de l’odeur des sapins pour vivre une expérience enrichissante au cœur d’un environnement préservé. Ici, pas d’artifice, nous vous faisons goûter aux traditions du fabuleux parc alpin. Faites la connaissance de passionnés qui ont su conserver l’art de la simplicité et de l’authenticité. \n\n Activités de randonnée, balades gourmandes, découverte de la montagne, de la faune, de la flore et loisirs en pleine nature pour dessiner ensemble vos plus beaux souvenirs du Valais.",
     "noPrestations": "Aucune prestation disponible pour le moment."
   },
   "quiEstHeidi": {
-    "subtitle": "Nature & Passion",
+    "subtitle": "Fondatrice & Happiness Dealer",
     "title": "Qui est Heidi ?",
-    "description": "Une passionnée de la nature, gardienne des abeilles et créatrice d'émotions.",
+    "description": "Une passionnée de la nature, gardienne des abeilles et créatrice d'émotions au cœur des Alpes valaisannes.",
 
     "aboutHeidi": {
-      "title": "A propos de Heidi",
-      "description": "Fondatrice & \"Happiness Dealer\" de Beeheidi, Sandra, c'est la petite fille d'un alpiniste qui lui a soufflé le goût de la montagne.",
+      "title": "Sandra, fondatrice de Beeheidi",
+      "description": "Fille d'alpiniste et gardienne des abeilles, Sandra a grandi au rythme des saisons valaisannes. Passionnée de montagne, elle a fondé Beeheidi avec une conviction simple : partager l'authenticité des Alpes et créer des émotions durables.<br/><br/>Chaque expérience qu'elle imagine porte sa signature — générosité, nature et art de vivre alpin.",
       "button": "Me contacter"
     },
     "ourTeam": {
-      "title": "L'équipe de Heidi",
-      "description": "Authentiques amoureux de la nature et du terroir, découvrez les membres de notre équipe, toujours prête à vous faire vivre de belles émotions !",
-      "button": "Explorer avec nous"
+      "title": "Stéphane, guide de montagne",
+      "description": "Guide certifié et amoureux du terrain, Stéphane partage sa connaissance intime du Valais à travers chaque sortie.<br/><br/>Ensemble, Sandra et Stéphane forment un duo complémentaire, unis par la même passion : vous faire découvrir un Valais authentique, loin des sentiers battus.",
+      "button": "Nos expériences"
     }
   },
   "services": {
@@ -173,13 +174,17 @@
     "subtitle": "Heidi se réjouit de vous lire!",
     "description": "Un petit mot à souffler à Heidi? Une expérience personnalisée, un séjour sur mesure au cœur des Alpes suisses à planifier? Ou alors même rejoindre notre équipe? ",
     "form": {
+      "firstName": "Prénom",
       "name": "Nom",
       "email": "Email",
+      "phone": "Téléphone",
       "subject": "Sujet",
       "message": "Message",
       "prestation": "Prestation",
+      "firstNamePlaceholder": "Votre prénom",
       "namePlaceholder": "Votre nom",
       "emailPlaceholder": "votre@email.com",
+      "phonePlaceholder": "+41 xx xxx xx xx",
       "subjectPlaceholder": "Sujet de votre message",
       "messagePlaceholder": "Votre message...",
       "required": "*",
@@ -205,20 +210,26 @@
     "gallery": "Galerie",
     "practicalInfo": "Informations complémentaires",
     "technicalDetails": "Détails techniques",
+    "region": "Région",
     "difficulty": "Difficulté",
     "contactToBook": "Contacter pour réserver"
   },
   "footer": {
-    "description": "Découvrez l'authenticité valaisanne avec Heidi. Expériences uniques en pleine nature.",
+    "descriptionLine1": "Découvrez l'authenticité valaisanne avec Heidi.",
+    "descriptionLine2": "Expériences uniques en pleine nature.",
     "navigation": "Navigation",
     "legal": "Mentions légales",
     "privacy": "Politique de confidentialité",
-    "terms": "Conditions d'utilisation",
+    "terms": "Conditions générales",
     "followUs": "Suivez-nous",
     "copyright": "© {year} Beeheidi. Tous droits réservés.",
     "madeWith": "Fait avec",
     "in": "en",
-    "valais": "Valais"
+    "valais": "Valais",
+    "contactTitle": "Contact",
+    "company": "Beeheidi Sàrl",
+    "phone": "+41 27 565 44 40",
+    "email": "info@beeheidi.ch"
   },
   "labels": {
     "category": {
@@ -244,8 +255,9 @@
     "durationCategory": {
       "moins-3h": "Moins de 3 heures",
       "demi-journee": "Demi-journée",
-      "journee": "Journée",
-      "plusieurs-jours": "Plusieurs jours"
+      "journee": "Journée complète",
+      "plusieurs-jours": "Plusieurs jours",
+      "sur-mesure": "Sur mesure"
     },
     "region": {
       "chablais": "Chablais",

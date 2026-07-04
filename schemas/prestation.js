@@ -1,62 +1,209 @@
+import {
+  localizedString,
+  localizedHybridContent,
+  imageField,
+  galleryImageType,
+  durationOptions,
+} from "./fields";
+
 export default {
   name: "prestation",
-  title: "Prestation",
+  title: "Activité",
   type: "document",
+  groups: [
+    { name: "content", title: "Contenu de la page", default: true },
+    { name: "card", title: "Vignette" },
+    { name: "internal", title: "Utilisation interne" },
+    { name: "legacy", title: "Ancien format (lecture seule)" },
+  ],
+  fieldsets: [
+    { name: "pageText", title: "Textes de la page", options: { collapsible: true } },
+    { name: "cardMedia", title: "Images vignette & bandeau", options: { collapsible: true } },
+    { name: "cardMeta", title: "Infos vignette", options: { collapsible: true } },
+    { name: "internalFlags", title: "Publication", options: { collapsible: true } },
+  ],
   fields: [
+    // ─── Contenu de la page ───────────────────────────────────────────────
+    localizedString("title", "Titre", {
+      group: "content",
+      fieldset: "pageText",
+      required: true,
+      validation: (Rule) => Rule.required(),
+    }),
+    localizedString("subtitle", "Sous-titre", {
+      group: "content",
+      fieldset: "pageText",
+      description: "Affiché sous le titre sur la page activité",
+    }),
+    localizedHybridContent("description", "Descriptif", {
+      group: "content",
+      fieldset: "pageText",
+    }),
+    localizedHybridContent("technicalDetailsContent", "Détails techniques", {
+      group: "content",
+      fieldset: "pageText",
+    }),
+    localizedHybridContent("equipment", "Matériel à prévoir", {
+      group: "content",
+      fieldset: "pageText",
+    }),
+    localizedHybridContent("practicalInfo", "Infos complémentaires", {
+      group: "content",
+      fieldset: "pageText",
+    }),
     {
-      name: "title",
-      title: "Titre",
+      name: "priceText",
+      title: "Prix",
       type: "object",
+      group: "content",
+      fieldset: "pageText",
+      description:
+        "Le montant « à partir de » s'affiche sur la vignette. La grille tarifaire complète s'affiche sur la page activité.",
       fields: [
         {
-          name: "fr",
-          title: "Titre (Français)",
+          name: "amount",
+          title: "Prix à partir de (vignette)",
+          type: "number",
+          description: "Ex: 600 — affiché sur la carte comme « Dès 600 CHF »",
+        },
+        {
+          name: "currency",
+          title: "Devise",
           type: "string",
-          validation: (Rule) => Rule.required().max(100),
+          initialValue: "CHF",
+        },
+        {
+          name: "fr",
+          title: "Grille tarifaire (Français — éditeur visuel)",
+          type: "blockContent",
         },
         {
           name: "en",
-          title: "Titre (English)",
-          type: "string",
-          validation: (Rule) => Rule.required().max(100),
+          title: "Grille tarifaire (English — visual editor)",
+          type: "blockContent",
+        },
+        {
+          name: "frHtml",
+          title: "Grille tarifaire (Français — HTML brut)",
+          type: "text",
+          rows: 8,
+          description:
+            "HTML autorisé. Si rempli, remplace l'éditeur visuel sur la page activité.",
+        },
+        {
+          name: "enHtml",
+          title: "Grille tarifaire (English — raw HTML)",
+          type: "text",
+          rows: 8,
         },
       ],
-      validation: (Rule) => Rule.required(),
     },
+    localizedHybridContent("included", "Prestations incluses", {
+      group: "content",
+      fieldset: "pageText",
+    }),
+
+    // ─── Vignette ─────────────────────────────────────────────────────────
+    imageField("thumbnailImage", "Image vignette", {
+      group: "card",
+      fieldset: "cardMedia",
+      description: "Image affichée sur les cartes (liste d'activités, accueil)",
+    }),
+    imageField("bannerImage", "Image bandeau", {
+      group: "card",
+      fieldset: "cardMedia",
+      description: "Grande image en haut de la page activité",
+    }),
+    {
+      name: "gallery",
+      title: "Galerie d'images",
+      type: "array",
+      group: "card",
+      fieldset: "cardMedia",
+      description:
+        "Vous pouvez cocher « Utiliser comme vignette » ou « Utiliser comme bandeau » sur une image de la galerie à la place des uploads dédiés.",
+      of: [galleryImageType],
+    },
+    {
+      name: "durationCategory",
+      title: "Durée",
+      type: "string",
+      group: "card",
+      fieldset: "cardMeta",
+      options: {
+        list: durationOptions,
+        layout: "dropdown",
+      },
+    },
+    localizedString("shortDescription", "Accroche vignette (optionnel)", {
+      group: "card",
+      fieldset: "cardMeta",
+      description:
+        "Texte court sous le titre sur la carte. Si vide, le sous-titre de la page est utilisé.",
+    }),
+
+    // ─── Utilisation interne ──────────────────────────────────────────────
     {
       name: "slug",
       title: "Slug (URL)",
       type: "object",
-      description:
-        "Slug unique pour chaque langue. Utilisé dans les URLs : /fr/explore/[slug.fr] et /en/explore/[slug.en]",
+      group: "internal",
+      description: "URL de la page : /fr/explore/[slug] et /en/explore/[slug]",
       fields: [
         {
           name: "fr",
           title: "Slug (Français)",
           type: "slug",
-          options: {
-            source: "title.fr",
-            maxLength: 96,
-          },
+          options: { source: "title.fr", maxLength: 96 },
           validation: (Rule) => Rule.required(),
         },
         {
           name: "en",
           title: "Slug (English)",
           type: "slug",
-          options: {
-            source: "title.en",
-            maxLength: 96,
-          },
+          options: { source: "title.en", maxLength: 96 },
           validation: (Rule) => Rule.required(),
         },
       ],
       validation: (Rule) => Rule.required(),
     },
     {
+      name: "activityReference",
+      title: "Référence activité",
+      type: "string",
+      group: "internal",
+      description: "Code interne (ex: BH-001)",
+    },
+    {
+      name: "active",
+      title: "Activer / désactiver",
+      type: "boolean",
+      group: "internal",
+      fieldset: "internalFlags",
+      description: "Décochez pour masquer l'activité sur le site",
+      initialValue: true,
+    },
+    {
+      name: "featured",
+      title: "Coup de cœur",
+      type: "boolean",
+      group: "internal",
+      fieldset: "internalFlags",
+      description: "Afficher en avant sur la page d'accueil",
+      initialValue: false,
+    },
+    {
+      name: "publishedAt",
+      title: "Date de publication",
+      type: "datetime",
+      group: "internal",
+      initialValue: () => new Date().toISOString(),
+    },
+    {
       name: "category",
-      title: "Catégorie",
+      title: "Catégorie (filtre)",
       type: "object",
+      group: "internal",
       fields: [
         {
           name: "fr",
@@ -71,7 +218,7 @@ export default {
               { title: "Détente", value: "detente" },
               { title: "Autre", value: "autre" },
             ],
-            layout: "radio",
+            layout: "dropdown",
           },
         },
         {
@@ -87,215 +234,8 @@ export default {
               { title: "Relaxation", value: "detente" },
               { title: "Other", value: "autre" },
             ],
-            layout: "radio",
+            layout: "dropdown",
           },
-        },
-      ],
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      name: "shortDescription",
-      title: "Description courte",
-      type: "object",
-      fields: [
-        {
-          name: "fr",
-          title: "Description courte (Français)",
-          type: "text",
-          rows: 3,
-          description:
-            "Description affichée dans les listes (max 200 caractères)",
-          validation: (Rule) => Rule.required().max(200),
-        },
-        {
-          name: "en",
-          title: "Description courte (English)",
-          type: "text",
-          rows: 3,
-          description:
-            "Short description displayed in lists (max 200 characters)",
-          validation: (Rule) => Rule.required().max(200),
-        },
-      ],
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      name: "description",
-      title: "Description complète",
-      type: "object",
-      fields: [
-        {
-          name: "fr",
-          title: "Description complète (Français)",
-          type: "array",
-          of: [
-            {
-              type: "block",
-            },
-          ],
-          validation: (Rule) => Rule.required(),
-        },
-        {
-          name: "en",
-          title: "Description complète (English)",
-          type: "array",
-          of: [
-            {
-              type: "block",
-            },
-          ],
-          validation: (Rule) => Rule.required(),
-        },
-      ],
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      name: "mainImage",
-      title: "Image principale",
-      type: "image",
-      options: {
-        hotspot: true,
-      },
-      fields: [
-        {
-          name: "alt",
-          title: "Texte alternatif",
-          type: "string",
-          description: "Important pour le SEO et l'accessibilité",
-        },
-      ],
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      name: "gallery",
-      title: "Galerie d'images",
-      type: "array",
-      of: [
-        {
-          type: "image",
-          options: {
-            hotspot: true,
-          },
-          fields: [
-            {
-              name: "alt",
-              title: "Texte alternatif",
-              type: "string",
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: "price",
-      title: "Prix",
-      type: "array",
-      of: [
-        {
-          type: "object",
-          fields: [
-            {
-              name: "groupSize",
-              title: "Taille du groupe",
-              type: "object",
-              fields: [
-                {
-                  name: "fr",
-                  title: "Taille du groupe (Français)",
-                  type: "string",
-                  description: 'Ex: "1 à 2 personnes", "3 à 4 personnes"',
-                  validation: (Rule) => Rule.required(),
-                },
-                {
-                  name: "en",
-                  title: "Group size (English)",
-                  type: "string",
-                  description: 'Ex: "1 to 2 people", "3 to 4 people"',
-                  validation: (Rule) => Rule.required(),
-                },
-              ],
-              validation: (Rule) => Rule.required(),
-            },
-            {
-              name: "amount",
-              title: "Montant",
-              type: "number",
-              validation: (Rule) => Rule.required().min(0),
-            },
-            {
-              name: "currency",
-              title: "Devise",
-              type: "string",
-              options: {
-                list: [
-                  { title: "CHF", value: "CHF" },
-                  { title: "EUR", value: "EUR" },
-                ],
-              },
-              initialValue: "CHF",
-            },
-          ],
-          preview: {
-            select: {
-              groupSize: "groupSize.fr",
-              amount: "amount",
-              currency: "currency",
-            },
-            prepare({ groupSize, amount, currency }) {
-              return {
-                title: `${groupSize || "N/A"}`,
-                subtitle: `${amount} ${currency}`,
-              };
-            },
-          },
-        },
-      ],
-      validation: (Rule) => Rule.required().min(1),
-    },
-    {
-      name: "duration",
-      title: "Durée",
-      type: "object",
-      fields: [
-        {
-          name: "total",
-          title: "Durée totale",
-          type: "object",
-          fields: [
-            {
-              name: "fr",
-              title: "Durée totale (Français)",
-              type: "string",
-              description: 'Ex: "5h30 (dont 2h45 de montée)"',
-            },
-            {
-              name: "en",
-              title: "Total duration (English)",
-              type: "string",
-              description: 'Ex: "5h30 (including 2h45 of ascent)"',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: "included",
-      title: "Inclus dans la prestation",
-      type: "object",
-      fields: [
-        {
-          name: "fr",
-          title: "Inclus (Français)",
-          type: "array",
-          of: [{ type: "string" }],
-          description: "Liste des éléments inclus (ex: repas, guide, matériel)",
-        },
-        {
-          name: "en",
-          title: "Included (English)",
-          type: "array",
-          of: [{ type: "string" }],
-          description: "List of included items (e.g., meals, guide, equipment)",
         },
       ],
     },
@@ -303,6 +243,7 @@ export default {
       name: "region",
       title: "Région",
       type: "string",
+      group: "internal",
       options: {
         list: [
           { title: "Chablais", value: "chablais" },
@@ -311,12 +252,14 @@ export default {
           { title: "Sion & Sierre", value: "sion-sierre" },
           { title: "Crans-Montana", value: "crans-montana" },
         ],
+        layout: "dropdown",
       },
     },
     {
       name: "season",
       title: "Saison",
       type: "array",
+      group: "internal",
       of: [{ type: "string" }],
       options: {
         list: [
@@ -326,184 +269,102 @@ export default {
           { title: "Hiver", value: "hiver" },
         ],
       },
-      description: "Saisons où cette prestation est disponible",
     },
     {
       name: "availabilityPeriod",
       title: "Période de disponibilité",
       type: "object",
+      group: "internal",
       fields: [
-        {
-          name: "fr",
-          title: "Période (Français)",
-          type: "string",
-          description: 'Ex: "de juin à fin septembre"',
-        },
-        {
-          name: "en",
-          title: "Period (English)",
-          type: "string",
-          description: 'Ex: "from June to end of September"',
-        },
+        { name: "fr", title: "Français", type: "string" },
+        { name: "en", title: "English", type: "string" },
       ],
     },
+
+    // ─── Ancien format (données existantes, masqué) ───────────────────────
     {
-      name: "technicalDetails",
-      title: "Détails techniques",
-      type: "object",
-      fields: [
+      name: "mainImage",
+      title: "[Ancien] Image principale",
+      type: "image",
+      group: "legacy",
+      hidden: ({ document }) => !document?.mainImage,
+      readOnly: true,
+      options: { hotspot: true },
+    },
+    {
+      name: "price",
+      title: "[Ancien] Grille tarifaire",
+      type: "array",
+      group: "legacy",
+      hidden: ({ document }) => !document?.price?.length,
+      readOnly: true,
+      of: [
         {
-          name: "duration",
-          title: "Durée détaillée",
           type: "object",
           fields: [
-            {
-              name: "fr",
-              title: "Durée (Français)",
-              type: "string",
-              description: 'Ex: "5h30 (dont 2h45 de montée)"',
-            },
-            {
-              name: "en",
-              title: "Duration (English)",
-              type: "string",
-              description: 'Ex: "5h30 (including 2h45 of ascent)"',
-            },
+            { name: "groupSize", title: "Taille groupe", type: "object", fields: [{ name: "fr", type: "string" }, { name: "en", type: "string" }] },
+            { name: "amount", title: "Montant", type: "number" },
+            { name: "currency", title: "Devise", type: "string" },
           ],
         },
+      ],
+    },
+    {
+      name: "duration",
+      title: "[Ancien] Durée détaillée",
+      type: "object",
+      group: "legacy",
+      hidden: ({ document }) => !document?.duration,
+      readOnly: true,
+      fields: [
         {
-          name: "difficultyDescription",
-          title: "Description de la difficulté",
+          name: "total",
           type: "object",
-          fields: [
-            {
-              name: "fr",
-              title: "Description (Français)",
-              type: "text",
-              description:
-                'Ex: "Chemins faciles mais moyennement techniques sur les derniers mètres"',
-            },
-            {
-              name: "en",
-              title: "Description (English)",
-              type: "text",
-              description:
-                'Ex: "Easy paths but moderately technical on the last meters"',
-            },
-          ],
+          fields: [{ name: "fr", type: "string" }, { name: "en", type: "string" }],
         },
       ],
-    },
-    {
-      name: "equipment",
-      title: "Matériel à prévoir",
-      type: "object",
-      fields: [
-        {
-          name: "fr",
-          title: "Matériel (Français)",
-          type: "array",
-          of: [{ type: "string" }],
-          description:
-            "Liste du matériel nécessaire (chaussures, vêtements, etc.)",
-        },
-        {
-          name: "en",
-          title: "Equipment (English)",
-          type: "array",
-          of: [{ type: "string" }],
-          description: "List of necessary equipment (shoes, clothing, etc.)",
-        },
-      ],
-    },
-    {
-      name: "practicalInfo",
-      title: "Informations complémentaires",
-      type: "object",
-      fields: [
-        {
-          name: "fr",
-          title: "Informations (Français)",
-          type: "array",
-          of: [
-            {
-              type: "block",
-            },
-          ],
-          description:
-            "Informations complémentaires (possibilité de raccourcir, etc.)",
-        },
-        {
-          name: "en",
-          title: "Information (English)",
-          type: "array",
-          of: [
-            {
-              type: "block",
-            },
-          ],
-          description: "Additional information (possibility to shorten, etc.)",
-        },
-      ],
-    },
-    {
-      name: "publishedAt",
-      title: "Date de publication",
-      type: "datetime",
-      initialValue: () => new Date().toISOString(),
-    },
-    {
-      name: "featured",
-      title: "Mise en avant",
-      type: "boolean",
-      description: "Afficher cette prestation en avant sur la page d'accueil",
-      initialValue: false,
-    },
-    {
-      name: "active",
-      title: "Active",
-      type: "boolean",
-      description: "Afficher cette prestation sur le site",
-      initialValue: true,
     },
   ],
   preview: {
     select: {
       title: "title.fr",
-      subtitle: "category.fr",
-      media: "mainImage",
+      subtitle: "durationCategory",
+      media: "thumbnailImage",
+      ref: "activityReference",
+      fallbackMedia: "mainImage",
+      active: "active",
+      featured: "featured",
     },
-    prepare({ title, subtitle, media }) {
-      const categoryLabels = {
-        randonnee: "Randonnée",
-        "dejeuner-altitude": "Déjeuner en altitude",
-        "escapade-culinaire": "Escapade culinaire",
-        aventure: "Aventure",
-        detente: "Détente",
-        autre: "Autre",
-      };
+    prepare({ title, subtitle, media, ref, fallbackMedia, active, featured }) {
+      const durationLabels = Object.fromEntries(
+        durationOptions.map((o) => [o.value, o.title])
+      );
+      const flags = [!active ? "masquée" : null, featured ? "♥" : null]
+        .filter(Boolean)
+        .join(" · ");
+
       return {
-        title: title || "Sans titre",
-        subtitle: categoryLabels[subtitle] || subtitle || "Sans catégorie",
-        media,
+        title: ref ? `[${ref}] ${title || "Sans titre"}` : title || "Sans titre",
+        subtitle: [durationLabels[subtitle], flags].filter(Boolean).join(" · ") || "Activité",
+        media: media || fallbackMedia,
       };
     },
   },
   orderings: [
     {
-      title: "Date de publication, nouveau",
+      title: "Date de publication, récent",
       name: "publishedAtDesc",
       by: [{ field: "publishedAt", direction: "desc" }],
     },
     {
-      title: "Date de publication, ancien",
-      name: "publishedAtAsc",
-      by: [{ field: "publishedAt", direction: "asc" }],
+      title: "Prix croissant",
+      name: "priceAsc",
+      by: [{ field: "priceText.amount", direction: "asc" }],
     },
     {
-      title: "Titre, A-Z",
+      title: "Titre A-Z",
       name: "titleAsc",
-      by: [{ field: "title", direction: "asc" }],
+      by: [{ field: "title.fr", direction: "asc" }],
     },
   ],
 };

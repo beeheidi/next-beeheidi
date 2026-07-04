@@ -1,23 +1,24 @@
 {
   "common": {
     "home": "Home",
-    "explore": "Explore",
+    "explore": "Experiences",
     "whoIsHeidi": "Who is Heidi?",
-    "services": "Services",
+    "services": "Partner Services",
     "contact": "Contact"
   },
   "hero": {
     "title": "Live a unique experience",
-    "exploreWorks": "Discover our favorite services"
+    "exploreWorks": "Our favorite experiences"
   },
   "home": {
-    "featuredPrestations": "Our favorite services",
-    "explorePrestations": "Explore our services",
-    "discoverServices": "Discover our services",
+    "featuredPrestations": "Our top experiences",
+    "explorePrestations": "View all our offers",
+    "discoverServices": "Partner Space",
     "you are": "You are :",
     "learn more": "Learn more",
+    "contactUs": "Contact us",
     "whoAreWe": "Who are we?",
-    "whoAreWeSubtitle": "Swiss Lifestyle & Alps Experiences",
+    "whoAreWeSubtitle": "Exceptional Experiences - Swiss Alps",
     "whoAreWeDescription": "A unique experience to live in the heart of the Alps. Discover one of the most beautiful natural attractions in the region through the eyes of the inhabitants.",
     "services": {
       "business": {
@@ -53,24 +54,24 @@
     }
   },
   "explore": {
-    "subtitle": "Nature & Passion",
-    "title": "Explore with Heidi",
-    "description": "Discover the authenticity of the Valaisian mountains. Enjoy the gentle altitude and the scent of pine trees to experience a rich and enriching experience in a preserved environment. Here, no artifice, we let you taste the traditions of the fabulous Alpine park. Get to know passionate people who have preserved the art of simplicity and authenticity. Activities, gourmet walks, discovery of the mountain, fauna, flora and nature activities to draw together your most beautiful memories of the Valais.",
+    "subtitle": "Alpine Experiences of Exception",
+    "title": "Valais with Heidi",
+    "description": "Discover the authenticity of the Valaisian mountains. Enjoy the gentle altitude and the scent of pine trees to experience a rich and enriching experience in a preserved environment. Here, no artifice, we let you taste the traditions of the fabulous Alpine park. Get to know passionate people who have preserved the art of simplicity and authenticity. \n\n Activities, gourmet walks, discovery of the mountain, fauna, flora and nature activities to draw together your most beautiful memories of the Valais.",
     "noPrestations": "No prestations available at the moment."
   },
   "quiEstHeidi": {
-    "subtitle": "Nature & Passion",
-    "title": "Who is Heidi ?",
-    "description": "A passionate nature lover, beekeeper and emotion creator.",
+    "subtitle": "Founder & Happiness Dealer",
+    "title": "Who is Heidi?",
+    "description": "A passionate nature lover, beekeeper and emotion creator in the heart of the Valaisian Alps.",
     "aboutHeidi": {
-      "title": "About Heidi",
-      "description": "Founder & \"Happiness Dealer\" of Beeheidi, Sandra, it's the little girl of an alpinist who blew the taste of the mountains into her.",
+      "title": "Sandra, Beeheidi's Founder",
+      "description": "Daughter of an alpinist and beekeeper, Sandra grew up to the rhythm of the Valaisian seasons. Passionate about the mountains, she founded Beeheidi with a simple conviction: share the authenticity of the Alps and create lasting emotions.<br/><br/>Every experience she designs bears her signature — generosity, nature and alpine art de vivre.",
       "button": "Contact me"
     },
     "ourTeam": {
-      "title": "Our team",
-      "description": "Authentic lovers of nature and terroir, discover the members of our team, always ready to make you live beautiful emotions!",
-      "button": "Explore with us"
+      "title": "Stéphane, mountain guide",
+      "description": "A certified guide and lover of the terrain, Stéphane shares his intimate knowledge of Valais through every outing.<br/><br/>Together, Sandra and Stéphane form a complementary duo, united by the same passion: showing you an authentic Valais, off the beaten track.",
+      "button": "Our experiences"
     }
   },
   "services": {
@@ -172,13 +173,17 @@
     "subtitle": "Heidi is happy to hear from you!",
     "description": "A little word to blow to Heidi? A personalized experience, a tailor-made stay in the heart of the Swiss Alps to plan? Or even join our team?",
     "form": {
-      "name": "Name",
+      "firstName": "First name",
+      "name": "Last name",
       "email": "Email",
+      "phone": "Phone",
       "subject": "Subject",
       "message": "Message",
       "prestation": "Service",
-      "namePlaceholder": "Your name",
+      "firstNamePlaceholder": "Your first name",
+      "namePlaceholder": "Your last name",
       "emailPlaceholder": "your@email.com",
+      "phonePlaceholder": "+41 xx xxx xx xx",
       "subjectPlaceholder": "Message subject",
       "messagePlaceholder": "Your message...",
       "required": "*",
@@ -204,20 +209,26 @@
     "gallery": "Gallery",
     "practicalInfo": "Additional information",
     "technicalDetails": "Technical details",
+    "region": "Region",
     "difficulty": "Difficulty",
     "contactToBook": "Contact to book"
   },
   "footer": {
-    "description": "Discover the authenticity of Valais with Heidi. Unique experiences in nature.",
+    "descriptionLine1": "Discover the authenticity of Valais with Heidi.",
+    "descriptionLine2": "Unique experiences in the heart of nature.",
     "navigation": "Navigation",
     "legal": "Legal notice",
     "privacy": "Privacy policy",
-    "terms": "Terms of use",
+    "terms": "General Conditions",
     "followUs": "Follow us",
     "copyright": "© {year} Beeheidi. All rights reserved.",
     "madeWith": "Made with",
     "in": "in",
-    "valais": "Valais"
+    "valais": "Valais",
+    "contactTitle": "Contact",
+    "company": "Beeheidi Sàrl",
+    "phone": "+41 27 565 44 40",
+    "email": "info@beeheidi.ch"
   },
   "labels": {
     "category": {
@@ -244,7 +255,8 @@
       "moins-3h": "Less than 3 hours",
       "demi-journee": "Half day",
       "journee": "Full day",
-      "plusieurs-jours": "Several days"
+      "plusieurs-jours": "Several days",
+      "sur-mesure": "Custom"
     },
     "region": {
       "chablais": "Chablais",
