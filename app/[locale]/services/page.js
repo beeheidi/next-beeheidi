@@ -81,7 +81,8 @@ export default async function ServicesPage({ params }) {
           subtitle={t("services.subtitle")}
           title={t("services.title")}
           description={t("services.description")}
-          textMaxWidth="4xl"
+          align="left"
+          textMaxWidth="full"
         />
       </section>
 
@@ -169,31 +170,15 @@ export default async function ServicesPage({ params }) {
       </section>
 
       {/* CTA final */}
-      <section className="max-w-laptop mx-auto px-6 py-16 text-center">
-        <h2 className="text-3xl font-light text-anthracite mb-4">
-          {t("services.experience")}
-        </h2>
-        <p className="text-gray-500 font-light mb-8 max-w-2xl mx-auto">
-          {t("services.experienceDescription")}
-        </p>
-        <div className="flex justify-center gap-4 flex-wrap">
-          <Button variant="primary" rounded="full" size="lg" href="/pdf/BeeheidiPrsentation.pdf">
-            {t("services.experienceButton")}
-          </Button>
-          <Button variant="outline" rounded="full" size="lg" href="/contact">
-            {t("services.button")}
-          </Button>
-        </div>
-        <p className="text-sm font-light text-red-400 italic mt-4">
-          {t("services.experienceAlert")}
-        </p>
-        <div className="w-full mt-12">
+      <section>
+
+        <div className="w-full h-full mt-12">
           <Image
-            src="/images/services/EdelweissZermatt.jpg"
+            src="/images/services/BeeheidiEnjoySwitzerland2.jpg"
             alt="Beeheidi"
             width={1920}
             height={1080}
-            className="w-full object-contain rounded-2xl"
+            className="w-full h-[500px] object-cover object-center"
           />
         </div>
       </section>

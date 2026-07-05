@@ -3,7 +3,6 @@ export default function PageTitle({
   title,
   description,
   className = "",
-  showDivider = true,
   textMaxWidth = "2xl",
   align = "center",
 }) {
@@ -32,12 +31,6 @@ export default function PageTitle({
       ? "text-left"
       : "text-center";
 
-  const dividerClass =
-    align === "right"
-      ? "ml-auto"
-      : align === "left"
-      ? "mr-auto"
-      : "mx-auto";
 
   const descClass =
     align === "right"
@@ -59,9 +52,6 @@ export default function PageTitle({
         <h1 className="text-5xl md:text-7xl font-light text-anthracite mb-8">
           {title}
         </h1>
-      )}
-      {showDivider && (
-        <div className={`w-px h-20 bg-primary ${dividerClass} mb-8`}></div>
       )}
       {description && (
         <p

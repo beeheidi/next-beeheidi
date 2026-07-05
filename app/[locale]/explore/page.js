@@ -1,3 +1,5 @@
+export const revalidate = 60;
+
 import { client } from "@/lib/sanity";
 import { prestationsQueryByLocale } from "@/lib/sanity.queries";
 import PrestationCard from "@/components/PrestationCard/PrestationCard";
@@ -17,7 +19,7 @@ export default async function ExplorePage({ params }) {
 
   return (
     <main className="bg-background pt-24 pb-16 relative">
-      <TopImage position="top-right" size="large" />
+      <TopImage position="top-left" size="large" />
       <div className="max-w-laptop mx-auto px-6 relative z-1">
         <PageTitle
           subtitle={t("explore.subtitle")}
@@ -40,7 +42,7 @@ export default async function ExplorePage({ params }) {
           </div>
         )}
       </div>
-      <TopImage position="bottom-left" size="small" />
+      <TopImage position="bottom-right" size="small" />
     </main>
   );
 }

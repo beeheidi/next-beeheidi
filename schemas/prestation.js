@@ -193,10 +193,20 @@ export default {
       initialValue: false,
     },
     {
+      name: "activityDate",
+      title: "Date (tri & filtres)",
+      type: "date",
+      group: "internal",
+      fieldset: "internalFlags",
+      description:
+        "Date de référence pour trier et filtrer les activités dans Sanity et sur le site. Si vide, la date de publication est utilisée.",
+    },
+    {
       name: "publishedAt",
       title: "Date de publication",
       type: "datetime",
       group: "internal",
+      fieldset: "internalFlags",
       initialValue: () => new Date().toISOString(),
     },
     {
@@ -334,8 +344,10 @@ export default {
       fallbackMedia: "mainImage",
       active: "active",
       featured: "featured",
+      activityDate: "activityDate",
+      publishedAt: "publishedAt",
     },
-    prepare({ title, subtitle, media, ref, fallbackMedia, active, featured }) {
+    prepare({ title, subtitle, media, ref, fallbackMedia, active, featured, activityDate, publishedAt }) {
       const durationLabels = Object.fromEntries(
         durationOptions.map((o) => [o.value, o.title])
       );
@@ -343,14 +355,25 @@ export default {
         .filter(Boolean)
         .join(" · ");
 
+      const dateLabel = activityDate
+        ? new Date(activityDate).toLocaleDateString("fr-CH")
+        : publishedAt
+          ? new Date(publishedAt).toLocaleDateString("fr-CH")
+          : null;
+
       return {
         title: ref ? `[${ref}] ${title || "Sans titre"}` : title || "Sans titre",
-        subtitle: [durationLabels[subtitle], flags].filter(Boolean).join(" · ") || "Activité",
+        subtitle: [dateLabel, durationLabels[subtitle], flags].filter(Boolean).join(" · ") || "Activité",
         media: media || fallbackMedia,
       };
     },
   },
   orderings: [
+    {
+      title: "Date, récent",
+      name: "activityDateDesc",
+      by: [{ field: "activityDate", direction: "desc" }],
+    },
     {
       title: "Date de publication, récent",
       name: "publishedAtDesc",

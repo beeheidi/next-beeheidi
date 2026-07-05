@@ -55,8 +55,8 @@ export default function QuiEstHeidi() {
           subtitle={t("subtitle")}
           title={t("title")}
           description={t("description")}
-          align="right"
-          textMaxWidth="3xl"
+          align="left"
+          textMaxWidth="full"
         />
 
         <ImageTextBlock
