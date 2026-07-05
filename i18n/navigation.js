@@ -31,6 +31,10 @@ const pathnames = {
     fr: "/mentions-legales",
     en: "/legal-notice",
   },
+  "/plan-du-site": {
+    fr: "/plan-du-site",
+    en: "/sitemap",
+  },
 };
 
 const navigation = createNavigation({

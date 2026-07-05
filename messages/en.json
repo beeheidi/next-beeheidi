@@ -220,6 +220,7 @@
     "legal": "Legal notice",
     "privacy": "Privacy policy",
     "terms": "General Conditions",
+    "sitemap": "Sitemap",
     "followUs": "Follow us",
     "copyright": "© {year} Beeheidi. All rights reserved.",
     "madeWith": "Made with",
@@ -394,5 +395,10 @@
       "phone": "+41 27 565 44 40"
     },
     "linkToCGV": "View Terms and Conditions"
+  },
+  "sitemap": {
+    "title": "Sitemap",
+    "sectionMain": "Main navigation",
+    "sectionLegal": "Legal information"
   }
 }

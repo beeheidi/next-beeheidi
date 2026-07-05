@@ -221,6 +221,7 @@
     "legal": "Mentions légales",
     "privacy": "Politique de confidentialité",
     "terms": "Conditions générales",
+    "sitemap": "Plan du site",
     "followUs": "Suivez-nous",
     "copyright": "© {year} Beeheidi. Tous droits réservés.",
     "madeWith": "Fait avec",
@@ -395,5 +396,10 @@
       "phone": "+41 27 565 44 40"
     },
     "linkToCGV": "Voir les Conditions Générales"
+  },
+  "sitemap": {
+    "title": "Plan du site",
+    "sectionMain": "Navigation principale",
+    "sectionLegal": "Informations légales"
   }
 }
