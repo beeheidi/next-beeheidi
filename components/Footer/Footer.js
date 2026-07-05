@@ -114,6 +114,14 @@ const Footer = () => {
                   {tFooter("terms")}
                 </Link>
               </li>
+              <li>
+                <Link
+                  href={getTranslatedPathname("/plan-du-site", locale)}
+                  className="text-gray-500 text-sm font-light hover:text-primary transition-colors duration-200"
+                >
+                  {tFooter("sitemap")}
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
