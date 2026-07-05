@@ -119,7 +119,7 @@ export default async function PrestationDetailPage({ params }) {
           __html: `window.__LOCALIZED_SLUGS__ = ${JSON.stringify(localizedSlugs)};`,
         }}
       />
-      <main className="bg-background pt-24 pb-16 relative">
+      <main className="bg-background pt-8 pb-8 md:pt-24 md:pb-16 relative">
         <TopImage position="top-left" size="large" />
         <div className="max-w-laptop mx-auto px-6 relative z-10">
           <PrestationBreadcrumb t={t} title={prestation.title} />

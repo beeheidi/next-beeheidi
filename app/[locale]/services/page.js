@@ -73,7 +73,7 @@ export default async function ServicesPage({ params }) {
   ];
 
   return (
-    <main className="bg-background pt-24 pb-16 relative">
+    <main className="bg-background pt-8 pb-8 md:pt-24 md:pb-16 relative">
       <TopImage position="top-left" size="large" />
 
       <section className="max-w-laptop mx-auto px-6 relative z-10">
@@ -120,6 +120,8 @@ export default async function ServicesPage({ params }) {
             </li>
           ))}
         </ul>
+        <p className="text-anthracite font-medium text-m mt-6 mb-6">{t("services.experienceDescription")}</p>
+        <Button variant="outline" rounded="full" size="sm" href="/contact">{t("services.button")}</Button>
       </section>
 
       {/* Vignettes services — texte gauche + image droite */}
@@ -132,18 +134,18 @@ export default async function ServicesPage({ params }) {
           >
             {/* Texte — gauche */}
             <div className="w-full lg:w-1/2 bg-white px-10 py-10 flex flex-col justify-center">
-              <h3 className="text-2xl font-light text-anthracite mb-3">
+              <h3 className="text-2xl font-semibold text-anthracite mb-3">
                 {service.title}
               </h3>
-              <p className="text-gray-500 font-light leading-relaxed mb-6">
+              <p className="text-anthracite leading-relaxed mb-6">
                 {service.description}
               </p>
-              <p className="text-sm font-semibold text-primary mb-3">
+              <p className="text-sm font-semibold text-anthracite mb-3">
                 {service.weCanOffer}
               </p>
               <ul className="space-y-2 mb-8">
                 {service.offers.map((offer, i) => (
-                  <li key={i} className="flex items-start gap-2 text-gray-500 font-light text-sm">
+                  <li key={i} className="flex items-start gap-2 text-anthracite  text-sm">
                     <span className="mt-1.5 w-1 h-1 rounded-full bg-primary flex-shrink-0" />
                     {offer}
                   </li>

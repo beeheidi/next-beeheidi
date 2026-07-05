@@ -52,3 +52,9 @@ body {
   background: var(--color-primary) !important;
   color: var(--color-primary) !important;
 }
+
+
+b {
+  font-weight: 600;
+  color: var(--color-anthracite);
+}

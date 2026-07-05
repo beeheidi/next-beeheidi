@@ -57,9 +57,6 @@ export default function PrestationContent({ prestation, t, getLabel, galleryImag
 
       {galleryImages.length > 0 && (
         <section>
-          <h2 className="text-2xl font-medium text-primary mb-4">
-            {t.prestation.gallery}
-          </h2>
           <GalleryMasonry images={galleryImages} altBase={prestation.title} />
         </section>
       )}
