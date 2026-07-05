@@ -7,6 +7,7 @@ const pageMappings = {
   "who-is-heidi": "qui-est-heidi",
   "terms-and-conditions": "cgv",
   "legal-notice": "mentions-legales",
+  "sitemap": "plan-du-site",
 };
 
 const intlMiddleware = createMiddleware({
