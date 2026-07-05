@@ -319,6 +319,7 @@ function buildSanityDocument(parsed) {
     activityReference: parsed.legacyId ? `LEGACY-${parsed.legacyId}` : undefined,
     active: true,
     featured: false,
+    activityDate: new Date().toISOString().split("T")[0],
     publishedAt: new Date().toISOString(),
   };
 }

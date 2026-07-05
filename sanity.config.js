@@ -2,6 +2,22 @@ import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
 import { schemaTypes } from "./schemas";
 
+const structure = (S) =>
+  S.list()
+    .title("Contenu")
+    .items([
+      ...S.documentTypeListItems().filter(
+        (listItem) => listItem.getId() !== "prestation"
+      ),
+      S.listItem()
+        .title("Activités")
+        .child(
+          S.documentTypeList("prestation")
+            .title("Activités")
+            .defaultOrdering([{ field: "activityDate", direction: "desc" }])
+        ),
+    ]);
+
 export default defineConfig({
   name: "default",
   title: "Site Vitrine",
@@ -11,7 +27,7 @@ export default defineConfig({
 
   basePath: "/studio",
 
-  plugins: [structureTool()],
+  plugins: [structureTool({ structure })],
 
   schema: {
     types: schemaTypes,
