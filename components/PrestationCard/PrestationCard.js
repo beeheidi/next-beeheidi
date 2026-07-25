@@ -31,7 +31,7 @@ export default function PrestationCard({ prestation }) {
   return (
     <Link
       href={`/explore/${currentSlug}`}
-      className="group block bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:scale-[1.02]"
+      className="group block bg-white rounded-lg overflow-hidden shadow-card hover:shadow-xl transition-all duration-300 hover:scale-[1.02]"
     >
       <div className="relative h-64 overflow-hidden">
         {imageUrl ? (

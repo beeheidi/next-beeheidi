@@ -16,10 +16,6 @@ const Hero = ({ title, whoAreWe }) => {
       alt: "Fleurs de Suisse",
     },
     {
-      image: "/images/accueil/Beeheidi.jpg",
-      alt: "Beeheidi",
-    },
-    {
       image: "/images/accueil/2020BeeheidiRandonnevalais.jpg",
       alt: "Randonnée Valais",
     },

@@ -64,27 +64,31 @@ export default async function Home({ params }) {
         whoAreWe={t("hero.exploreWorks")}
       />
 
-      <section className="py-16 relative -mt-28 overflow-visible z-10">
-        
+      <section className="py-16 relative -mt-28 overflow-visible z-10 mb-28">
+
         <WhoAreWe t={t} />
       </section>
 
       {prestations && prestations.length > 0 && (
-        <section className="relative overflow-hidden">
-          {/* Watermark heidi */}
-          <div className="relative justify-center flex mb-8 w-full pointer-events-none select-none z-0">
-            <Image
-              src="/images/logo/logo-heidi-white.svg"
-              alt=""
-              width={600}
-              height={300}
-              className="object-contain opacity-10 invert w-[250px] md:w-[500px]"
-            />
-          </div>
+        <section className="relative ">
+
           <div className="max-w-laptop mx-auto px-6 py-16 relative z-10">
-            <h2 className="text-4xl font-light text-center text-anthracite mb-12">
-              {t("home.featuredPrestations")}
-            </h2>
+            {/* Watermark heidi */}
+            <div className="relative mb-28">
+
+              <div className="absolute  pointer-events-none select-none z-0 -top-28 left-1/2 -translate-x-1/2">
+                <Image
+                  src="/images/logo/logo-heidi-white.svg"
+                  alt=""
+                  width={600}
+                  height={300}
+                  className="object-contain opacity-10 invert w-[250px] md:w-[500px]"
+                />
+              </div>
+              <h2 className="text-4xl font-light text-center text-anthracite">
+                {t("home.featuredPrestations")}
+              </h2>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {prestations.map((prestation) => (
                 <PrestationCard key={prestation._id} prestation={prestation} />

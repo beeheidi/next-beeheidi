@@ -12,7 +12,7 @@
 
   --max-width: 1440px;
 
-  --box-shadow-card: 0 25px 60px -15px rgba(0, 0, 0, 0.1);
+  --box-shadow-card: 10px 10px 25px 0 rgba(0, 0, 0, 0.1);
 }
 
 @theme inline {
@@ -28,7 +28,6 @@
 
   /* Box Shadow */
   --shadow-card: var(--box-shadow-card);
-
 }
 html {
   scroll-behavior: smooth;
@@ -52,7 +51,6 @@ body {
   background: var(--color-primary) !important;
   color: var(--color-primary) !important;
 }
-
 
 b {
   font-weight: 600;
