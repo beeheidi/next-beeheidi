@@ -49,7 +49,7 @@ const Hero = ({ title, whoAreWe }) => {
       </Swiper>
 
       {/* Logo + baseline — centrés, légèrement au-dessus du milieu */}
-      <div className="absolute w-fit left-[350px]  inset-0 flex flex-col items-center justify-center z-10 pointer-events-none px-6">
+      <div className="absolute w-fit left-6 md:left-[250px]  inset-0 flex flex-col  justify-center z-10 pointer-events-none px-6">
         <Image
           src="/images/logo/logo.svg"
           alt="Beeheidi"
@@ -64,7 +64,7 @@ const Hero = ({ title, whoAreWe }) => {
 
       {/* Scroll CTA — bas de page, design original */}
       <div className="absolute bottom-24 left-0 flex items-center gap-4 z-10">
-        <div className="w-12 md:w-96 h-px bg-white" />
+        <div className="w-12 md:w-65 h-px bg-white" />
         <div className="text-white flex items-center gap-4">
           <p className="text-lg font-light">{whoAreWe}</p>
           <ChevronDown

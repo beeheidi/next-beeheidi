@@ -77,8 +77,8 @@
   },
   "services": {
     "subtitle": "Nos services adaptés à chacune de vos attentes",
-    "title": "Vivez une expérience unique au cœur des Alpes en notre compagnie!",
-    "description": "De la simple journée au séjour complet avec nuitées, nous composons pour vous sur mesure ! Team Building, découverte du Valais, activités sportives ou gourmandes, tout est possible !",
+    "title": "Vivez une expérience unique au cœur des Alpes!",
+    "description": "De la simple journée au séjour complet avec nuitées, nous composons pour vous sur mesure !\n\nTeam Building, découverte du Valais, activités sportives ou gourmandes, tout est possible !",
     "youAre": "Découvrez les services que nous pouvons vous proposer, que vous soyez :",
     "whyUs": "Pourquoi nous choisir ?",
     "whyUsList": [
@@ -212,7 +212,7 @@
     "technicalDetails": "Détails techniques",
     "region": "Région",
     "difficulty": "Difficulté",
-    "contactToBook": "Contacter pour réserver"
+    "contactToBook": "Réservation"
   },
   "footer": {
     "descriptionLine1": "Découvrez l'authenticité valaisanne avec Heidi.",
@@ -274,7 +274,7 @@
     "sections": {
       "generalities": {
         "title": "GÉNÉRALITÉS",
-        "content": "Les conditions générales (CG) ci-après s'appliquent à toutes les prestations fournies par Beeheidi Sàrl aux clients situés en Suisse ou à l'étranger. Exception faite de la boutique en ligne. Le client passant commande déclarent se conformer aux présentes CG. Au surplus, les dispositions du Code des obligations (RS 220) sont applicables."
+        "content": "Les conditions générales (CG) ci-après s'appliquent à toutes les prestations fournies par Beeheidi Sàrl aux clients situés en Suisse ou à l'étranger. Exception faite de la boutique en ligne. Le client passant commande déclare se conformer aux présentes CG. Au surplus, les dispositions du Code des obligations (RS 220) sont applicables."
       },
       "contract": {
         "title": "CONCLUSION DU CONTRAT SUR LA BASE DES PRÉSENTES CG",
@@ -287,7 +287,7 @@
       },
       "payment": {
         "title": "MODALITÉS DE PAIEMENT",
-        "content": "Les modalités de payement sont fixées dans les conditions particulières de chaque offre.",
+        "content": "Les modalités de paiement sont fixées dans les conditions particulières de chaque offre.",
         "content2": "En cas de retard de paiement, Beeheidi Sàrl se réserve le droit de facturer des frais de rappel et, le cas échéant, de résilier le contrat avec effet immédiat.",
         "content3": "Toutes les prestations fournies par Beeheidi Sàrl sont facturées et seront uniquement encaissées par virement bancaire ou postal. Les paiements par carte de crédit sont acceptés, dans ce cas, des frais peuvent être perçus."
       },
@@ -295,7 +295,8 @@
         "title": "RESPONSABILITÉS",
         "content": "Beeheidi Sàrl exclut toute responsabilité pour les services de sociétés tierces qu'elle ne gère pas directement (art. 101 al. 2 CO), notamment les coûts supplémentaires, retards, inconvénients, etc.",
         "content2": "Beeheidi Sàrl décline toute responsabilité pour les dommages (accident, blessure, etc.) pouvant atteindre le client et dont l'origine échappe à son contrôle.",
-        "content3": "Beeheidi Sàrl décline toute responsabilité face aux risques imprévisibles et/ou liés au comportement du client ainsi que des participants. En d'autres termes, le client accepte d'assumer le risque inhérent à une activité de loisir en plein air, qui ne peut être évité malgré une préparation minutieuse et une conduite prudente et avisée. La pratique d'activités en montagne comporte des risques et le client ainsi que tous les participants déclarent avoir le matériel et les aptitudes physiques nécessaires à la pratique de ces activités. En outre, il ne doit pas être sous l'influence de substances qui pourraient compromettre la tenue de l'activité en toute sécurité.",
+        "content3": "Beeheidi Sàrl décline toute responsabilité face aux risques imprévisibles et/ou liés au comportement du client ainsi que des participants. En d'autres termes, le client accepte d'assumer le risque inhérent à une activité de loisir en plein air, qui ne peut être évité malgré une préparation minutieuse et une conduite prudente et avisée.",
+        "content3Highlight": "La pratique d'activités en montagne comporte des risques et le client ainsi que tous les participants déclarent avoir le matériel et les aptitudes physiques nécessaires à la pratique de ces activités. En outre, il ne doit pas être sous l'influence de substances qui pourraient compromettre la tenue de l'activité en toute sécurité.",
         "content4": "Afin d'assurer un déroulement aussi sûr que possible, le client doit se conformer en tout temps aux instructions de Beeheidi Sàrl et/ou de ses auxiliaires. Il est tenu de faire immédiatement part à Beeheidi Sàrl et/ou ses auxiliaires de toute préoccupation éventuelle ainsi que de tout problème physique et/ou psychique dont il pourrait souffrir. Le client est responsable d'informer tout participant à une prestation dispensée par Beeheidi Sàrl de cette clause de sécurité.",
         "content5": "Les personnes mineures doivent être accompagnées de leur représentant légal, le cas échéant d'un adulte ayant l'autorisation de ce dernier."
       },
@@ -307,14 +308,14 @@
       },
       "cancellation": {
         "title": "ANNULATION PAR LE CO-CONTRACTANT",
-        "content": "Toute annulation de prestations devra être adressée par écrit à Beeheidi Sàrl et engendrera des frais. Votre réservation est transmissible mais ne peut-être ni échangée ni remboursée.",
+        "content": "Toute annulation de prestations devra être adressée par écrit à Beeheidi Sàrl et engendrera des frais. Votre réservation est transmissible mais ne peut être ni échangée ni remboursée.",
         "content2": "Si le nombre minimum requis de participants n'est pas atteint, Beeheidi Sàrl se réserve le droit d'annuler le séjour en remboursant intégralement les participants déjà inscrits. Cependant, aucune autre compensation financière n'est prévue.",
         "content3": "Si les conditions météorologiques ne permettent pas le maintien de l'activité, Beeheidi Sàrl se réserve le droit d'annuler le séjour en remboursant intégralement le client déjà inscrit. Aucune autre compensation financière n'est prévue.",
         "content4": "Beeheidi Sàrl ne propose pas d'assurance annulation. Cas échéant, une telle assurance est à contracter directement par le client."
       },
       "forceMajeure": {
         "title": "CAS DE FORCE MAJEURE",
-        "content": "Si Beeheidi Sàrl estime qu'un voyage ne peut commencer ou doit être interrompu avant son terme en raison d'un cas de force majeure (par ex. catastrophe naturelle, pandémie, troubles politiques, lorsque ces évènements commandent de ne pas faire le voyage, etc), ou en raison d'actes de l'autorité́, Beeheidi ne peut en aucun cas être tenue pour responsable. En outre, elle est en droit de déduire des versements qu'elle restitue au participant les frais qu'elle a déjà̀ engagés. Tout droit à une compensation financière est exclu."
+        "content": "Si Beeheidi Sàrl estime qu'un voyage ne peut commencer ou doit être interrompu avant son terme en raison d'un cas de force majeure (par ex. catastrophe naturelle, pandémie, troubles politiques, lorsque ces évènements commandent de ne pas faire le voyage, etc), ou en raison d'actes de l'autorité́, Beeheidi Sàrl ne peut en aucun cas être tenue pour responsable. En outre, elle est en droit de déduire des versements qu'elle restitue au participant les frais qu'elle a déjà̀ engagés. Tout droit à une compensation financière est exclu."
       },
       "confidentiality": {
         "title": "CONFIDENTIALITÉ",
@@ -332,25 +333,25 @@
     }
   },
   "legal": {
-    "title": "Mentions Légales",
+    "title": "Mentions légales",
     "introduction": {
-      "content": "En consultant des informations, indications ou documents figurant sur le site Internet de Beeheidi, vous déclarez adhérer aux conditions ci-après. Beeheidi se réserve le droit de modifier, compléter ou supprimer tout ou partie du contenu du site Internet et des présentes conditions, et ce, à tout moment et selon sa libre appréciation. Il en va de même en cas d'améliorations et/ou de modifications apportées aux informations."
+      "content": "En consultant des informations, indications ou documents figurant sur le site internet de Beeheidi, vous déclarez adhérer aux conditions ci-après. Beeheidi se réserve le droit de modifier, compléter ou supprimer tout ou partie du contenu du site internet et des présentes conditions, et ce, à tout moment et selon sa libre appréciation. Il en va de même en cas d'améliorations et/ou de modifications apportées aux informations."
     },
     "copyright": {
       "title": "Droits d'auteur",
-      "content": "L'ensemble du contenu (textes, graphiques, photos, etc.) du site Internet est protégé par un droit d'auteur et, sauf disposition contraire, est la propriété exclusive et totale de Beeheidi. L'utilisateur doit également respecter les indications relatives à des droits de protection et d'utilisation de tiers susceptibles de figurer sur ce site Internet.",
-      "content2": "Beeheidi fournit les informations contenues sur le site Internet à des fins exclusives d'usage privé et d'information.",
-      "content3": "Il est permis de télécharger, d'enregistrer, d'imprimer ou de reproduire de quelque autre manière certaines pages et/ou parties du site Internet, à condition de ne supprimer ni des mentions de copyright, ni d'autres désignations légalement protégées. Beeheidi conserve tous les droits de propriété et d'utilisation et peut à tout moment révoquer cette autorisation.",
-      "content4": "La reproduction (partielle ou totale), la diffusion (électronique ou par d'autres moyens), la modification, la création de liens ou l'utilisation à des fins publiques ou commerciales des informations, quelles qu'elles soient, contenues sur le site Internet requièrent l'autorisation écrite préalable de Beeheidi."
+      "content": "L'ensemble du contenu (textes, graphiques, photos, etc.) du site internet est protégé par un droit d'auteur et, sauf disposition contraire, est la propriété exclusive et totale de Beeheidi. L'utilisateur doit également respecter les indications relatives à des droits de protection et d'utilisation de tiers susceptibles de figurer sur ce site internet.",
+      "content2": "Beeheidi fournit les informations contenues sur le site internet à des fins exclusives d'usage privé et d'information.",
+      "content3": "Il est permis de télécharger, d'enregistrer, d'imprimer ou de reproduire de quelque autre manière certaines pages et/ou parties du site internet, à condition de ne supprimer ni des mentions de copyright, ni d'autres désignations légalement protégées. Beeheidi conserve tous les droits de propriété et d'utilisation et peut à tout moment révoquer cette autorisation.",
+      "content4": "La reproduction (partielle ou totale), la diffusion (électronique ou par d'autres moyens), la modification, la création de liens ou l'utilisation à des fins publiques ou commerciales des informations, quelles qu'elles soient, contenues sur le site internet requièrent l'autorisation écrite préalable de Beeheidi."
     },
     "warranty": {
       "title": "Exclusion de garantie",
       "content": "Bien que Beeheidi s'emploie en toute bonne foi à garantir la fiabilité des informations contenues dans le site au moment de leur publication, Beeheidi ne peut certifier ou attester formellement de manière explicite ou implicite (également vis à vis de tiers) l'exactitude, la fiabilité et l'exhaustivité des informations contenues dans le site www.beeheidi.ch",
-      "content2": "Les opinions émises ou autres informations contenues dans le site internet www.beeheidi.ch peuvent être modifiées en tout temps sans avertissement préalable. Beeheidi se dégage de toute responsabilité et ne garantit nullement que les fonctions disponibles sur le site www.beeheidi.ch ne soient jamais interrompues ni l'absence de virus ou autres éléments dommageables dans le navigateur concerné."
+      "content2": "Les opinions émises ou autres informations contenues dans le site internet www.beeheidi.ch peuvent être modifiées en tout temps sans avertissement préalable. Beeheidi décline toute responsabilité et ne garantit nullement que les fonctions disponibles sur le site www.beeheidi.ch ne soient jamais interrompues ni l'absence de virus ou autres éléments dommageables dans le navigateur concerné."
     },
     "liability": {
       "title": "Restriction de la responsabilité",
-      "content": "Beeheidi se dégage de toute responsabilité (également en cas de faute) pour les dommages directs, indirects ou consécutifs pouvant résulter de l'accès aux éléments du site internet www.beeheidi.ch ou de leur utilisation, respectivement de l'impossibilité d'y accéder ou de les utiliser ou encore résultant de la connexion à d'autres sites internet."
+      "content": "Beeheidi décline toute responsabilité (également en cas de faute) pour les dommages directs, indirects ou consécutifs pouvant résulter de l'accès aux éléments du site internet www.beeheidi.ch ou de leur utilisation, respectivement de l'impossibilité d'y accéder ou de les utiliser ou encore résultant de la connexion à d'autres sites internet."
     },
     "externalLinks": {
       "title": "Liens vers d'autres sites internet",

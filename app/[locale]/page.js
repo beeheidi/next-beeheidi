@@ -64,7 +64,7 @@ export default async function Home({ params }) {
         whoAreWe={t("hero.exploreWorks")}
       />
 
-      <section className="py-16 relative -mt-28 overflow-visible z-10 mb-28">
+      <section className="py-16 relative -mt-28 overflow-visible z-10 mb-8">
 
         <WhoAreWe t={t} />
       </section>
@@ -72,20 +72,17 @@ export default async function Home({ params }) {
       {prestations && prestations.length > 0 && (
         <section className="relative ">
 
-          <div className="max-w-laptop mx-auto px-6 py-16 relative z-10">
+          <div className="max-w-laptop mx-auto px-6 pt-4 pb-16 relative z-10">
             {/* Watermark heidi */}
-            <div className="relative mb-28">
-
-              <div className="absolute  pointer-events-none select-none z-0 -top-28 left-1/2 -translate-x-1/2">
-                <Image
-                  src="/images/logo/logo-heidi-white.svg"
-                  alt=""
-                  width={600}
-                  height={300}
-                  className="object-contain opacity-10 invert w-[250px] md:w-[500px]"
-                />
-              </div>
-              <h2 className="text-4xl font-light text-center text-anthracite">
+            <div className="relative mb-16 w-full min-h-[140px] md:min-h-[220px] flex justify-center">
+              <Image
+                src="/images/logo/logo-heidi-white.svg"
+                alt=""
+                width={800}
+                height={400}
+                className="pointer-events-none select-none absolute inset-0 m-auto h-auto w-screen md:w-[700px] object-contain opacity-5 invert"
+              />
+              <h2 className="relative z-10 mt-[140px] text-2xl md:text-4xl font-light text-center text-anthracite">
                 {t("home.featuredPrestations")}
               </h2>
             </div>
@@ -108,11 +105,21 @@ export default async function Home({ params }) {
         </section>
       )}
 
-      <section className="bg-white py-16 relative">
+      <section className="bg-white py-24 relative mt-16">
         <div className="max-w-laptop mx-auto px-6">
-          <h2 className="text-4xl font-light text-center text-anthracite mb-12">
-            {t("home.discoverServices")}
-          </h2>
+          {/* Watermark heidi */}
+          <div className="relative mb-12 w-full min-h-[140px] md:min-h-[220px] flex justify-center">
+            <Image
+              src="/images/logo/logo-heidi-white.svg"
+              alt=""
+              width={800}
+              height={400}
+              className="pointer-events-none select-none absolute inset-0 m-auto h-auto w-screen md:w-[700px] object-contain opacity-5 invert"
+            />
+            <h2 className="relative z-10 mt-[140px] text-2xl md:text-4xl font-light text-center text-anthracite">
+              {t("home.discoverServices")}
+            </h2>
+          </div>
 
           <SliderCardsServices services={services} />
 

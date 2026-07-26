@@ -26,6 +26,8 @@ export default function PageTitle({
   className = "",
   textMaxWidth = "2xl",
   align = "center",
+  titleColor = "anthracite",
+  titleBold = false,
 }) {
   const maxWidthClasses = {
     sm: "max-w-sm",
@@ -64,6 +66,9 @@ export default function PageTitle({
         : "text-center";
 
 
+  const titleColorClass = titleColor === "primary" ? "text-primary" : "text-anthracite";
+  const titleWeightClass = titleBold ? "font-bold" : "font-light";
+
   const descClass =
     align === "right"
       ? "ml-auto"
@@ -91,7 +96,7 @@ export default function PageTitle({
         </span>
       )}
       {title && (
-        <h1 className="text-3xl md:text-4xl font-light text-anthracite mb-4">
+        <h1 className={`text-3xl md:text-4xl ${titleWeightClass} ${titleColorClass} mb-4`}>
           {title}
         </h1>
       )}

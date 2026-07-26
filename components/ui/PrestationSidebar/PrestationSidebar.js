@@ -12,11 +12,6 @@ export default function PrestationSidebar({ prestation, t, cardPrice, durationLa
             <h3 className="text-xl font-medium text-primary mb-4">
               {t.prestation.prices}
             </h3>
-            {cardPrice && (
-              <p className="text-2xl font-light text-primary mb-4">
-                Dès <span className="font-medium">{cardPrice}</span>
-              </p>
-            )}
             {hasCmsContent(prestation.priceGrid) ? (
               <CmsContent value={prestation.priceGrid} />
             ) : (

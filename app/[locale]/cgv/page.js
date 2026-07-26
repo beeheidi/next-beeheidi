@@ -13,12 +13,12 @@ export default async function CGVPage({ params }) {
     <main className="bg-background pt-8 pb-8 md:pt-24 md:pb-16 relative">
       <TopImage position="top-left" size="large" />
       <div className="max-w-laptop mx-auto px-6 relative z-10">
-        <PageTitle title={t.cgv.title} textMaxWidth="7xl" align="left" />
+        <PageTitle title={t.cgv.title} textMaxWidth="7xl" align="left" titleColor="primary" titleBold />
 
-        <div className="prose prose-lg max-w-none mt-12 space-y-12">
+        <div className="prose prose-lg max-w-none mt-12 space-y-12 font-light">
           {/* Généralités */}
           <section>
-            <h2 className="text-3xl font-light text-anthracite mb-4">
+            <h2 className="text-3xl font-bold text-anthracite mb-4">
               {sections.generalities.title}
             </h2>
             <p className="text-gray-700 leading-relaxed">
@@ -28,7 +28,7 @@ export default async function CGVPage({ params }) {
 
           {/* Conclusion du contrat */}
           <section>
-            <h2 className="text-3xl font-light text-anthracite mb-4">
+            <h2 className="text-3xl font-bold text-anthracite mb-4">
               {sections.contract.title}
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
@@ -41,7 +41,7 @@ export default async function CGVPage({ params }) {
 
           {/* Prix */}
           <section>
-            <h2 className="text-3xl font-light text-anthracite mb-4">
+            <h2 className="text-3xl font-bold text-anthracite mb-4">
               {sections.prices.title}
             </h2>
             <p className="text-gray-700 leading-relaxed">
@@ -51,7 +51,7 @@ export default async function CGVPage({ params }) {
 
           {/* Modalités de paiement */}
           <section>
-            <h2 className="text-3xl font-light text-anthracite mb-4">
+            <h2 className="text-3xl font-bold text-anthracite mb-4">
               {sections.payment.title}
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
@@ -67,7 +67,7 @@ export default async function CGVPage({ params }) {
 
           {/* Responsabilités */}
           <section>
-            <h2 className="text-3xl font-light text-anthracite mb-4">
+            <h2 className="text-3xl font-bold text-anthracite mb-4">
               {sections.liability.title}
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
@@ -77,7 +77,8 @@ export default async function CGVPage({ params }) {
               {sections.liability.content2}
             </p>
             <p className="text-gray-700 leading-relaxed mb-4">
-              {sections.liability.content3}
+              {sections.liability.content3}{" "}
+              <strong className="font-semibold">{sections.liability.content3Highlight}</strong>
             </p>
             <p className="text-gray-700 leading-relaxed mb-4">
               {sections.liability.content4}
@@ -89,7 +90,7 @@ export default async function CGVPage({ params }) {
 
           {/* Assurances */}
           <section>
-            <h2 className="text-3xl font-light text-anthracite mb-4">
+            <h2 className="text-3xl font-bold text-anthracite mb-4">
               {sections.insurance.title}
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
@@ -105,7 +106,7 @@ export default async function CGVPage({ params }) {
 
           {/* Annulation */}
           <section>
-            <h2 className="text-3xl font-light text-anthracite mb-4">
+            <h2 className="text-3xl font-bold text-anthracite mb-4">
               {sections.cancellation.title}
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
@@ -124,7 +125,7 @@ export default async function CGVPage({ params }) {
 
           {/* Force majeure */}
           <section>
-            <h2 className="text-3xl font-light text-anthracite mb-4">
+            <h2 className="text-3xl font-bold text-anthracite mb-4">
               {sections.forceMajeure.title}
             </h2>
             <p className="text-gray-700 leading-relaxed">
@@ -134,7 +135,7 @@ export default async function CGVPage({ params }) {
 
           {/* Confidentialité */}
           <section>
-            <h2 className="text-3xl font-light text-anthracite mb-4">
+            <h2 className="text-3xl font-bold text-anthracite mb-4">
               {sections.confidentiality.title}
             </h2>
             <p className="text-gray-700 leading-relaxed">
@@ -144,7 +145,7 @@ export default async function CGVPage({ params }) {
 
           {/* Interprétation */}
           <section>
-            <h2 className="text-3xl font-light text-anthracite mb-4">
+            <h2 className="text-3xl font-bold text-anthracite mb-4">
               {sections.interpretation.title}
             </h2>
             <p className="text-gray-700 leading-relaxed">
@@ -154,7 +155,7 @@ export default async function CGVPage({ params }) {
 
           {/* Juridiction */}
           <section>
-            <h2 className="text-3xl font-light text-anthracite mb-4">
+            <h2 className="text-3xl font-bold text-anthracite mb-4">
               {sections.jurisdiction.title}
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">

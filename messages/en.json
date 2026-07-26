@@ -212,7 +212,7 @@
     "technicalDetails": "Technical details",
     "region": "Region",
     "difficulty": "Difficulty",
-    "contactToBook": "Contact to book"
+    "contactToBook": "Book"
   },
   "footer": {
     "descriptionLine1": "Discover the authenticity of Valais with Heidi.",
@@ -274,7 +274,7 @@
     "sections": {
       "generalities": {
         "title": "GENERALITIES",
-        "content": "The terms and conditions (T&Cs) stated below apply to all services provided by Beeheidi Sàrl and to clients who reside in and outside of Switzerland, with the exception of the online shop. Any individual placing an order declares they have read and agreed to the present T&Cs. In addition, provisions from the code of obligations (RS 220) apply."
+        "content": "The terms and conditions (T&Cs) stated below apply to all services provided by Beeheidi Sàrl and to clients who reside in and outside of Switzerland, with the exception of the online shop. Any individual placing an order declares they have read and agreed to the present T&Cs. In addition, provisions from the Swiss Code of Obligations (RS 220) apply."
       },
       "contract": {
         "title": "CONCLUSION OF THE CONTRACT BASED ON THE PRESENT T&Cs",
@@ -293,9 +293,10 @@
       },
       "liability": {
         "title": "LIABILITY RELEASE",
-        "content": "Beeheidi Sàrl cannot be held responsible for services provided by independent contractors or third parties that are not directly run by Beeheidi (art. 101 al.2 CO), such as extra costs, delays, unforeseen circumstances, etc.",
+        "content": "Beeheidi Sàrl cannot be held responsible for services provided by independent contractors or third parties that are not directly run by Beeheidi Sàrl (art. 101 al.2 CO), such as extra costs, delays, unforeseen circumstances, etc.",
         "content2": "Beeheidi Sàrl accepts no responsibility for damages (accident, injury, etc.) the client is exposed to that may be caused by circumstances out of Beeheidi's control.",
-        "content3": "Beeheidi Sàrl cannot be held liable for any unpredictable risks and/or risks linked to the client's or the participant's behaviour. In other words, the client accepts full responsibility for the risks associated with outdoor activities which may be unavoidable despite meticulous and cautious planning. Any outdoor activity may involve an element of risk, the client as well as all the participants confirm that they have the appropriate equipment and sufficient physical abilities for the practice of such activities. Furthermore, the participant must not be under the influence of substances that could compromise their safety and that of others.",
+        "content3": "Beeheidi Sàrl cannot be held liable for any unpredictable risks and/or risks linked to the client's or the participant's behaviour. In other words, the client accepts full responsibility for the risks associated with outdoor activities which may be unavoidable despite meticulous and cautious planning.",
+        "content3Highlight": "Any outdoor activity may involve an element of risk, the client as well as all the participants confirm that they have the appropriate equipment and sufficient physical abilities for the practice of such activities. Furthermore, the participant must not be under the influence of substances that could compromise their safety and that of others.",
         "content4": "In order to carry out the activity in the safest environment possible, the client must respect the instructions provided by Beeheidi Sàrl and any affiliated partner at all times. The client is required to immediately inform Beeheidi Sàrl and/or any affiliated partner of any potential concern, physical condition and/or psychological issue that may affect him. The client is held responsible for informing all participants in an activity managed by Beeheidi Sàrl about this safety clause.",
         "content5": "Minors must be accompanied by their legal representative, or by an adult appointed by the legal representative."
       },
@@ -310,11 +311,11 @@
         "content": "The co-contracting party must address a written cancellation request to Beeheidi Sàrl. The client accepts that fees will apply. The reservation is transferable but cannot be exchanged or refunded.",
         "content2": "If the minimum number of participants has not been reached, Beeheidi Sàrl reserves the right to cancel the stay or the activity, therefore refunding the registered participants. No further financial compensation is to be expected.",
         "content3": "If the weather conditions do not allow the activity to take place, Beheeidi Sàrl reserves the right to cancel the stay or the activity and will provide a full refund. No further financial compensation is to be expected. Beheeidi Sàrl does not provide a cancellation insurance.",
-        "content4": "Clients are responsible for their own cancellation insurance."
+        "content4": "Clients are responsible for arranging their own cancellation insurance."
       },
       "forceMajeure": {
         "title": "FORCE MAJEURE CLAUSE",
-        "content": "If Beeheidi Sàrl considers that an activity or a trip should not start or should be interrupted before its end due to unforeseen circumstances (eg. Natural disaster, pandemic, political issues, or travel is not recommended, etc.), or under the order of competent authorities, Beeheidi cannot be held responsible. Furthermore, the company has the right to deduct from the amount refunded to the participant any costs/expenditures already made on their behalf. Any right to a financial compensation will not be taken into consideration."
+        "content": "If Beeheidi Sàrl considers that an activity or a trip should not start or should be interrupted before its end due to unforeseen circumstances (eg. Natural disaster, pandemic, political issues, or travel is not recommended, etc.), or under the order of competent authorities, Beeheidi Sàrl cannot be held responsible. Furthermore, the company has the right to deduct from the amount refunded to the participant any costs/expenditures already made on their behalf. Any entitlement to financial compensation is excluded."
       },
       "confidentiality": {
         "title": "CONFIDENTIALITY CLAUSE",

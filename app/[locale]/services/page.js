@@ -88,7 +88,7 @@ export default async function ServicesPage({ params }) {
 
       {/* Navigation services */}
       <section className="max-w-laptop mx-auto px-6 mb-16">
-        <p className="text-center text-gray-500 font-light mb-8">
+        <p className="text-left text-gray-500 font-light mb-8">
           {t("services.youAre")}
         </p>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
@@ -134,7 +134,7 @@ export default async function ServicesPage({ params }) {
           >
             {/* Texte — gauche */}
             <div className="w-full lg:w-1/2 bg-white px-10 py-10 flex flex-col justify-center">
-              <h3 className="text-2xl font-semibold text-anthracite mb-3">
+              <h3 className="text-2xl font-medium text-anthracite mb-3">
                 {service.title}
               </h3>
               <p className="text-anthracite leading-relaxed mb-6">
@@ -171,10 +171,28 @@ export default async function ServicesPage({ params }) {
         ))}
       </section>
 
+      <section className="bg-white py-16 relative mt-16">
+        <div className="max-w-laptop mx-auto px-6">
+          {/* Watermark heidi */}
+          <div className="relative w-full min-h-[140px] md:min-h-[220px] flex justify-center">
+            <Image
+              src="/images/logo/logo-heidi-white.svg"
+              alt=""
+              width={800}
+              height={400}
+              className="pointer-events-none select-none absolute inset-0 m-auto h-auto w-screen md:w-[700px] object-contain opacity-5 invert"
+            />
+            <h2 className="relative z-10 mt-[140px] text-2xl md:text-4xl font-light text-center text-anthracite">
+              Une expérience authentique
+            </h2>
+          </div>
+        </div>
+      </section>
+
       {/* CTA final */}
       <section>
 
-        <div className="w-full h-full mt-12">
+        <div className="w-full h-full">
           <Image
             src="/images/services/BeeheidiEnjoySwitzerland2.jpg"
             alt="Beeheidi"
