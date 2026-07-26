@@ -30,12 +30,12 @@ export default async function Home({ params }) {
       title: t("home.services.tourism.title"),
       description: t("home.services.tourism.description"),
     },
-    {
+/*     {
       image: "/images/services/PlantesFleursTisanesHerbier21b.jpg",
       alt: "Randonnée",
       title: t("home.services.municipality.title"),
       description: t("home.services.municipality.description"),
-    },
+    }, */
     {
       image: "/images/services/2020BeeheidiChampry06.jpg",
       alt: "Randonnée",

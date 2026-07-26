@@ -34,7 +34,7 @@ export default async function ServicesPage({ params }) {
       image: "/images/services/2020BeeheidiCrans-Montana079.jpg",
       alt: "Office du tourisme",
     },
-    {
+/*     {
       id: "municipality",
       title: t("services.municipality.title"),
       description: t("services.municipality.description"),
@@ -42,7 +42,7 @@ export default async function ServicesPage({ params }) {
       offers: t.raw("services.municipality.offers"),
       image: "/images/services/PlantesFleursTisanesHerbier21b.jpg",
       alt: "Commune",
-    },
+    }, */
     {
       id: "accommodation",
       title: t("services.accommodation.title"),
@@ -194,7 +194,7 @@ export default async function ServicesPage({ params }) {
 
         <div className="w-full h-full">
           <Image
-            src="/images/services/BeeheidiEnjoySwitzerland2.jpg"
+            src="/images/services/EdelweissZermatt.jpg"
             alt="Beeheidi"
             width={1920}
             height={1080}
