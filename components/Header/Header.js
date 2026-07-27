@@ -15,12 +15,18 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [locale, setLocale] = useState(defaultLocale);
   const [scrolledPast100vh, setScrolledPast100vh] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [isHovering, setIsHovering] = useState(false);
+  const [canHover, setCanHover] = useState(false);
   const svgRef = useRef(null);
   const menuItemsRef = useRef([]);
+  const lastScrollY = useRef(0);
 
   // next-intl's usePathname retourne le path sans préfixe de locale
   const isHomePage = pathname === "/";
   const showLogo = !isHomePage;
+  const showHeader = !isScrolled || isVisible || isHovering || isOpen;
 
   const getSvgColor = () => {
     if (isOpen) return "stroke-black";
@@ -87,18 +93,42 @@ const Header = () => {
   }, [isOpen]);
 
   useEffect(() => {
-    if (!isHomePage) {
-      setScrolledPast100vh(false);
-      return;
-    }
+    const hoverMq = window.matchMedia("(hover: hover) and (pointer: fine)");
+    const syncCanHover = () => setCanHover(hoverMq.matches);
+    syncCanHover();
+    hoverMq.addEventListener("change", syncCanHover);
+    return () => hoverMq.removeEventListener("change", syncCanHover);
+  }, []);
+
+  useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY || window.pageYOffset;
-      setScrolledPast100vh(scrollY > window.innerHeight - 100);
+      const atTop = scrollY < 10;
+
+      setIsScrolled(!atTop);
+      setScrolledPast100vh(
+        isHomePage ? scrollY > window.innerHeight - 100 : false
+      );
+
+      if (isOpen || atTop) {
+        setIsVisible(true);
+      } else if (canHover) {
+        // Desktop : masqué hors du haut, réapparait au hover
+        setIsVisible(false);
+      } else if (scrollY < lastScrollY.current) {
+        // Mobile : réapparait au scroll vers le haut
+        setIsVisible(true);
+      } else if (scrollY > lastScrollY.current + 4) {
+        setIsVisible(false);
+      }
+
+      lastScrollY.current = scrollY;
     };
+
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [isHomePage]);
+  }, [isHomePage, isOpen, canHover]);
 
   // Fermer le menu sur changement de route (retour navigateur inclus)
   useEffect(() => {
@@ -113,55 +143,73 @@ const Header = () => {
 
   return (
     <>
-      <header className="bg-transparent backdrop-blur-xs relative z-50">
-        <div className="flex items-center justify-between max-w-laptop mx-auto px-6">
-          {showLogo && (
-            <Link href="/">
-              <Image
-                src="/images/logo/logo-dore.svg"
-                alt="Logo Beeheidi"
-                width={500}
-                height={500}
-                className="object-contain w-full h-18"
+      {/* Conserve la place du header dans le flux (aligné sur mt-[-96px] de la home) */}
+      <div className="h-24" aria-hidden="true" />
+
+      <div
+        className="fixed top-0 left-0 right-0 z-50"
+        onMouseEnter={() => canHover && setIsHovering(true)}
+        onMouseLeave={() => setIsHovering(false)}
+      >
+        {/* Bande invisible pour révéler le header au hover (desktop) */}
+        {canHover && isScrolled && !showHeader && (
+          <div className="h-5" aria-hidden="true" />
+        )}
+
+        <header
+          className={`absolute top-0 left-0 right-0 bg-transparent backdrop-blur-xs transition-transform duration-300 ease-out ${
+            showHeader ? "translate-y-0" : "-translate-y-full pointer-events-none"
+          }`}
+        >
+          <div className="flex items-center justify-between max-w-laptop mx-auto px-6">
+            {showLogo && (
+              <Link href="/">
+                <Image
+                  src="/images/logo/logo-dore.svg"
+                  alt="Logo Beeheidi"
+                  width={500}
+                  height={500}
+                  className="object-contain w-full h-18"
+                />
+              </Link>
+            )}
+            <div className="w-full flex items-center justify-end gap-4">
+              <Culture
+                variant={
+                  isHomePage && !scrolledPast100vh ? "light" : "dark"
+                }
               />
-            </Link>
-          )}
-          <div className="w-full flex items-center justify-end gap-4">
-            <Culture
-              variant={
-                isHomePage && !scrolledPast100vh ? "light" : "dark"
-              }
-            />
-            <svg
-              ref={svgRef}
-              className={`w-24 h-24 scale-50 z-52 outline-none transition-colors duration-300 cursor-pointer ${getSvgColor()}`}
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 10 10"
-              strokeWidth=".6"
-              fill="rgba(0,0,0,0)"
-              strokeLinecap="round"
-              onClick={handleClick}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => e.key === "Enter" && handleClick()}
-              aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
-              aria-expanded={isOpen}
-            >
-              <path d="M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7">
-                <animate dur="0.2s" attributeName="d" values="M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7;M3,3L5,5L7,3M5,5L5,5M3,7L5,5L7,7" fill="freeze" begin="start.begin" />
-                <animate dur="0.2s" attributeName="d" values="M3,3L5,5L7,3M5,5L5,5M3,7L5,5L7,7;M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7" fill="freeze" begin="reverse.begin" />
-              </path>
-              <rect width="10" height="10" stroke="none">
-                <animate dur="2s" id="reverse" attributeName="width" begin="indefinite" />
-              </rect>
-              <rect width="10" height="10" stroke="none">
-                <animate dur="0.001s" id="start" attributeName="width" values="10;0" fill="freeze" begin="indefinite" />
-                <animate dur="0.001s" attributeName="width" values="0;10" fill="freeze" begin="reverse.begin" />
-              </rect>
-            </svg>
+              <svg
+                ref={svgRef}
+                className={`w-24 h-24 scale-50 z-52 outline-none transition-colors duration-300 cursor-pointer ${getSvgColor()}`}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 10 10"
+                strokeWidth=".6"
+                fill="rgba(0,0,0,0)"
+                strokeLinecap="round"
+                onClick={handleClick}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => e.key === "Enter" && handleClick()}
+                aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
+                aria-expanded={isOpen}
+              >
+                <path d="M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7">
+                  <animate dur="0.2s" attributeName="d" values="M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7;M3,3L5,5L7,3M5,5L5,5M3,7L5,5L7,7" fill="freeze" begin="start.begin" />
+                  <animate dur="0.2s" attributeName="d" values="M3,3L5,5L7,3M5,5L5,5M3,7L5,5L7,7;M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7" fill="freeze" begin="reverse.begin" />
+                </path>
+                <rect width="10" height="10" stroke="none">
+                  <animate dur="2s" id="reverse" attributeName="width" begin="indefinite" />
+                </rect>
+                <rect width="10" height="10" stroke="none">
+                  <animate dur="0.001s" id="start" attributeName="width" values="10;0" fill="freeze" begin="indefinite" />
+                  <animate dur="0.001s" attributeName="width" values="0;10" fill="freeze" begin="reverse.begin" />
+                </rect>
+              </svg>
+            </div>
           </div>
-        </div>
-      </header>
+        </header>
+      </div>
 
       {/* Backdrop semi-opaque */}
       <div
