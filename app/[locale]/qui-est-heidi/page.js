@@ -101,8 +101,10 @@ export default function QuiEstHeidi() {
         <ImageDuo
           image1Src="/images/qui-est-heidi/portrait.jpg"
           image1Alt="Sandra, fondatrice de Beeheidi"
-          image2Src="/images/qui-est-heidi/qui-est-heidi-img-2.jpg"
-          image2Alt="Stéphane, guide de montagne"
+          image2Src="/images/qui-est-heidi/pose-ciel.jpeg"
+          image2Alt="Vue panoramique depuis un plateau alpin"
+          image3Src="/images/qui-est-heidi/qui-est-heidi-img-2.jpg"
+          image3Alt="Stéphane et Sandra, guides Beeheidi"
         />
       </div>
     </main>
