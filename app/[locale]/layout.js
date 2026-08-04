@@ -5,6 +5,7 @@ import { Roboto } from "next/font/google";
 import "../globals.css";
 import ConditionalHeader from "@/components/Header/ConditionalHeader";
 import Footer from "@/components/Footer/Footer";
+import CookieConsent from "@/components/CookieConsent/CookieConsent";
 import { locales } from "../../i18n";
 
 const roboto = Roboto({
@@ -38,6 +39,7 @@ export default async function LocaleLayout({ children, params }) {
       <ConditionalHeader />
       {children}
       <Footer />
+      <CookieConsent />
     </NextIntlClientProvider>
   );
 }

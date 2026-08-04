@@ -73,6 +73,17 @@
       "title": "Stéphane, mountain guide",
       "description": "A certified guide and lover of the terrain, Stéphane shares his intimate knowledge of Valais through every outing.<br/><br/>Together, Sandra and Stéphane form a complementary duo, united by the same passion: showing you an authentic Valais, off the beaten track.",
       "button": "Our experiences"
+    },
+    "guidesTeam": {
+      "title": "The team who supports us",
+      "paragraph1": "Beeheidi has surrounded itself with guides, mountain companions and enthusiasts spread across the canton, chosen for their skills and, above all, for their human qualities, their love of the region and their eagerness to share it.",
+      "paragraph2": "Genuine lovers of nature and local terroir, they are excellent ambassadors for their region. They know the best alpine pastures for tasting a fruit tart made by grandma, as well as where the finest sérac cheese is crafted. Born with a built-in GPS, they spot the best places to admire a stunning sunrise or sunset and know exactly where to stop for the magic to happen.",
+      "paragraph3": "Beeheidi also works with various independent providers — mountain guides, outdoor guides, restaurateurs and more. They are all professionals who will give you wonderful experiences and introduce you to unique locations off the beaten track.",
+      "paragraph4": "Above all, we love sharing our playground and want to help visitors discover it through our eyes, in all simplicity."
+    },
+    "inAFewWords": {
+      "title": "Beeheidi in a few words",
+      "content": "Beeheidi is not just a service company, but also a brand that brings together a community connected to the Alps, the local terroir and its traditions."
     }
   },
   "services": {
@@ -80,12 +91,12 @@
     "title": "Live a unique experience in the heart of the Alps with us!",
     "description": "From a simple day to a complete stay with overnight stays, we compose for you! Team Building, Valais discovery, sports activities or gourmet, everything is possible!",
     "youAre": "Discover the services we can offer you, whether you are :",
-    "whyUs": "Why choose us ?",
+    "whyUs": "Why choose us?",
     "whyUsList": [
       "We are local actors at human scale and put forward our terroir.",
       "Authenticity, Quality & Safety are part of our key values!",
       "We work with professionalism while prioritizing the client's safety and we are insured for the activities we offer.",
-      "But above all, our team is made up of passionate people who perfectly know the Valais and its wonders and have a heart to share them, in all simplicity."
+      "But above all, our team is made up of passionate people who perfectly know the Valais and its wonders and have it at heart to share them, in all simplicity."
     ],
     "experience": "Live a unique experience in the heart of the Alps with us!",
     "experienceDescription": "Whether you want a simple afternoon discovery or stay in Valais, we will organize the activities you desire! Share your wishes with us by contacting us immediately.",
@@ -302,7 +313,7 @@
       },
       "insurance": {
         "title": "INSURANCE",
-        "content": "Beheeidi Sàrl and any affiliated partner are covered by a professional third-party liability insurance. However, the client accepts full responsibility in case of loss, injury, death, or damage caused to a third party or himself, that may occur during one of the activities organised by Beeheidi Sàrl.",
+        "content": "Beeheidi Sàrl and any affiliated partner are covered by a professional third-party liability insurance. However, the client accepts full responsibility in case of loss, injury, death, or damage caused to a third party or himself, that may occur during one of the activities organised by Beeheidi Sàrl.",
         "content2": "Each participant must have a personal accident and health insurance that covers mountain rescue services (such as AirGlacier, Rega, …) as well as a third-party liability insurance, that includes all the services and activities provided.",
         "content3": "Furthermore, each participant accepts full responsibility in case of damage, loss or theft of equipment belonging to Beeheidi Sàrl or an affiliated partner."
       },
@@ -310,7 +321,7 @@
         "title": "CANCELLATION FROM CO-CONTRACTING PARTY",
         "content": "The co-contracting party must address a written cancellation request to Beeheidi Sàrl. The client accepts that fees will apply. The reservation is transferable but cannot be exchanged or refunded.",
         "content2": "If the minimum number of participants has not been reached, Beeheidi Sàrl reserves the right to cancel the stay or the activity, therefore refunding the registered participants. No further financial compensation is to be expected.",
-        "content3": "If the weather conditions do not allow the activity to take place, Beheeidi Sàrl reserves the right to cancel the stay or the activity and will provide a full refund. No further financial compensation is to be expected. Beheeidi Sàrl does not provide a cancellation insurance.",
+        "content3": "If the weather conditions do not allow the activity to take place, Beeheidi Sàrl reserves the right to cancel the stay or the activity and will provide a full refund. No further financial compensation is to be expected. Beeheidi Sàrl does not provide a cancellation insurance.",
         "content4": "Clients are responsible for arranging their own cancellation insurance."
       },
       "forceMajeure": {
@@ -383,6 +394,11 @@
       "newsletter": {
         "title": "Newsletter and Electronic Mail",
         "content": "Electronic messages or newsletters from Beeheidi are only sent to you if you wish. If you no longer wish to receive them, you can unsubscribe at any time. Remember that data transmitted unencrypted can be read or modified by unauthorized third parties."
+      },
+      "cookies": {
+        "title": "Cookies",
+        "content": "We use cookies to improve your browsing experience and, with your consent, measure site traffic. You can change your preferences at any time.",
+        "manageLink": "Manage my cookie preferences"
       }
     },
     "general": {

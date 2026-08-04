@@ -143,13 +143,13 @@ const Footer = () => {
 
           <div className="flex items-center gap-4">
             <Culture variant="dark" />
-            <Link
+            <a
               href="/studio"
               className="text-gray-200 text-xs hover:text-gray-400 transition-colors duration-200"
               aria-label="Administration"
             >
               ✦
-            </Link>
+            </a>
           </div>
         </div>
       </div>

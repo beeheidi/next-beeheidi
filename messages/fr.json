@@ -7,7 +7,7 @@
     "contact": "Contact"
   },
   "hero": {
-    "title": "Vivez une experience unique",
+    "title": "Vivez une expérience unique",
     "exploreWorks": "Nos expériences coups de coeur"
   },
   "home": {
@@ -63,7 +63,7 @@
     "subtitle": "Locaux, authentiques et passionnés",
     "title": "Qui est Heidi ?",
     "description": "<b>Fondatrice & \"Happiness Dealer\" de Beeheidi, Sandra, c’est la petite fille d’un alpiniste qui lui a soufflé le goût de la montagne.</b>",
-    "description2": "<p>À force de passer ses étés en altitude, à travers les champs de fleurs, il allait de soi que tout le monde la renomme Heidi. Elle ne pratique pas le trail pour le goût de la compétition mais plutôt parce qu’elle sait que les meilleures tartes aux myrtilles se trouvent cachées au cœur des alpages.</p><p>A travers ce projet, Heidi souhaite créer des liens et offrir des émotions inoubliables, fraiches et remplies de simplicité avec une grande richesse humaine, ceci au cœur de l'un des plus beaux parcs d’attractions naturels, les Alpes. Sa philosophie est qu’il est de notre devoir de nous rendre la vie douce et heureuse.</p><p>À l’aube de ses 40 ans et comprenant que cet éphémère passage ici ne doit pas se composer de regrets, elle prend la sage décision de se lancer et de mettre en œuvre tout ce qu’elle a toujours dessiné dans un cahier et qui était resté dans le tiroir nommé : \"Un jour peut-être\".</p><p>Le 21 mai 2019, la société Beeheidi est créée par Sandra Rouiller & Stéphane Berclaz, son associé mais surtout son compagnon de vie. <br/><b>Beeheidi, une particule chantante offrant ainsi un hommage au grand-papa Happy-culteur.</b></p>",
+    "description2": "<p>À force de passer ses étés en altitude, à travers les champs de fleurs, il allait de soi que tout le monde la renomme Heidi. Elle ne pratique pas le trail pour le goût de la compétition mais plutôt parce qu’elle sait que les meilleures tartes aux myrtilles se trouvent cachées au cœur des alpages.</p><p>À travers ce projet, Heidi souhaite créer des liens et offrir des émotions inoubliables, fraîches et remplies de simplicité avec une grande richesse humaine, ceci au cœur de l'un des plus beaux parcs d’attractions naturels, les Alpes. Sa philosophie est qu’il est de notre devoir de nous rendre la vie douce et heureuse.</p><p>À l’aube de ses 40 ans et comprenant que cet éphémère passage ici ne doit pas se composer de regrets, elle prend la sage décision de se lancer et de mettre en œuvre tout ce qu’elle a toujours dessiné dans un cahier et qui était resté dans le tiroir nommé : \"Un jour peut-être\".</p><p>Le 21 mai 2019, la société Beeheidi est créée par Sandra Rouiller & Stéphane Berclaz, son associé mais surtout son compagnon de vie. <br/><b>Beeheidi, une particule chantante offrant ainsi un hommage au grand-papa Happy-culteur.</b></p>",
     "aboutHeidi": {
       "title": "Sandra, fondatrice de Beeheidi",
       "description": "Fille d'alpiniste et gardienne des abeilles, Sandra a grandi au rythme des saisons valaisannes. Passionnée de montagne, elle a fondé Beeheidi avec une conviction simple : partager l'authenticité des Alpes et créer des émotions durables.<br/><br/>Chaque expérience qu'elle imagine porte sa signature — générosité, nature et art de vivre alpin.",
@@ -73,6 +73,17 @@
       "title": "Stéphane, guide de montagne",
       "description": "Guide certifié et amoureux du terrain, Stéphane partage sa connaissance intime du Valais à travers chaque sortie.<br/><br/>Ensemble, Sandra et Stéphane forment un duo complémentaire, unis par la même passion : vous faire découvrir un Valais authentique, loin des sentiers battus.",
       "button": "Nos expériences"
+    },
+    "guidesTeam": {
+      "title": "L'équipe qui nous accompagne",
+      "paragraph1": "Beeheidi s'est entourée de guides, accompagnateurs et passionnés de montagne répartis dans tout le canton, choisis pour leurs compétences et surtout pour leurs qualités humaines, leur amour de la région et leur soif de partage.",
+      "paragraph2": "Authentiques amoureux de la nature et du terroir, ce sont d'excellents ambassadeurs de leur région. Ils connaissent les meilleurs alpages pour déguster une tarte aux fruits concoctée par grand-maman ainsi que là où se fabriquent les meilleurs séracs. Nés avec un GPS intégré, ils repèrent les meilleurs endroits pour contempler un magnifique lever ou coucher de soleil et savent exactement où s'arrêter pour que la magie opère.",
+      "paragraph3": "Beeheidi travaille également avec différents prestataires indépendants, accompagnateurs en montagne, guides outdoor, restaurateurs, etc. Ce sont tous des professionnels qui vous feront vivre de belles émotions et découvrir des lieux inédits hors des sentiers battus.",
+      "paragraph4": "Par-dessus tout, nous aimons partager notre terrain de jeu et souhaitons le faire découvrir aux visiteurs à travers notre regard et dans la simplicité."
+    },
+    "inAFewWords": {
+      "title": "Beeheidi en quelques mots",
+      "content": "Beeheidi n'est pas seulement une entreprise de services, mais également une marque qui rassemble une communauté sensible aux Alpes, au terroir et aux traditions."
     }
   },
   "services": {
@@ -267,7 +278,7 @@
       "sion-sierre": "Sion & Sierre",
       "crans-montana": "Crans-Montana"
     },
-    "price": "À partir de"
+    "price": "Dès"
   },
   "cgv": {
     "title": "Conditions Générales",
@@ -346,7 +357,7 @@
     },
     "warranty": {
       "title": "Exclusion de garantie",
-      "content": "Bien que Beeheidi s'emploie en toute bonne foi à garantir la fiabilité des informations contenues dans le site au moment de leur publication, Beeheidi ne peut certifier ou attester formellement de manière explicite ou implicite (également vis à vis de tiers) l'exactitude, la fiabilité et l'exhaustivité des informations contenues dans le site www.beeheidi.ch",
+      "content": "Bien que Beeheidi s'emploie en toute bonne foi à garantir la fiabilité des informations contenues dans le site au moment de leur publication, Beeheidi ne peut certifier ou attester formellement de manière explicite ou implicite (également vis-à-vis de tiers) l'exactitude, la fiabilité et l'exhaustivité des informations contenues dans le site www.beeheidi.ch",
       "content2": "Les opinions émises ou autres informations contenues dans le site internet www.beeheidi.ch peuvent être modifiées en tout temps sans avertissement préalable. Beeheidi décline toute responsabilité et ne garantit nullement que les fonctions disponibles sur le site www.beeheidi.ch ne soient jamais interrompues ni l'absence de virus ou autres éléments dommageables dans le navigateur concerné."
     },
     "liability": {
@@ -383,6 +394,11 @@
       "newsletter": {
         "title": "Newsletter et courrier électroniques",
         "content": "Les messages électroniques ou newsletters de Beeheidi ne vous sont envoyés que si vous le désirez. Si vous ne souhaitez plus les recevoir, vous pouvez à tout moment vous désabonner. N'oubliez pas que les données transmises non codées peuvent être lues ou modifiées par des tiers non autorisés."
+      },
+      "cookies": {
+        "title": "Cookies",
+        "content": "Nous utilisons des cookies pour améliorer votre expérience de navigation et, avec votre consentement, mesurer l'audience du site. Vous pouvez modifier vos préférences à tout moment.",
+        "manageLink": "Gérer mes préférences de cookies"
       }
     },
     "general": {

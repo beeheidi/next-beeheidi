@@ -19,6 +19,7 @@ import {
 } from "@/lib/content";
 import { notFound } from "next/navigation";
 import TopImage from "@/components/ui/TopImage/TopImage";
+import SetLocalizedSlugs from "@/components/ui/SetLocalizedSlugs/SetLocalizedSlugs";
 import PrestationBreadcrumb from "@/components/ui/PrestationBreadcrumb/PrestationBreadcrumb";
 import PrestationHero from "@/components/ui/PrestationHero/PrestationHero";
 import PrestationContent from "@/components/ui/PrestationContent/PrestationContent";
@@ -114,11 +115,7 @@ export default async function PrestationDetailPage({ params }) {
 
   return (
     <>
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `window.__LOCALIZED_SLUGS__ = ${JSON.stringify(localizedSlugs)};`,
-        }}
-      />
+      <SetLocalizedSlugs slugs={localizedSlugs} />
       <main className="bg-background pt-8 pb-8 md:pt-24 md:pb-16 relative">
         <TopImage position="top-left" size="large" />
         <div className="max-w-laptop mx-auto px-6 relative z-10">

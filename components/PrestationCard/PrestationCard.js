@@ -67,7 +67,8 @@ export default function PrestationCard({ prestation }) {
             )}
             {displayPrice && (
               <span className="text-lg text-anthracite font-light">
-                Dès <span className="font-medium">{displayPrice}</span>
+                {t("labels.price")}{" "}
+                <span className="font-medium">{displayPrice}</span>
               </span>
             )}
             <button className="ml-auto flex-shrink-0 w-10 h-10 rounded-full bg-[var(--color-primary)] flex items-center justify-center text-white transition-all duration-300 group-hover:rotate-90 cursor-pointer">
