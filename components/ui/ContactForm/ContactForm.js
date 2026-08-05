@@ -64,7 +64,7 @@ const ContactForm = ({ prestation = null }) => {
   const labelClass = "block text-sm font-light text-anthracite mb-2";
 
   return (
-    <div className="max-w-2xl mx-auto">
+    <div className="max-w-2xl mx-auto relative z-10">
       <form onSubmit={handleSubmit} className="space-y-6">
 
         {/* Prénom + Nom */}
