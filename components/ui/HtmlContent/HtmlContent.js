@@ -1,11 +1,15 @@
-import DOMPurify from "isomorphic-dompurify";
+import sanitizeHtml from "sanitize-html";
 
 export default function HtmlContent({ html, className = "" }) {
   if (!html?.trim()) return null;
 
-  const clean = DOMPurify.sanitize(html, {
-    ALLOWED_TAGS: ["p", "br", "strong", "b", "em", "i", "u", "s", "ul", "ol", "li", "a", "span"],
-    ALLOWED_ATTR: ["href", "target", "rel", "class"],
+  const clean = sanitizeHtml(html, {
+    allowedTags: ["p", "br", "strong", "b", "em", "i", "u", "s", "ul", "ol", "li", "a", "span"],
+    allowedAttributes: {
+      a: ["href", "target", "rel"],
+      span: ["class"],
+      p: ["class"],
+    },
   });
 
   return (
