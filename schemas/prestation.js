@@ -213,6 +213,14 @@ export default {
       initialValue: () => new Date().toISOString(),
     },
     {
+      name: "internalNotes",
+      title: "Note interne",
+      type: "text",
+      group: "internal",
+      rows: 4,
+      description: "Notes privées — non affichées sur le site",
+    },
+    {
       name: "category",
       title: "Catégorie (filtre)",
       type: "object",
