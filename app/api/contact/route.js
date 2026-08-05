@@ -1,8 +1,6 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 const escapeHtml = (value = "") =>
   String(value)
     .replace(/&/g, "&amp;")
@@ -57,6 +55,7 @@ export async function POST(request) {
         ? `Demande – ${prestation}`
         : "Nouveau message depuis le site");
 
+    const resend = new Resend(process.env.RESEND_API_KEY);
     const { error } = await resend.emails.send({
       from,
       to: [to],
