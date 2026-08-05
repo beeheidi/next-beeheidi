@@ -49,7 +49,7 @@ const Hero = ({ title, whoAreWe }) => {
       </Swiper>
 
       {/* Logo + baseline — centrés, légèrement au-dessus du milieu */}
-      <div className="absolute w-fit left-6 md:left-[250px]  inset-0 flex flex-col  top-96 z-10 pointer-events-none px-6">
+      <div className="absolute w-fit left-6 md:left-[250px]  inset-0 flex flex-col  top-92 z-10 pointer-events-none px-6">
         <Image
           src="/images/logo/logo.svg"
           alt="Beeheidi"
