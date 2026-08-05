@@ -12,6 +12,8 @@ import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
 
+export const revalidate = 60;
+
 export default async function Home({ params }) {
   const { locale } = await params;
   const prestations = await client.fetch(featuredPrestationsQuery(locale));

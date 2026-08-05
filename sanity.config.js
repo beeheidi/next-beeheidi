@@ -1,21 +1,21 @@
 import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
+import { orderableDocumentListDeskItem } from "@sanity/orderable-document-list";
 import { schemaTypes } from "./schemas";
 
-const structure = (S) =>
+const structure = (S, context) =>
   S.list()
     .title("Contenu")
     .items([
+      orderableDocumentListDeskItem({
+        type: "prestation",
+        title: "Activités",
+        S,
+        context,
+      }),
       ...S.documentTypeListItems().filter(
         (listItem) => listItem.getId() !== "prestation"
       ),
-      S.listItem()
-        .title("Activités")
-        .child(
-          S.documentTypeList("prestation")
-            .title("Activités")
-            .defaultOrdering([{ field: "activityDate", direction: "desc" }])
-        ),
     ]);
 
 export default defineConfig({

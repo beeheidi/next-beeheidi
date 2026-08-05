@@ -5,6 +5,7 @@ import {
   galleryImageType,
   durationOptions,
 } from "./fields";
+import { orderRankField, orderRankOrdering } from "@sanity/orderable-document-list";
 
 export default {
   name: "prestation",
@@ -23,6 +24,8 @@ export default {
     { name: "internalFlags", title: "Publication", options: { collapsible: true } },
   ],
   fields: [
+    orderRankField({ type: "prestation", newItemPosition: "before" }),
+
     // ─── Contenu de la page ───────────────────────────────────────────────
     localizedString("title", "Titre", {
       group: "content",
@@ -194,12 +197,12 @@ export default {
     },
     {
       name: "activityDate",
-      title: "Date (tri & filtres)",
+      title: "Date (référence)",
       type: "date",
       group: "internal",
       fieldset: "internalFlags",
       description:
-        "Date de référence pour trier et filtrer les activités dans Sanity et sur le site. Si vide, la date de publication est utilisée.",
+        "Date de référence optionnelle (filtres / affichage interne). L’ordre sur le site se gère par glisser-déposer dans la liste Activités.",
     },
     {
       name: "publishedAt",
@@ -369,6 +372,7 @@ export default {
     },
   },
   orderings: [
+    orderRankOrdering,
     {
       title: "Date, récent",
       name: "activityDateDesc",
