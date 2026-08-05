@@ -41,7 +41,16 @@ const ContactForm = ({ prestation = null }) => {
     }
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("send_failed");
+      }
+
       setSubmitStatus({ type: "success", message: t("success") });
       setFormData({
         firstName: "",

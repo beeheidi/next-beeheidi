@@ -49,7 +49,7 @@ export default function PrestationCard({ prestation }) {
         )}
       </div>
       <div className="p-6">
-        <h3 className="text-2xl font-semibold text-anthracite mb-2">
+        <h3 className="text-2xl min-h-[64px] font-semibold text-anthracite mb-2">
           {prestation.title || prestation.titleFr || prestation.titleEn}
         </h3>
         <p className="text-anthracite font-regular mb-4 line-clamp-2">
