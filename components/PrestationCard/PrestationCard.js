@@ -58,18 +58,18 @@ export default function PrestationCard({ prestation }) {
 
         {(displayPrice || durationLabel) && (
           <div className="flex items-center justify-between gap-4 pt-4 border-t border-gray-200">
+            {displayPrice && (
+              <span className="text-lg text-anthracite font-light">
+                {t("labels.price")}{" "}
+                <span className="font-medium">{displayPrice}</span>
+              </span>
+            )}
             {durationLabel ? (
               <span className="text-sm text-gray-500 font-light">
                 {durationLabel}
               </span>
             ) : (
               <span />
-            )}
-            {displayPrice && (
-              <span className="text-lg text-anthracite font-light">
-                {t("labels.price")}{" "}
-                <span className="font-medium">{displayPrice}</span>
-              </span>
             )}
             <button className="ml-auto flex-shrink-0 w-10 h-10 rounded-full bg-[var(--color-primary)] flex items-center justify-center text-white transition-all duration-300 group-hover:rotate-90 cursor-pointer">
               <ChevronRight className="w-5 h-5" />
