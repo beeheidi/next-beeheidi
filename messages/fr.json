@@ -8,7 +8,7 @@
   },
   "hero": {
     "title": "Vivez une expérience unique",
-    "exploreWorks": "Nos expériences coups de coeur"
+    "exploreWorks": "Nos expériences coups de cœur"
   },
   "home": {
     "featuredPrestations": "Les incontournables",
@@ -99,6 +99,7 @@
       "Mais surtout, notre équipe se compose de passionnés connaissant parfaitement le Valais et ses merveilles et ayant à cœur de les partager, en toute simplicité."
     ],
     "experience": "Vivez une expérience unique en notre compagnie.",
+    "authenticExperience": "Une expérience authentique",
     "experienceDescription": "Que vous souhaitiez une simple après-midi découverte ou séjourner en Valais, nous organiserons les activités dont vous rêvez ! Faites-nous part de vos envies en nous contactant dès à présent.",
     "experienceButton": "Notre brochure de présentation",
     "experienceAlert": "(Attention, l’ouverture de ce document peut provoquer une envie irrésistible de prendre de l’altitude!)",
@@ -182,8 +183,8 @@
   },
   "contact": {
     "title": "Contact",
-    "subtitle": "Heidi se réjouit de vous lire!",
-    "description": "Un petit mot à souffler à Heidi? Une expérience personnalisée, un séjour sur mesure au cœur des Alpes suisses à planifier? Ou alors même rejoindre notre équipe? ",
+    "subtitle": "Heidi se réjouit de vous lire !",
+    "description": "Un petit mot à souffler à Heidi ? Une expérience personnalisée, un séjour sur mesure au cœur des Alpes suisses à planifier ? Ou alors même rejoindre notre équipe ? ",
     "form": {
       "firstName": "Prénom",
       "name": "Nom",

@@ -179,11 +179,12 @@ export default {
     },
     {
       name: "active",
-      title: "Activer / désactiver",
+      title: "Visible sur le site",
       type: "boolean",
       group: "internal",
       fieldset: "internalFlags",
-      description: "Décochez pour masquer l'activité sur le site",
+      description:
+        "Désactivez pour masquer l'activité sur le site (elle reste dans Sanity). La pastille verte « Published » indique seulement que le document est enregistré dans le CMS.",
       initialValue: true,
     },
     {
@@ -362,7 +363,9 @@ export default {
       const durationLabels = Object.fromEntries(
         durationOptions.map((o) => [o.value, o.title])
       );
-      const flags = [!active ? "masquée" : null, featured ? "♥" : null]
+      const isActive = active !== false;
+      const visibility = isActive ? "🟢 Sur le site" : "🔴 Masquée";
+      const flags = [visibility, featured ? "♥ Coup de cœur" : null]
         .filter(Boolean)
         .join(" · ");
 
@@ -372,9 +375,13 @@ export default {
           ? new Date(publishedAt).toLocaleDateString("fr-CH")
           : null;
 
+      const baseTitle = ref
+        ? `[${ref}] ${title || "Sans titre"}`
+        : title || "Sans titre";
+
       return {
-        title: ref ? `[${ref}] ${title || "Sans titre"}` : title || "Sans titre",
-        subtitle: [dateLabel, durationLabels[subtitle], flags].filter(Boolean).join(" · ") || "Activité",
+        title: isActive ? baseTitle : `[Masquée] ${baseTitle}`,
+        subtitle: [flags, dateLabel, durationLabels[subtitle]].filter(Boolean).join(" · "),
         media: media || fallbackMedia,
       };
     },

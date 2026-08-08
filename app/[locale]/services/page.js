@@ -87,7 +87,7 @@ export default async function ServicesPage({ params }) {
       </section>
 
       {/* Navigation services */}
-      <section className="max-w-laptop mx-auto px-6 mb-16">
+      <section className="max-w-laptop mx-auto px-6 relative z-10 mb-16">
         <p className="text-left text-gray-500 font-light mb-8">
           {t("services.youAre")}
         </p>
@@ -183,7 +183,7 @@ export default async function ServicesPage({ params }) {
               className="pointer-events-none select-none absolute inset-0 m-auto h-auto w-screen md:w-[700px] object-contain opacity-5 invert"
             />
             <h2 className="relative z-10 mt-[140px] text-2xl md:text-4xl font-light text-center text-anthracite">
-              Une expérience authentique
+              {t("services.authenticExperience")}
             </h2>
           </div>
         </div>

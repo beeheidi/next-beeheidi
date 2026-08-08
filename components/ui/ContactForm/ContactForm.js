@@ -10,7 +10,6 @@ const ContactForm = ({ prestation = null }) => {
     name: "",
     email: "",
     phone: "",
-    subject: "",
     message: "",
     prestation: prestation || "",
   });
@@ -57,7 +56,6 @@ const ContactForm = ({ prestation = null }) => {
         name: "",
         email: "",
         phone: "",
-        subject: "",
         message: "",
         prestation: prestation || "",
       });
@@ -130,6 +128,7 @@ const ContactForm = ({ prestation = null }) => {
           <div>
             <label htmlFor="phone" className={labelClass}>
               {t("phone")}
+              <span className="text-primary">{t("required")}</span>
             </label>
             <input
               type="tel"
@@ -139,25 +138,12 @@ const ContactForm = ({ prestation = null }) => {
               onChange={handleChange}
               className={inputClass}
               placeholder={t("phonePlaceholder")}
+              required
             />
           </div>
         </div>
 
-        {/* Sujet */}
-        <div>
-          <label htmlFor="subject" className={labelClass}>
-            {t("subject")}
-          </label>
-          <input
-            type="text"
-            id="subject"
-            name="subject"
-            value={formData.subject}
-            onChange={handleChange}
-            className={inputClass}
-            placeholder={t("subjectPlaceholder")}
-          />
-        </div>
+
 
         {/* Prestation (si applicable) */}
         {prestation && (

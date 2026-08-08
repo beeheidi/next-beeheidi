@@ -2,6 +2,7 @@ import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
 import { orderableDocumentListDeskItem } from "@sanity/orderable-document-list";
 import { schemaTypes } from "./schemas";
+import { PrestationActiveBadge } from "./sanity/badges/PrestationActiveBadge";
 
 const structure = (S, context) =>
   S.list()
@@ -31,6 +32,12 @@ export default defineConfig({
 
   schema: {
     types: schemaTypes,
+  },
+  document: {
+    badges: (prev, context) =>
+      context.schemaType === "prestation"
+        ? [PrestationActiveBadge, ...prev]
+        : prev,
   },
   studio: {
     components: {
