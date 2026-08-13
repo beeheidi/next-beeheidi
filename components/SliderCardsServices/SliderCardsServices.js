@@ -45,6 +45,7 @@ export default function SliderCardsServices({ services }) {
                 src={service.image}
                 alt={service.alt}
                 fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="object-cover absolute top-0 left-0 z-0"
               />
               <div className="relative z-11 px-8 h-full flex flex-col items-start  py-24 backdrop-blur-xs">

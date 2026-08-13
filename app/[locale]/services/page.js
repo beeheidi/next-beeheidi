@@ -164,6 +164,7 @@ export default async function ServicesPage({ params }) {
                 src={service.image}
                 alt={service.alt}
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
             </div>

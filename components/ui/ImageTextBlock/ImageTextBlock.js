@@ -47,6 +47,7 @@ export default function ImageTextBlock({
           src={imageSrc}
           alt={imageAlt}
           fill
+          sizes="(max-width: 768px) 100vw, 58vw"
           className="object-cover transition-transform duration-1000 group-hover:scale-105"
         />
       </div>

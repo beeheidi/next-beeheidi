@@ -227,6 +227,7 @@ const Header = () => {
         }`}
         role="dialog"
         aria-modal="true"
+        aria-label={t("menuTitle")}
       >
         {/* Logo watermark */}
         <div className="relative mb-8 w-full pointer-events-none select-none">

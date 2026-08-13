@@ -40,6 +40,7 @@ export default function PrestationCard({ prestation }) {
             src={imageUrl}
             alt={thumbnail?.alt || prestation.title || ""}
             fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
             className="object-cover group-hover:scale-110 transition-transform duration-300"
           />
         ) : (
@@ -71,9 +72,12 @@ export default function PrestationCard({ prestation }) {
             ) : (
               <span />
             )}
-            <button className="ml-auto flex-shrink-0 w-10 h-10 rounded-full bg-[var(--color-primary)] flex items-center justify-center text-white transition-all duration-300 group-hover:rotate-90 cursor-pointer">
+            <span
+              aria-hidden="true"
+              className="ml-auto flex-shrink-0 w-10 h-10 rounded-full bg-[var(--color-primary)] flex items-center justify-center text-white transition-all duration-300 group-hover:rotate-90"
+            >
               <ChevronRight className="w-5 h-5" />
-            </button>
+            </span>
           </div>
         )}
       </div>
