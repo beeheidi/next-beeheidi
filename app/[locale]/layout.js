@@ -47,5 +47,4 @@ export default async function LocaleLayout({ children, params }) {
 export const metadata = {
   title: "Beeheidi",
   description: "Beeheidi",
-  robots: "noindex, nofollow",
 };

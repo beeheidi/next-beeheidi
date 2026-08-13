@@ -20,7 +20,6 @@ const poppins = Poppins({
 export const metadata = {
   title: "Beeheidi",
   description: "Beeheidi",
-  robots: "noindex, nofollow",
   icons: {
     icon: [{ url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" }],
     shortcut: "/favicon-32x32.png",
