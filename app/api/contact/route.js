@@ -9,6 +9,25 @@ const escapeHtml = (value = "") =>
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#39;");
 
+const verifyRecaptcha = async (token) => {
+  if (!token) return false;
+
+  const response = await fetch(
+    "https://www.google.com/recaptcha/api/siteverify",
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({
+        secret: process.env.RECAPTCHA_SECRET_KEY,
+        response: token,
+      }),
+    }
+  );
+
+  const data = await response.json();
+  return data.success === true;
+};
+
 export async function POST(request) {
   try {
     if (!process.env.RESEND_API_KEY) {
@@ -19,8 +38,16 @@ export async function POST(request) {
       );
     }
 
+    if (!process.env.RECAPTCHA_SECRET_KEY) {
+      console.error("RECAPTCHA_SECRET_KEY manquante");
+      return NextResponse.json(
+        { error: "Configuration reCAPTCHA manquante" },
+        { status: 500 }
+      );
+    }
+
     const body = await request.json();
-    const { firstName, name, email, phone, subject, message, prestation } =
+    const { firstName, name, email, phone, subject, message, prestation, recaptchaToken } =
       body ?? {};
 
     if (!firstName?.trim() || !name?.trim() || !email?.trim() || !message?.trim()) {
@@ -34,6 +61,14 @@ export async function POST(request) {
     if (!emailRegex.test(email)) {
       return NextResponse.json(
         { error: "Adresse email invalide" },
+        { status: 400 }
+      );
+    }
+
+    const isHuman = await verifyRecaptcha(recaptchaToken);
+    if (!isHuman) {
+      return NextResponse.json(
+        { error: "Vérification reCAPTCHA échouée" },
         { status: 400 }
       );
     }

@@ -204,9 +204,13 @@
       "submit": "Send message",
       "submitting": "Sending...",
       "success": "Your message has been sent successfully! We will get back to you soon.",
+      "consentText": "I agree that my data will be used to get back to me, in accordance with our",
+      "consentLink": "privacy policy",
       "error": {
         "required": "Please fill in all required fields.",
         "email": "Please enter a valid email address.",
+        "consent": "Please accept the privacy policy.",
+        "recaptcha": "Please validate the reCAPTCHA.",
         "generic": "An error occurred. Please try again later."
       }
     }

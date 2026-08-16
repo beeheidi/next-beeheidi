@@ -1,10 +1,14 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import Button from "@/components/ui/Button/Button";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+import { Link, getTranslatedPathname } from "@/i18n/navigation";
 
 const ContactForm = ({ prestation = null }) => {
   const t = useTranslations("contact.form");
+  const locale = useLocale();
+  const recaptchaRef = useRef(null);
   const [formData, setFormData] = useState({
     firstName: "",
     name: "",
@@ -15,6 +19,8 @@ const ContactForm = ({ prestation = null }) => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
+  const [consentAccepted, setConsentAccepted] = useState(false);
+  const [recaptchaToken, setRecaptchaToken] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -39,11 +45,23 @@ const ContactForm = ({ prestation = null }) => {
       return;
     }
 
+    if (!consentAccepted) {
+      setSubmitStatus({ type: "error", message: t("error.consent") });
+      setIsSubmitting(false);
+      return;
+    }
+
+    if (!recaptchaToken) {
+      setSubmitStatus({ type: "error", message: t("error.recaptcha") });
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, recaptchaToken }),
       });
 
       if (!response.ok) {
@@ -59,9 +77,12 @@ const ContactForm = ({ prestation = null }) => {
         message: "",
         prestation: prestation || "",
       });
+      setConsentAccepted(false);
     } catch {
       setSubmitStatus({ type: "error", message: t("error.generic") });
     } finally {
+      recaptchaRef.current?.reset();
+      setRecaptchaToken(null);
       setIsSubmitting(false);
     }
   };
@@ -178,6 +199,40 @@ const ContactForm = ({ prestation = null }) => {
             placeholder={t("messagePlaceholder")}
           />
         </div>
+
+        {/* Consentement RGPD */}
+        <div className="flex items-start gap-3">
+          <input
+            type="checkbox"
+            id="consent"
+            name="consent"
+            checked={consentAccepted}
+            onChange={(e) => setConsentAccepted(e.target.checked)}
+            required
+            className="mt-1 h-4 w-4 shrink-0 rounded border-gray-300 text-primary focus:ring-primary"
+          />
+          <label htmlFor="consent" className="text-sm font-light text-anthracite">
+            {t("consentText")}{" "}
+            <Link
+              href={getTranslatedPathname("/mentions-legales", locale)}
+              target="_blank"
+              className="underline hover:text-primary transition-colors"
+            >
+              {t("consentLink")}
+            </Link>
+          </label>
+        </div>
+
+        {/* reCAPTCHA */}
+        {process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY && (
+          <ReCAPTCHA
+            ref={recaptchaRef}
+            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+            onChange={(token) => setRecaptchaToken(token)}
+            onExpired={() => setRecaptchaToken(null)}
+            hl={locale}
+          />
+        )}
 
         {submitStatus && (
           <div
